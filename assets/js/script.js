@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const activeClasses = ['bg-primary-50', 'text-primary-700', 'font-bold', 'shadow-sm', 'active'];
     const inactiveClasses = ['text-slate-600', 'dark:text-slate-300', 'hover:text-primary-600', 'hover:bg-white/80', 'dark:hover:bg-slate-700', 'font-semibold'];
 
-    const allLinks = document.querySelectorAll('.desktop-link-tk, .mobile-nav-link');
+    const allLinks = document.querySelectorAll('.desktop-link-tk, .mobile-nav-link-tk');
 
     allLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 link.classList.remove(...inactiveClasses); // Hapus style abu-abu
             } 
             // Jika link Mobile
-            else if (link.classList.contains('mobile-nav-link')) {
+            else if (link.classList.contains('mobile-nav-link-tk')) {
                 link.classList.add('active'); // Style active mobile sudah ada di CSS
             }
         } else {
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 link.classList.remove(...activeClasses);
                 link.classList.add(...inactiveClasses);
             }
-             else if (link.classList.contains('mobile-nav-link')) {
+             else if (link.classList.contains('mobile-nav-link-tk')) {
                 link.classList.remove('active');
             }
         }
