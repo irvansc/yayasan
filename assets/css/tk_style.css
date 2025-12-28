@@ -1,0 +1,77 @@
+/* --- FILE: assets/css/tk_style.css --- */
+
+/* 1. Custom Scrollbar (Agar terlihat modern) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+.dark ::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* 2. Glassmorphism Navigation */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.dark .glass-nav {
+    background: rgba(15, 23, 42, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 3. Bento Card Hover Effects */
+.bento-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.bento-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Text Highlight Decoration (Efek Stabilo) */
+.text-highlight {
+    position: relative;
+    z-index: 10;
+}
+.text-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: -2px;
+    right: -2px;
+    height: 12px;
+    background-color: #fde68a; /* Yellow */
+    z-index: -1;
+    transform: rotate(-1deg);
+    opacity: 0.8;
+    border-radius: 4px;
+}
+.dark .text-highlight::after {
+    background-color: #059669; 
+    opacity: 0.5;
+}
+
+/* 5. Mobile Sidebar Styles */
+#mobile-sidebar {
+    will-change: transform;
+}
+.mobile-nav-link.active {
+    background-color: #ecfdf5; /* primary-50 */
+    color: #047857; /* primary-700 */
+    font-weight: 700;
+}
+.dark .mobile-nav-link.active {
+    background-color: #1e293b;
+    color: #34d399;
+}

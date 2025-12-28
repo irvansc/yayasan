@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legalitas & Akreditasi - YPI AL-INTIDHOM</title>
+    <meta name="description"
+        content="Informasi legalitas hukum yayasan dan status akreditasi unit pendidikan YPI Al-Intidhom.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="./output.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        /* Animation Utilities (Sama seperti sejarah.html) */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Custom Pattern untuk Background Sertifikat */
+        .bg-pattern-dots {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .dark .bg-pattern-dots {
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+        }
+    </style>
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 dark:bg-dark-bg dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-primary-600 selection:text-white flex flex-col min-h-screen">
+
+    <div
+        class="bg-primary-900 text-white py-2 text-xs font-medium hidden md:block z-50 relative border-b border-primary-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><i class="fas fa-phone-alt text-secondary-500"></i> (021)
+                    789-0123</span>
+                <span class="flex items-center gap-2"><i class="fas fa-envelope text-secondary-500"></i>
+                    info@al-intidhom.sch.id</span>
+                <span class="flex items-center gap-2"><i class="fas fa-clock text-secondary-500"></i> Senin - Jumat:
+                    07.00 - 16.00</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="alumni.html" class="hover:text-secondary-500 transition-colors">Alumni</a>
+                <a href="karir.html" class="hover:text-secondary-500 transition-colors">Karir</a>
+                <span class="text-primary-700">|</span>
+                <div class="flex gap-3">
+                    <a href="#" class="hover:text-secondary-500"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-secondary-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-secondary-500"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Main Navigation -->
+    <header
+        class="sticky top-0 w-full z-40 transition-all duration-300 glass-effect border-b border-gray-200 dark:border-dark-border shadow-sm"
+        id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="assets/img/logo.png" alt="Logo YPI Al-Intidhom"
+                        class="w-11 h-11 rounded-xl shadow-lg shadow-primary-500/20 group-hover:scale-105 transition-transform duration-300 object-cover">
+                    <div class="flex flex-col">
+                        <span
+                            class="block font-extrabold text-xl tracking-tight text-primary-900 dark:text-white leading-none font-serif">AL-INTIDHOM</span>
+                        <span
+                            class="block text-[10px] font-bold text-secondary-600 dark:text-secondary-500 tracking-[0.2em] uppercase mt-0.5">Islamic
+                            Foundation</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="desktop-link  text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Beranda</a>
+
+                    <!-- Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="desktop-link active flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                            Profil <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="sambutan.html"
+                                class="desktop-link  block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">Sambutan
+                                Ketua</a>
+                            <a href="sejarah.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Sejarah
+                                & Visi Misi</a>
+                            <a href="struktur.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">Struktur
+                                Organisasi</a>
+                            <a href="legalitas.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">Legalitas
+                                & Akreditasi</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                            Pendidikan <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="#"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">TK/PAUD</a>
+                            <a href="#"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">SD</a>
+                            <a href="#"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">MTS</a>
+                            <a href="#"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">MA</a>
+                            <a href="#"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">STAI
+                                AL-INTIDHOM</a>
+
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                            Akademik <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="ppdb.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">PPDB</a>
+                            <a href="beasiswa.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Beasiswa</a>
+                            <a href="kalender.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">Kalender
+                                Akademik</a>
+                            <a href="kurikulum.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">Kurikulum</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                            Informasi <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="berita.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">Berita/Pengumuman</a>
+                            <a href="artikel.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Artikel</a>
+                        </div>
+                    </div>
+                    <a href="galeri.html"
+                        class="desktop-link  text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Galeri</a>
+                    <a href="unduhan.html"
+                        class="desktop-link  text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Unduhan</a>
+                    <a href="alumni.html"
+                        class="desktop-link  text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Alumni</a>
+                    <a href="kontak.html"
+                        class="desktop-link  text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Kontak</a>
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle-desktop"
+                        class="ml-2 w-9 h-9 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center lg:hidden gap-4">
+                    <button id="theme-toggle-mobile"
+                        class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 focus:outline-none transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn"
+                        class="relative z-50 p-2 -mr-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none">
+                        <div class="w-6 h-5 flex flex-col justify-between">
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-1"></span>
+                            <span class="w-3/4 h-0.5 bg-current rounded-full transition-all duration-300"
+                                id="bar-2"></span>
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-3"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-backdrop"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm opacity-0 invisible transition-all duration-300"
+        onclick="toggleSidebar()">
+    </div>
+
+    <div id="mobile-sidebar"
+        class="fixed top-0 left-0 bottom-0 w-[280px] z-[70] bg-white dark:bg-dark-card shadow-2xl transform -translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col">
+
+        <div class="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-800">
+            <div class="flex items-center gap-3">
+                <img src="assets/img/logo.png" alt="Logo" class="w-8 h-8 rounded-lg shadow-sm">
+                <div class="flex flex-col">
+                    <span
+                        class="font-bold text-lg text-slate-800 dark:text-white leading-none tracking-tight">AL-INTIDHOM</span>
+                    <span class="text-[9px] font-bold text-primary-600 uppercase tracking-widest mt-0.5">Islamic
+                        School</span>
+                </div>
+            </div>
+            <button onclick="toggleSidebar()"
+                class="p-2 rounded-full text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+
+            <a href="index.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-home w-5 text-center opacity-70"></i> Beranda
+            </a>
+            <!-- PROFIL -->
+            <div class="group">
+                <button onclick="toggleSub('menu-profil', 'arrow-profil')"
+                    class="mobile-nav-link active w-full flex items-center justify-between px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                    <span class="flex items-center gap-3"><i class="fas fa-user-tie w-5 text-center opacity-70"></i>
+                        Profil</span>
+                    <i id="arrow-profil" class="fas fa-chevron-right text-xs transition-transform duration-300"></i>
+                </button>
+                <div id="menu-profil" class="hidden pl-12 pr-2 space-y-1 py-1">
+                    <a href="sambutan.html"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">Sambutan
+                        Ketua</a>
+                    <a href="sejarah.html"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">Sejarah &
+                        Visi</a>
+                    <a href="struktur.html"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">Struktur
+                        Organisasi</a>
+                    <a href="legalitas.html"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">Legalitas &
+                        Akreditasi</a>
+                </div>
+            </div>
+
+            <!-- PENDIDIKAN -->
+            <div class="group">
+                <button onclick="toggleSub('menu-pendidikan', 'arrow-pendidikan')"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                    <span class="flex items-center gap-3"><i
+                            class="fas fa-graduation-cap w-5 text-center opacity-70"></i>
+                        Pendidikan</span>
+                    <i id="arrow-pendidikan" class="fas fa-chevron-right text-xs transition-transform duration-300"></i>
+                </button>
+                <div id="menu-pendidikan" class="hidden pl-12 pr-2 space-y-1 py-1">
+                    <a href="#" class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">TK /
+                        PAUD</a>
+                    <a href="#" class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">SD /
+                        MI</a>
+                    <a href="#" class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">MTS</a>
+                    <a href="#" class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">MA</a>
+                    <a href="#"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">STAI</a>
+                </div>
+            </div>
+
+            <!-- AKADEMIK -->
+            <div class="group">
+                <button onclick="toggleSub('menu-akademik', 'arrow-akademik')"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                    <span class="flex items-center gap-3"><i
+                            class="fas fa-graduation-cap w-5 text-center opacity-70"></i>
+                        Akademik</span>
+                    <i id="arrow-akademik" class="fas fa-chevron-right text-xs transition-transform duration-300"></i>
+                </button>
+                <div id="menu-akademik" class="hidden pl-12 pr-2 space-y-1 py-1">
+                    <a href="#"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">PPDB</a>
+                    <a href="#"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">Beasiswa</a>
+                    <a href="#"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">Kalender
+                        Akademik</a>
+                    <a href="#"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">Kurikulum</a>
+                </div>
+            </div>
+
+            <!-- INFORMASI -->
+            <div class="group">
+                <button onclick="toggleSub('menu-informasi', 'arrow-informasi')"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                    <span class="flex items-center gap-3"><i class="fas fa-newspaper w-5 text-center opacity-70"></i>
+                        Informasi</span>
+                    <i id="arrow-informasi" class="fas fa-chevron-right text-xs transition-transform duration-300"></i>
+                </button>
+                <div id="menu-informasi" class="hidden pl-12 pr-2 space-y-1 py-1">
+                    <a href="#"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">Berita/Pengumuman</a>
+                    <a href="#"
+                        class="mobile-nav-link block py-2 text-sm text-slate-500 hover:text-primary-600">Artikel</a>
+                </div>
+            </div>
+
+            <!-- GALERI -->
+            <a href="galeri.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-5 text-center opacity-70"></i> Galery
+            </a>
+
+            <!-- ALUMNI -->
+            <a href="alumni.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-user-graduate w-5 text-center opacity-70"></i> Alumni
+            </a>
+            <!-- KONTAK -->
+            <a href="kontak.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-phone w-5 text-center opacity-70"></i> Kontak
+            </a>
+            <!-- UNDUHAN -->
+
+            <a href="unduhan.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-file w-5 text-center opacity-70"></i> Unduhan
+            </a>
+        </div>
+
+    </div>
+
+    <section class="relative pt-24 pb-24 md:pt-22 md:pb-22 bg-slate-900 overflow-hidden ">
+
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/1600/900?grayscale&blur=2" alt="Background Header"
+                class="w-full h-full object-cover opacity-30 transform scale-105 animate-slow-zoom">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/30"></div>
+            <div class="absolute inset-0 opacity-[0.03]"
+                style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;">
+            </div>
+        </div>
+
+        <div
+            class="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen">
+        </div>
+        <div
+            class="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-secondary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen">
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+
+            <div
+                class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6 animate-fade-in-up">
+                <span class="w-2 h-2 rounded-full bg-secondary-500 animate-pulse"></span>
+                <span class="text-primary-200 text-[10px] font-bold uppercase tracking-[0.2em]">Validitas Lembaga</span>
+            </div>
+
+            <h1
+                class="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-2xl animate-fade-in-up delay-100">
+                Legalitas & <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Akreditasi</span>
+            </h1>
+
+            <div class="animate-fade-in-up delay-200">
+                <nav
+                    class="inline-flex items-center p-1 rounded-full bg-white/10 border border-white/10 backdrop-blur-md shadow-2xl">
+                    <ol class="flex items-center gap-1">
+                        <li>
+                            <a href="index.html"
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-primary-600 hover:scale-110 transition-all duration-300"
+                                title="Kembali ke Beranda">
+                                <i class="fas fa-home text-xs"></i>
+                            </a>
+                        </li>
+                        <li class="text-slate-500 px-1"><i class="fas fa-chevron-right text-[10px]"></i></li>
+                        <li>
+                            <a href="#"
+                                class="px-2 py-1 text-xs font-medium text-slate-300 hover:text-white transition-colors rounded-md hover:bg-white/5">Profil</a>
+                        </li>
+                        <li class="text-slate-500 px-1"><i class="fas fa-chevron-right text-[10px]"></i></li>
+                        <li>
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-primary-600/90 text-white text-xs font-bold shadow-lg border border-primary-500/50">Legalitas</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-14 md:py-20 bg-white dark:bg-dark-bg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+                    Pondasi Hukum & <br>
+                    <span class="text-primary-600">Standar Mutu Pendidikan</span>
+                </h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full mx-auto mb-8">
+                </div>
+                <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                    YPI Al-Intidhom berkomitmen untuk menyelenggarakan pendidikan yang akuntabel dan transparan.
+                    Seluruh unit pendidikan kami beroperasi di bawah payung hukum yang sah serta telah terakreditasi
+                    oleh Badan Akreditasi Nasional (BAN-S/M) sebagai jaminan mutu layanan.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div
+                    class="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-slate-800 rounded-2xl p-8 hover:shadow-card hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-balance-scale text-2xl"></i>
+                        </div>
+                        <span
+                            class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider border border-green-200">Aktif</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">SK Kemenkumham</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Pengesahan Badan Hukum Yayasan</p>
+                    <div
+                        class="bg-white dark:bg-slate-900/50 rounded-lg p-3 border border-dashed border-slate-300 dark:border-slate-700">
+                        <p class="text-xs text-slate-400 uppercase font-semibold mb-1">Nomor SK:</p>
+                        <p class="font-mono text-sm text-slate-700 dark:text-slate-200 select-all">
+                            AHU-0012345.AH.01.04.Tahun 2010</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-slate-800 rounded-2xl p-8 hover:shadow-card hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-secondary-100 dark:bg-secondary-900/30 flex items-center justify-center text-secondary-600 dark:text-secondary-400 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-file-signature text-2xl"></i>
+                        </div>
+                        <span
+                            class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider border border-green-200">Sah</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Akta Notaris</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Akta Pendirian Yayasan</p>
+                    <div
+                        class="bg-white dark:bg-slate-900/50 rounded-lg p-3 border border-dashed border-slate-300 dark:border-slate-700">
+                        <p class="text-xs text-slate-400 uppercase font-semibold mb-1">Nomor Akta:</p>
+                        <p class="font-mono text-sm text-slate-700 dark:text-slate-200">No. 25 Tanggal 12 Mei 1990</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-slate-50 dark:bg-dark-card border border-slate-200 dark:border-slate-800 rounded-2xl p-8 hover:shadow-card hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-building text-2xl"></i>
+                        </div>
+                        <span
+                            class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-wider border border-blue-200">Terdaftar</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">NIB & Izin Ops</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Nomor Induk Berusaha</p>
+                    <div
+                        class="bg-white dark:bg-slate-900/50 rounded-lg p-3 border border-dashed border-slate-300 dark:border-slate-700">
+                        <p class="text-xs text-slate-400 uppercase font-semibold mb-1">Nomor NIB:</p>
+                        <p class="font-mono text-sm text-slate-700 dark:text-slate-200 select-all">9120101822xxx</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section
+        class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-pattern-dots opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-pattern-dots opacity-20"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <span class="text-primary-600 font-bold tracking-wider uppercase text-sm">Penjaminan Mutu</span>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 dark:text-white mt-2">
+                        Akreditasi Unit Pendidikan
+                    </h2>
+                </div>
+                <a href="https://bansm.kemdikbud.go.id/akreditasi" target="_blank"
+                    class="text-sm font-semibold text-primary-600 hover:text-primary-700 flex items-center gap-2">
+                    Cek di Website BAN-S/M <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="space-y-6">
+
+                <div
+                    class="bg-white dark:bg-dark-card rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-6 flex flex-col md:flex-row items-center gap-6 relative overflow-hidden group">
+                    <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-500"></div>
+
+                    <div
+                        class="flex-shrink-0 w-24 h-24 rounded-full bg-gradient-to-br from-secondary-400 to-secondary-600 flex flex-col items-center justify-center text-white shadow-lg shadow-secondary-500/30 group-hover:scale-105 transition-transform">
+                        <span class="text-4xl font-serif font-bold">A</span>
+                        <span class="text-[10px] font-medium uppercase tracking-wider mt-1">Unggul</span>
+                    </div>
+
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">RA / TK Islam Al-Intidhom</h3>
+                            <span
+                                class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700 inline-block w-fit mx-auto md:mx-0">NPSN:
+                                6988xxxx</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 md:mb-0">
+                            Terakreditasi A (Unggul) berdasarkan keputusan BAN-PAUD dan PNF. Mencetak generasi usia dini
+                            yang ceria, cerdas, dan berakhlak.
+                        </p>
+                    </div>
+
+                    <div class="flex-shrink-0 flex flex-col items-center md:items-end gap-2 min-w-[140px]">
+                        <div class="text-right">
+                            <span class="block text-xs text-slate-400">Nilai Akhir</span>
+                            <span class="block text-2xl font-bold text-primary-600">92</span>
+                        </div>
+                        <div class="text-xs text-slate-400">
+                            Berlaku s.d: <span class="text-slate-700 dark:text-slate-300 font-semibold">2027</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-dark-card rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-6 flex flex-col md:flex-row items-center gap-6 relative overflow-hidden group">
+                    <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-600"></div>
+
+                    <div
+                        class="flex-shrink-0 w-24 h-24 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex flex-col items-center justify-center text-white shadow-lg shadow-primary-500/30 group-hover:scale-105 transition-transform">
+                        <span class="text-4xl font-serif font-bold">A</span>
+                        <span class="text-[10px] font-medium uppercase tracking-wider mt-1">Unggul</span>
+                    </div>
+
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">SD IT Al-Intidhom</h3>
+                            <span
+                                class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700 inline-block w-fit mx-auto md:mx-0">NPSN:
+                                2060xxxx</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 md:mb-0">
+                            Terakreditasi A dengan predikat Unggul. Memadukan kurikulum nasional dan kurikulum khas
+                            pesantren modern.
+                        </p>
+                    </div>
+
+                    <div class="flex-shrink-0 flex flex-col items-center md:items-end gap-2 min-w-[140px]">
+                        <div class="text-right">
+                            <span class="block text-xs text-slate-400">Nilai Akhir</span>
+                            <span class="block text-2xl font-bold text-primary-600">95</span>
+                        </div>
+                        <div class="text-xs text-slate-400">
+                            Berlaku s.d: <span class="text-slate-700 dark:text-slate-300 font-semibold">2028</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-dark-card rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-6 flex flex-col md:flex-row items-center gap-6 relative overflow-hidden group">
+                    <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500"></div>
+
+                    <div
+                        class="flex-shrink-0 w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex flex-col items-center justify-center text-white shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
+                        <span class="text-4xl font-serif font-bold">A</span>
+                        <span class="text-[10px] font-medium uppercase tracking-wider mt-1">Unggul</span>
+                    </div>
+
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">SMP Islam Al-Intidhom</h3>
+                            <span
+                                class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700 inline-block w-fit mx-auto md:mx-0">NPSN:
+                                2060xxxx</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 md:mb-0">
+                            Fokus pada pengembangan karakter, sains, dan teknologi. Fasilitas laboratorium lengkap dan
+                            tenaga pengajar profesional.
+                        </p>
+                    </div>
+
+                    <div class="flex-shrink-0 flex flex-col items-center md:items-end gap-2 min-w-[140px]">
+                        <div class="text-right">
+                            <span class="block text-xs text-slate-400">Nilai Akhir</span>
+                            <span class="block text-2xl font-bold text-primary-600">93</span>
+                        </div>
+                        <div class="text-xs text-slate-400">
+                            Berlaku s.d: <span class="text-slate-700 dark:text-slate-300 font-semibold">2026</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 relative overflow-hidden bg-primary-900">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+        </div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-secondary-500 rounded-full blur-[120px] opacity-30"></div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Transparansi Publik</h2>
+            <p class="text-primary-100 text-lg max-w-2xl mx-auto mb-10">
+                Kami menyediakan akses terbuka terhadap dokumen publik terkait profil yayasan dan legalitas operasional
+                sebagai bentuk tanggung jawab kami kepada masyarakat.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="kontak.html"
+                    class="px-8 py-4 bg-secondary-500 hover:bg-secondary-600 text-slate-900 font-bold rounded-lg shadow-lg shadow-secondary-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <i class="fas fa-phone"></i> Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer
+        class="bg-white dark:bg-dark-bg text-slate-600 dark:text-slate-300 pt-16 pb-8 md:pt-20 md:pb-10 border-t border-slate-200 dark:border-slate-800 font-sans transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6 text-slate-900 dark:text-white">
+                        <img src="assets/img/logo.png" alt="Logo YPI Al-Intidhom"
+                            class="w-10 h-10 rounded-lg object-cover shadow-sm">
+                        <span class="font-serif font-bold text-2xl tracking-tight">AL-INTIDHOM</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-600 dark:text-slate-400">Yayasan Pendidikan Islam
+                        Al-Intidhom berkomitmen menyelenggarakan pendidikan berkualitas, terjangkau, dan berlandaskan
+                        nilai-nilai Islam Ahlussunnah Wal Jamaah.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-primary-600 hover:border-primary-600 hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-6 relative inline-block">
+                        Tautan Cepat <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Profil Yayasan</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Visi & Misi</a></li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Tenaga Pengajar</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Prestasi Siswa</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Galeri Kegiatan</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-6 relative inline-block">
+                        Unit Pendidikan <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li
+                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer group">
+                            <div
+                                class="w-8 h-8 rounded bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-shapes"></i>
+                            </div>
+                            <span>RA / TK Islam</span>
+                        </li>
+                        <li
+                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer group">
+                            <div
+                                class="w-8 h-8 rounded bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <span>SD IT Al-Intidhom</span>
+                        </li>
+                        <li
+                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer group">
+                            <div
+                                class="w-8 h-8 rounded bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <span>SMP Islam</span>
+                        </li>
+                        <li
+                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer group">
+                            <div
+                                class="w-8 h-8 rounded bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <span>SMA Islam</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-6 relative inline-block">
+                        Hubungi Kami <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary-500"></i>
+                            <span class="text-slate-600 dark:text-slate-400">Jl. Raya Pendidikan No. 123, Kel.
+                                Kebayoran, Jakarta Selatan 12345</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-primary-500"></i>
+                            <span class="text-slate-600 dark:text-slate-400">(021) 789-0123</span>
+                        </li>
+                    </ul>
+                    <div>
+                        <p class="text-xs text-slate-500 mb-2">Dapatkan info PPDB via Email:</p>
+                        <form class="flex gap-2">
+                            <input type="email" placeholder="Email Anda..."
+                                class="bg-slate-100 dark:bg-slate-800 border-none rounded-lg px-3 py-2 text-sm w-full focus:ring-2 focus:ring-primary-500 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-600">
+                            <button
+                                class="bg-primary-600 hover:bg-primary-700 text-white rounded-lg px-3 py-2 transition-colors"><i
+                                    class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2024 YPI Al-Intidhom. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-primary-600 dark:hover:text-white transition-colors">Privacy
+                        Policy</a>
+                    <a href="#" class="hover:text-primary-600 dark:hover:text-white transition-colors">Terms of
+                        Service</a>
+                    <a href="#" class="hover:text-primary-600 dark:hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

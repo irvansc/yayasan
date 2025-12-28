@@ -1,0 +1,154 @@
+/* --- Utilities --- */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-effect {
+    background: rgba(11, 17, 32, 0.85);
+}
+
+/* --- Animations & Transitions --- */
+.hero-slide {
+    transition: opacity 1000ms ease-in-out, transform 8000ms ease-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.hero-slide.inactive {
+    opacity: 0;
+    transform: scale(1);
+}
+
+.slide-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 800ms ease-out 300ms;
+}
+
+.hero-slide.active .slide-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Specific Elements --- */
+.image-blob {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    transition: all 0.5s ease;
+}
+
+.image-blob:hover {
+    border-radius: 60% 40% 30% 70% / 50% 40% 50% 60%;
+}
+
+/* --- Testimonial Swiper Customization --- */
+.testimonial-swiper {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    /* Ensure shadows aren't cut off */
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+.testimonial-swiper .swiper-slide {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: blur(3px);
+    opacity: 0.5;
+    transform: scale(0.9);
+    height: auto; /* Flex height matching */
+}
+
+/* Specific styling for the active slide (Center) */
+.testimonial-swiper .swiper-slide-active {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+    z-index: 20;
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #cbd5e1;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active {
+    width: 30px;
+    border-radius: 999px;
+    background: #0ea5e9; /* Match primary or secondary color */
+}
+
+.dark .testimonial-swiper .swiper-pagination-bullet {
+    background: #475569;
+}
+
+.dark .testimonial-swiper .swiper-pagination-bullet-active {
+    background: #0ea5e9;
+}
+  /* Custom Styling for Article Slider Dots to match Hero Section */
+.article-featured-swiper .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+            /* Inactive state like Hero */
+            opacity: 1;
+            margin: 0 6px !important;
+            transition: all 0.3s ease;
+            border-radius: 9999px;
+        }
+
+        .article-featured-swiper .swiper-pagination-bullet-active {
+            background-color: #ffffff;
+            /* Active white */
+            box-shadow: 0 0 0 2px #10b981;
+            /* Ring-2 Ring-Primary-500 equivalent */
+            transform: scale(1.1);
+        }
+
+        .dark .article-featured-swiper .swiper-pagination-bullet-active {
+            background-color: #0ea5e9;
+        }
+
+/* 1. Style Desktop */
+.desktop-link {
+    position: relative;
+}
+
+/* Garis Bawah Hijau (Default hidden) */
+.desktop-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: -6px;
+    left: 0;
+    background-color: #059669; /* Warna Primary */
+    transition: width 0.3s ease-in-out;
+    border-radius: 99px;
+}
+
+/* KETIKA AKTIF (Class .active ditambahkan otomatis oleh JS baru tadi) */
+.desktop-link.active {
+    color: #059669 !important; 
+    font-weight: 700;
+}
+
+/* Garis bawah muncul penuh saat aktif */
+.desktop-link.active::after {
+    width: 100%; 
+}
+
+/* 2. Style Mobile */
+.mobile-nav-link.active {
+    background-color: #ecfdf5; /* Background hijau muda */
+    color: #059669 !important;
+    font-weight: 700;
+    border-left: 4px solid #059669; /* Indikator di kiri */
+}
+

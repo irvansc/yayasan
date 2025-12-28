@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membangun Karakter Generasi Qur'ani - YPI AL-INTIDHOM</title>
+    <meta name="description" content="Strategi mendidik anak di era digital dengan nilai-nilai Al-Qur'an.">
+
+    <!-- =========================================
+         1. EXTERNAL LIBRARIES & FONTS
+    ========================================== -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <link href="./output.css" rel="stylesheet">
+
+    <style>
+        /* Custom Utilities */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .dark .glass-effect {
+            background: rgba(11, 17, 32, 0.95);
+        }
+
+        /* Typography Article Body */
+        .prose p {
+            margin-bottom: 1.5em;
+            line-height: 1.8;
+        }
+
+        .prose h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.875rem;
+            /* 30px */
+            font-weight: 700;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            color: inherit;
+        }
+
+        .prose h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            /* 24px */
+            font-weight: 600;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+            color: inherit;
+        }
+
+        .prose ul,
+        .prose ol {
+            margin-bottom: 1.5em;
+            padding-left: 1.5em;
+        }
+
+        .prose li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Drop Cap */
+        .first-letter-drop::first-letter {
+            float: left;
+            font-size: 3.5rem;
+            line-height: 0.8;
+            font-weight: bold;
+            padding-right: 0.5rem;
+            margin-top: 0.1em;
+            font-family: 'Playfair Display', serif;
+            color: #10b981;
+            /* Primary 500 */
+        }
+
+        /* Blockquote Styling */
+        blockquote {
+            border-left: 4px solid #10b981;
+            padding-left: 1.5rem;
+            font-style: italic;
+            margin: 2rem 0;
+            color: #64748b;
+        }
+
+        .dark blockquote {
+            color: #94a3b8;
+        }
+
+        /* Reply Form Animation */
+        .reply-form-container {
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            max-height: 0;
+        }
+
+        .reply-form-container.open {
+            max-height: 500px;
+            /* Arbitrary large height */
+        }
+    </style>
+
+    <!-- Dark Mode Script -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 dark:bg-dark-bg dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-primary-600 selection:text-white flex flex-col min-h-screen">
+
+    <!-- =========================================
+         HEADER & NAVIGATION (SAME AS ARTIKEL)
+    ========================================== -->
+    <div
+        class="bg-primary-900 text-white py-2 text-xs font-medium hidden md:block z-50 relative border-b border-primary-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><i class="fas fa-phone-alt text-secondary-500"></i> (021)
+                    789-0123</span>
+                <span class="flex items-center gap-2"><i class="fas fa-envelope text-secondary-500"></i>
+                    info@al-intidhom.sch.id</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-secondary-500 transition-colors">Alumni</a>
+                <a href="#" class="hover:text-secondary-500 transition-colors">Karir</a>
+                <span class="text-primary-700">|</span>
+                <div class="flex gap-3">
+                    <a href="#" class="hover:text-secondary-500"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-secondary-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-secondary-500"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header
+        class="sticky top-0 w-full z-40 transition-all duration-300 glass-effect border-b border-gray-200 dark:border-dark-border shadow-sm"
+        id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group cursor-pointer">
+                    <img src="assets/img/logo.png" alt="Logo YPI Al-Intidhom"
+                        class="w-11 h-11 rounded-xl shadow-lg shadow-primary-500/20 group-hover:scale-105 transition-transform duration-300 object-cover"
+                        onerror="this.src='https://via.placeholder.com/50x50?text=Logo'">
+                    <div class="flex flex-col">
+                        <span
+                            class="block font-extrabold text-xl tracking-tight text-primary-900 dark:text-white leading-none font-serif">AL-INTIDHOM</span>
+                        <span
+                            class="block text-[10px] font-bold text-secondary-600 dark:text-secondary-500 tracking-[0.2em] uppercase mt-0.5">Islamic
+                            Foundation</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Beranda</a>
+                    <a href="artikel.html"
+                        class="text-sm font-bold text-primary-600 dark:text-primary-400 transition-colors">Artikel</a>
+                    <a href="berita.html"
+                        class="text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Berita</a>
+                    <a href="kontak.html"
+                        class="text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Kontak</a>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle-desktop"
+                        class="ml-2 w-9 h-9 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center lg:hidden gap-4">
+                    <button id="theme-toggle-mobile"
+                        class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 focus:outline-none">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn"
+                        class="text-slate-600 dark:text-slate-200 hover:text-primary-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden) -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white dark:bg-dark-card border-t border-gray-200 dark:border-dark-border absolute w-full left-0 shadow-lg top-20 z-30">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-primary-50">Beranda</a>
+                <a href="artikel.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-primary-600 bg-primary-50 dark:bg-primary-900/20">Artikel</a>
+                <a href="berita.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-primary-50">Berita</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================
+         BREADCRUMB MODERN
+    ========================================== -->
+    <div class="relative bg-slate-900 py-12 md:py-16 overflow-hidden">
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 bg-primary-900/20 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            class="absolute inset-0 w-full h-full object-cover opacity-20 filter blur-sm transform scale-105"
+            alt="Breadcrumb bg">
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+            <nav class="flex justify-center items-center text-sm md:text-base text-slate-300 mb-3"
+                aria-label="Breadcrumb">
+                <ol
+                    class="inline-flex items-center space-x-2 md:space-x-3 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                    <li class="inline-flex items-center">
+                        <a href="index.html" class="hover:text-white transition-colors flex items-center gap-2">
+                            <i class="fas fa-home text-xs"></i> <span class="hidden sm:inline">Beranda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-slate-500 text-xs mx-1"></i>
+                            <a href="artikel.html" class="hover:text-white transition-colors">Artikel</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-slate-500 text-xs mx-1"></i>
+                            <span class="text-white font-medium line-clamp-1 max-w-[150px] sm:max-w-none">Detail
+                                Artikel</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+            <!-- Optional: Small Title in Header -->
+            <!-- <h2 class="text-white font-serif text-2xl md:text-3xl font-bold opacity-0 animate-fade-in-up" style="animation-delay: 0.1s; animation-fill-mode: forwards;">Wawasan & Inspirasi</h2> -->
+        </div>
+    </div>
+
+    <!-- =========================================
+         MAIN CONTENT AREA
+    ========================================== -->
+    <section
+        class="py-12 bg-white dark:bg-slate-900 min-h-screen -mt-8 relative z-30 rounded-t-3xl border-t border-slate-100 dark:border-slate-800 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+                <!-- LEFT COLUMN: ARTICLE CONTENT (8 Cols) -->
+                <article class="lg:col-span-8">
+
+                    <!-- Article Header & Meta Data (Improved for Mobile) -->
+                    <div class="mb-8" data-aos="fade-up">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-xs font-bold uppercase tracking-wide">Pendidikan</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-400 text-xs font-bold uppercase tracking-wide">Parenting</span>
+                        </div>
+
+                        <h1
+                            class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-slate-900 dark:text-white leading-tight mb-6">
+                            Membangun Karakter Generasi Qur'ani di Era Digital: Tantangan & Solusi
+                        </h1>
+
+                        <!-- Meta Data Responsive -->
+                        <div
+                            class="flex flex-col md:flex-row md:items-center justify-between py-5 border-y border-slate-100 dark:border-slate-800 gap-6 md:gap-4">
+                            <!-- Author & Date -->
+                            <div class="flex items-center gap-4">
+                                <img src="https://ui-avatars.com/api/?name=Ust+Ahmad&background=10b981&color=fff"
+                                    alt="Penulis"
+                                    class="w-12 h-12 rounded-full ring-2 ring-primary-100 dark:ring-primary-900">
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-base font-bold text-slate-900 dark:text-white leading-none mb-1">Ust.
+                                        Ahmad Fauzi, Lc.</span>
+                                    <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                                        <i class="far fa-calendar-alt mr-1"></i> 20 Juni 2024 &nbsp;•&nbsp; <i
+                                            class="far fa-clock mr-1"></i> 5 Menit Baca
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Stats & Actions -->
+                            <div
+                                class="flex items-center justify-between md:justify-end gap-6 text-slate-500 text-sm w-full md:w-auto border-t md:border-t-0 border-slate-100 dark:border-slate-800 pt-4 md:pt-0">
+                                <div class="flex gap-4">
+                                    <span
+                                        class="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 rounded-lg"
+                                        title="Dilihat">
+                                        <i class="far fa-eye text-primary-500"></i>
+                                        <span class="font-semibold text-slate-700 dark:text-slate-300">2.4k</span>
+                                    </span>
+                                    <span
+                                        class="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 rounded-lg"
+                                        title="Komentar">
+                                        <i class="far fa-comment-alt text-secondary-500"></i>
+                                        <span class="font-semibold text-slate-700 dark:text-slate-300">12</span>
+                                    </span>
+                                </div>
+                                <button class="flex items-center gap-1.5 hover:text-primary-600 transition-colors group"
+                                    title="Simpan">
+                                    <span
+                                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary-50 dark:group-hover:bg-primary-900/20 transition-colors">
+                                        <i class="far fa-bookmark text-slate-400 group-hover:text-primary-600"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Image -->
+                    <figure class="mb-10 rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            alt="Ilustrasi Belajar" class="w-full h-auto object-cover">
+                        <figcaption class="text-center text-xs text-slate-500 mt-2 italic">Ilustrasi kegiatan belajar
+                            mengajar yang interaktif (Sumber: Unsplash)</figcaption>
+                    </figure>
+
+                    <!-- Content Body -->
+                    <div class="prose prose-slate dark:prose-invert max-w-none text-slate-700 dark:text-slate-300"
+                        data-aos="fade-up">
+
+                        <p class="first-letter-drop text-lg">
+                            Era digital membawa perubahan signifikan dalam pola asuh dan pendidikan anak. Gadget yang
+                            seharusnya menjadi alat bantu, tak jarang justru menjadi bumerang yang mengikis nilai-nilai
+                            moral. Bagaimana kita sebagai orang tua dan pendidik menyikapi hal ini?
+                        </p>
+
+                        <p>
+                            Membentuk generasi Qur'ani bukan sekadar mengajarkan anak membaca atau menghafal Al-Qur'an
+                            semata. Lebih dari itu, tujuannya adalah menanamkan nilai-nilai Al-Qur'an agar menjadi
+                            karakter yang mendarah daging dalam setiap tindakan dan pemikiran mereka.
+                        </p>
+
+                        <h2>Tantangan Terbesar Saat Ini</h2>
+                        <p>
+                            Anak-anak saat ini disebut sebagai <em>Digital Native</em>. Mereka lahir dan tumbuh
+                            bersentuhan langsung dengan teknologi. Beberapa tantangan utama yang dihadapi meliputi:
+                        </p>
+
+                        <ul class="list-disc list-outside ml-6">
+                            <li><strong>Paparan Konten Negatif:</strong> Kemudahan akses internet seringkali tidak
+                                diimbangi dengan filter yang kuat.</li>
+                            <li><strong>Penurunan Daya Fokus:</strong> Terbiasa dengan konten pendek (seperti
+                                TikTok/Reels) membuat anak sulit berkonsentrasi dalam waktu lama.</li>
+                            <li><strong>Individualisme:</strong> Asyik dengan dunianya sendiri di layar, mengurangi
+                                interaksi sosial nyata.</li>
+                        </ul>
+
+                        <!-- Case: Image Inside Content (Floating) -->
+                        <div class="my-8 md:float-right md:ml-8 md:w-1/2 mb-6">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                class="rounded-xl shadow-md w-full" alt="Diskusi Kelompok">
+                            <p class="text-xs text-center text-slate-500 mt-2">Diskusi kelompok meningkatkan interaksi
+                                sosial.</p>
+                        </div>
+
+                        <h3>Strategi Pendekatan yang Efektif</h3>
+                        <p>
+                            Untuk menghadapi tantangan tersebut, diperlukan strategi yang komprehensif yang melibatkan
+                            sekolah dan rumah. Berikut adalah beberapa langkah yang dapat diambil:
+                        </p>
+
+                        <blockquote>
+                            "Didiklah anak-anakmu sesuai dengan zamannya, karena mereka hidup bukan di zamanmu." – Ali
+                            bin Abi Thalib RA
+                        </blockquote>
+
+                        <p>
+                            Nasihat sahabat Ali RA ini sangat relevan. Kita tidak bisa melarang teknologi sepenuhnya,
+                            namun kita bisa mengarahkannya. YPI Al-Intidhom menerapkan metode <strong>Blended Learning
+                                Berbasis Adab</strong>.
+                        </p>
+
+                        <!-- Case: Table Data -->
+                        <div class="overflow-x-auto my-8">
+                            <h4 class="font-bold text-lg mb-2 text-slate-900 dark:text-white">Perbandingan Pola Asuh
+                            </h4>
+                            <table
+                                class="w-full text-sm text-left border-collapse border border-slate-200 dark:border-slate-700">
+                                <thead class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+                                    <tr>
+                                        <th class="border border-slate-200 dark:border-slate-700 px-4 py-2">Aspek</th>
+                                        <th class="border border-slate-200 dark:border-slate-700 px-4 py-2">Pendekatan
+                                            Konvensional</th>
+                                        <th class="border border-slate-200 dark:border-slate-700 px-4 py-2">Pendekatan
+                                            Qur'ani Digital</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td
+                                            class="border border-slate-200 dark:border-slate-700 px-4 py-2 font-semibold">
+                                            Penggunaan Gadget</td>
+                                        <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Dilarang
+                                            Keras / Bebas Tanpa Batas</td>
+                                        <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Diatur waktu
+                                            & kontennya (Tools Edukasi)</td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            class="border border-slate-200 dark:border-slate-700 px-4 py-2 font-semibold">
+                                            Sumber Ilmu</td>
+                                        <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Buku Teks
+                                            Saja</td>
+                                        <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Buku +
+                                            Referensi Digital Valid</td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            class="border border-slate-200 dark:border-slate-700 px-4 py-2 font-semibold">
+                                            Fokus Utama</td>
+                                        <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Nilai
+                                            Akademik</td>
+                                        <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Adab sebelum
+                                            Ilmu</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h2>Kesimpulan</h2>
+                        <p>
+                            Membangun generasi Qur'ani di era digital adalah sebuah perjalanan panjang yang membutuhkan
+                            kesabaran dan konsistensi. Sinergi antara sekolah, orang tua, dan lingkungan masyarakat
+                            menjadi kunci keberhasilannya. Mari kita mulai dari langkah kecil di rumah kita
+                            masing-masing.
+                        </p>
+
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
+                        <span class="text-sm font-bold text-slate-900 dark:text-white mr-2"><i
+                                class="fas fa-tags text-primary-500"></i> Tags:</span>
+                        <div class="inline-flex flex-wrap gap-2">
+                            <a href="#"
+                                class="text-xs px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded hover:bg-primary-500 hover:text-white transition-colors">Pendidikan</a>
+                            <a href="#"
+                                class="text-xs px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded hover:bg-primary-500 hover:text-white transition-colors">Teknologi</a>
+                            <a href="#"
+                                class="text-xs px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded hover:bg-primary-500 hover:text-white transition-colors">Al-Qur'an</a>
+                        </div>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div
+                        class="mt-8 flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-800">
+                        <span class="font-bold text-sm text-slate-700 dark:text-slate-300">Bagikan Artikel Ini:</span>
+                        <div class="flex gap-3">
+                            <a href="#"
+                                class="w-8 h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition-opacity"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="#"
+                                class="w-8 h-8 rounded-full bg-[#1DA1F2] text-white flex items-center justify-center hover:opacity-90 transition-opacity"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="#"
+                                class="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:opacity-90 transition-opacity"><i
+                                    class="fab fa-whatsapp"></i></a>
+                            <a href="#"
+                                class="w-8 h-8 rounded-full bg-[#0A66C2] text-white flex items-center justify-center hover:opacity-90 transition-opacity"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Author Box -->
+                    <div
+                        class="mt-10 p-6 bg-white dark:bg-dark-card border border-slate-100 dark:border-slate-800 rounded-2xl shadow-sm flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
+                        <img src="https://ui-avatars.com/api/?name=Ust+Ahmad&background=10b981&color=fff&size=128"
+                            class="w-20 h-20 rounded-full ring-4 ring-slate-50 dark:ring-slate-800">
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Ust. Ahmad Fauzi, Lc.</h4>
+                            <p
+                                class="text-xs text-primary-600 dark:text-primary-400 font-bold uppercase tracking-wide mb-3">
+                                Kepala Divisi Kurikulum</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                                Lulusan Universitas Al-Azhar Kairo yang berdedikasi dalam pengembangan kurikulum
+                                pendidikan Islam terpadu. Aktif menulis tentang parenting dan pendidikan karakter.
+                            </p>
+                            <a href="#"
+                                class="text-xs font-bold text-slate-500 hover:text-primary-600 transition-colors">Lihat
+                                Semua Artikel Penulis <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post Navigation -->
+                    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <a href="#"
+                            class="group p-4 bg-white dark:bg-dark-card border border-slate-100 dark:border-slate-800 rounded-xl hover:border-primary-500 transition-all flex items-center gap-4">
+                            <i class="fas fa-chevron-left text-slate-400 group-hover:text-primary-500 text-xl"></i>
+                            <div class="text-right flex-1"> <!-- Text right fix for prev -->
+                                <span class="block text-xs text-slate-400 mb-1">Artikel Sebelumnya</span>
+                                <h5
+                                    class="font-bold text-sm text-slate-800 dark:text-slate-200 group-hover:text-primary-600 line-clamp-1">
+                                    Tips Menjaga Kesehatan Santri</h5>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="group p-4 bg-white dark:bg-dark-card border border-slate-100 dark:border-slate-800 rounded-xl hover:border-primary-500 transition-all flex items-center gap-4 justify-end">
+                            <div class="text-left flex-1">
+                                <span class="block text-xs text-slate-400 mb-1">Artikel Selanjutnya</span>
+                                <h5
+                                    class="font-bold text-sm text-slate-800 dark:text-slate-200 group-hover:text-primary-600 line-clamp-1">
+                                    Prestasi Olimpiade Matematika</h5>
+                            </div>
+                            <i class="fas fa-chevron-right text-slate-400 group-hover:text-primary-500 text-xl"></i>
+                        </a>
+                    </div>
+
+                    <!-- COMMENTS SECTION -->
+                    <div class="mt-16 bg-white dark:bg-dark-card border border-slate-100 dark:border-slate-800 rounded-2xl shadow-sm overflow-hidden"
+                        id="comments-section">
+                        <!-- Comment Header with Toggle -->
+                        <div class="flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-800 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                            id="toggle-comments-btn">
+                            <h3
+                                class="text-xl font-serif font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                <i class="far fa-comments text-primary-500"></i> Komentar (3)
+                            </h3>
+                            <button
+                                class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-primary-600 transition-colors">
+                                <i class="fas fa-chevron-down transition-transform duration-300"
+                                    id="comments-chevron"></i>
+                            </button>
+                        </div>
+
+                        <!-- Comment Content Wrapper (Collapsible) -->
+                        <div class="hidden transition-[max-height] duration-500 ease-in-out" id="comments-content">
+                            <div class="p-6">
+                                <!-- Comment Form -->
+                                <form
+                                    class="mb-12 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                                    <h4 class="font-bold text-slate-900 dark:text-white mb-4">Tinggalkan Komentar</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                        <input type="text" placeholder="Nama Lengkap *"
+                                            class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-card text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm">
+                                        <input type="email" placeholder="Alamat Email *"
+                                            class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-card text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm">
+                                    </div>
+                                    <textarea rows="4" placeholder="Tulis komentar Anda di sini..."
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-dark-card text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm mb-4"></textarea>
+                                    <button type="submit"
+                                        class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg shadow-primary-600/30 text-sm">
+                                        Kirim Komentar
+                                    </button>
+                                </form>
+
+                                <!-- Comments List -->
+                                <div class="space-y-8">
+                                    <!-- Comment 1 -->
+                                    <div class="flex gap-4 comment-item">
+                                        <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=random"
+                                            class="w-12 h-12 rounded-full flex-shrink-0">
+                                        <div class="flex-1">
+                                            <div
+                                                class="bg-slate-50 dark:bg-slate-800/30 p-4 rounded-xl border border-slate-100 dark:border-slate-800 relative group">
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <h5 class="font-bold text-slate-900 dark:text-white text-sm">Budi
+                                                        Santoso</h5>
+                                                    <span class="text-xs text-slate-400">20 Juni 2024, 10:30 WIB</span>
+                                                </div>
+                                                <p
+                                                    class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+                                                    MasyaAllah, artikel yang sangat bermanfaat ustadz. Terutama poin
+                                                    tentang penggunaan gadget yang terarah. Saya sering kesulitan
+                                                    membatasi screen time anak.
+                                                </p>
+                                                <!-- Reply Button -->
+                                                <button
+                                                    class="text-xs font-bold text-primary-600 flex items-center gap-1 hover:underline btn-reply"
+                                                    data-target="reply-form-1">
+                                                    <i class="fas fa-reply"></i> Balas
+                                                </button>
+                                            </div>
+
+                                            <!-- Dynamic Reply Form Placeholder -->
+                                            <div id="reply-form-1" class="reply-form-container mt-2"></div>
+
+                                            <!-- Reply Thread (Nested) -->
+                                            <div
+                                                class="flex gap-4 mt-4 ml-0 md:ml-4 border-l-2 border-slate-200 dark:border-slate-700 pl-4">
+                                                <img src="https://ui-avatars.com/api/?name=Ust+Ahmad&background=10b981&color=fff"
+                                                    class="w-10 h-10 rounded-full flex-shrink-0">
+                                                <div class="flex-1">
+                                                    <div
+                                                        class="bg-primary-50 dark:bg-primary-900/10 p-4 rounded-xl border border-primary-100 dark:border-primary-900/30">
+                                                        <div class="flex justify-between items-center mb-2">
+                                                            <h5
+                                                                class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+                                                                Ust. Ahmad <span
+                                                                    class="bg-primary-600 text-white text-[10px] px-1.5 rounded">Author</span>
+                                                            </h5>
+                                                            <span class="text-xs text-slate-400">20 Juni 2024, 11:00
+                                                                WIB</span>
+                                                        </div>
+                                                        <p
+                                                            class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                                            Alhamdulillah, semoga bermanfaat Pak Budi. Memang butuh
+                                                            ketegasan dan konsistensi, bisa dimulai dengan membuat
+                                                            kesepakatan tertulis bersama anak.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Comment 2 -->
+                                    <div class="flex gap-4 comment-item">
+                                        <img src="https://ui-avatars.com/api/?name=Siti+Aminah&background=random"
+                                            class="w-12 h-12 rounded-full flex-shrink-0">
+                                        <div class="flex-1">
+                                            <div
+                                                class="bg-slate-50 dark:bg-slate-800/30 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <h5 class="font-bold text-slate-900 dark:text-white text-sm">Siti
+                                                        Aminah</h5>
+                                                    <span class="text-xs text-slate-400">21 Juni 2024, 08:15 WIB</span>
+                                                </div>
+                                                <p
+                                                    class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+                                                    Izin share ke grup wali murid ya Ustadz. Sangat relevan dengan
+                                                    kondisi sekarang.
+                                                </p>
+                                                <button
+                                                    class="text-xs font-bold text-primary-600 flex items-center gap-1 hover:underline btn-reply"
+                                                    data-target="reply-form-2">
+                                                    <i class="fas fa-reply"></i> Balas
+                                                </button>
+                                            </div>
+                                            <!-- Dynamic Reply Form Placeholder -->
+                                            <div id="reply-form-2" class="reply-form-container mt-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- RIGHT COLUMN: SIDEBAR (4 Cols) -->
+                <aside class="lg:col-span-4 space-y-8">
+
+                    <!-- 1. KATEGORI (Badges Style) -->
+                    <div class="bg-white dark:bg-dark-card rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 p-6"
+                        data-aos="fade-left">
+                        <h3 class="font-serif font-bold text-lg text-slate-900 dark:text-white mb-4 relative pb-2">
+                            Kategori
+                            <span class="absolute bottom-0 left-0 w-12 h-1 bg-primary-500 rounded-full"></span>
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="#"
+                                class="group flex items-center gap-2 px-3 py-1.5 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-200 dark:hover:border-primary-800 hover:text-primary-600 transition-all duration-300">
+                                <span>Akademik</span>
+                                <span
+                                    class="bg-slate-200 dark:bg-slate-700 text-[10px] font-bold px-1.5 py-0.5 rounded-md text-slate-500 dark:text-slate-400 group-hover:bg-white dark:group-hover:bg-slate-800 group-hover:text-primary-600 transition-colors">12</span>
+                            </a>
+                            <a href="#"
+                                class="group flex items-center gap-2 px-3 py-1.5 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-200 dark:hover:border-primary-800 hover:text-primary-600 transition-all duration-300">
+                                <span>Parenting</span>
+                                <span
+                                    class="bg-slate-200 dark:bg-slate-700 text-[10px] font-bold px-1.5 py-0.5 rounded-md text-slate-500 dark:text-slate-400 group-hover:bg-white dark:group-hover:bg-slate-800 group-hover:text-primary-600 transition-colors">15</span>
+                            </a>
+                            <a href="#"
+                                class="group flex items-center gap-2 px-3 py-1.5 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-200 dark:hover:border-primary-800 hover:text-primary-600 transition-all duration-300">
+                                <span>Kajian</span>
+                                <span
+                                    class="bg-slate-200 dark:bg-slate-700 text-[10px] font-bold px-1.5 py-0.5 rounded-md text-slate-500 dark:text-slate-400 group-hover:bg-white dark:group-hover:bg-slate-800 group-hover:text-primary-600 transition-colors">8</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sticky Sidebar Wrapper -->
+                    <div class="sticky top-24 space-y-8">
+
+                        <!-- 2. TOP ARTIKEL (Small Cards) -->
+                        <div class="bg-white dark:bg-dark-card rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 p-6"
+                            data-aos="fade-left" data-aos-delay="100">
+                            <h3 class="font-serif font-bold text-lg text-slate-900 dark:text-white mb-5 relative pb-2">
+                                Top Artikel
+                                <span class="absolute bottom-0 left-0 w-12 h-1 bg-secondary-500 rounded-full"></span>
+                            </h3>
+                            <div class="space-y-4">
+                                <!-- Top 1 -->
+                                <a href="#" class="flex gap-3 group">
+                                    <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 relative">
+                                        <img src="https://picsum.photos/200/200?random=1"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute top-0 left-0 bg-secondary-500 text-white text-[10px] font-bold px-1.5 rounded-br-lg">
+                                            1</div>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-slate-800 dark:text-slate-200 leading-snug group-hover:text-primary-600 transition-colors line-clamp-2">
+                                            Tips Menghafal Al-Qur'an untuk Anak Usia Dini
+                                        </h4>
+                                        <span class="text-[10px] text-slate-400 mt-1 block"><i
+                                                class="far fa-eye mr-1"></i> 3.5k Views</span>
+                                    </div>
+                                </a>
+                                <!-- Top 2 -->
+                                <a href="#" class="flex gap-3 group">
+                                    <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 relative">
+                                        <img src="https://picsum.photos/200/200?random=2"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute top-0 left-0 bg-slate-500 text-white text-[10px] font-bold px-1.5 rounded-br-lg">
+                                            2</div>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-slate-800 dark:text-slate-200 leading-snug group-hover:text-primary-600 transition-colors line-clamp-2">
+                                            Keutamaan Shalat Dhuha bagi Pelajar
+                                        </h4>
+                                        <span class="text-[10px] text-slate-400 mt-1 block"><i
+                                                class="far fa-eye mr-1"></i> 2.1k Views</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 3. ARTIKEL TERKAIT -->
+                        <div class="bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700 p-6"
+                            data-aos="fade-left" data-aos-delay="200">
+                            <h3 class="font-serif font-bold text-lg text-slate-900 dark:text-white mb-4">
+                                Baca Juga
+                            </h3>
+                            <ul
+                                class="space-y-3 list-disc list-inside text-sm text-slate-600 dark:text-slate-400 marker:text-primary-500">
+                                <li><a href="#"
+                                        class="hover:text-primary-600 dark:hover:text-primary-400 hover:underline">Peran
+                                        Ayah dalam Pendidikan Anak</a></li>
+                                <li><a href="#"
+                                        class="hover:text-primary-600 dark:hover:text-primary-400 hover:underline">Bahaya
+                                        Kecanduan Game Online</a></li>
+                                <li><a href="#"
+                                        class="hover:text-primary-600 dark:hover:text-primary-400 hover:underline">Adab
+                                        Penuntut Ilmu Menurut Imam Al-Ghazali</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- 4. PENGUMUMAN POPULER (Mini) -->
+                        <div
+                            class="bg-gradient-to-br from-primary-900 to-primary-800 rounded-2xl shadow-xl p-6 text-white relative overflow-hidden">
+                            <div
+                                class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10">
+                            </div>
+                            <h4 class="font-bold mb-3 flex items-center gap-2"><i
+                                    class="fas fa-bullhorn text-secondary-400"></i> Info Penting</h4>
+                            <div class="space-y-3">
+                                <div
+                                    class="bg-white/10 backdrop-blur rounded p-3 text-sm hover:bg-white/20 transition cursor-pointer">
+                                    <p class="font-bold text-xs text-secondary-300 mb-1">25 JUNI 2024</p>
+                                    <p class="leading-snug text-xs">Pengambilan Raport Semester Genap</p>
+                                </div>
+                                <div
+                                    class="bg-white/10 backdrop-blur rounded p-3 text-sm hover:bg-white/20 transition cursor-pointer">
+                                    <p class="font-bold text-xs text-secondary-300 mb-1">01 JULI 2024</p>
+                                    <p class="leading-snug text-xs">Awal Tahun Ajaran Baru 2024/2025</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER (SAME AS ARTIKEL)
+    ========================================== -->
+    <footer class="bg-dark-bg text-slate-300 pt-16 pb-8 md:pt-20 md:pb-10 border-t border-slate-800 font-sans">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6 text-white">
+                        <img src="assets/img/logo.png" alt="Logo" class="w-10 h-10 rounded-lg object-cover"
+                            onerror="this.src='https://via.placeholder.com/50x50?text=Logo'">
+                        <span class="font-serif font-bold text-2xl tracking-tight">AL-INTIDHOM</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-400">Yayasan Pendidikan Islam Al-Intidhom
+                        berkomitmen menyelenggarakan pendidikan berkualitas, terjangkau, dan berlandaskan nilai-nilai
+                        Islam Ahlussunnah Wal Jamaah.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-primary-600 hover:border-primary-600 hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6 relative inline-block">
+                        Tautan Cepat <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="sejarah.html"
+                                class="hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Sejarah & Visi
+                                Misi</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Tenaga Pengajar</a>
+                        </li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Ekstrakurikuler</a>
+                        </li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Prestasi Siswa</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Units -->
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6 relative inline-block">
+                        Unit Pendidikan <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li
+                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-800 transition-colors cursor-pointer group">
+                            <div
+                                class="w-8 h-8 rounded bg-primary-900/50 flex items-center justify-center text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-shapes"></i>
+                            </div>
+                            <span>RA / TK Islam</span>
+                        </li>
+                        <li
+                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-800 transition-colors cursor-pointer group">
+                            <div
+                                class="w-8 h-8 rounded bg-primary-900/50 flex items-center justify-center text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <span>SD IT Al-Intidhom</span>
+                        </li>
+                        <li
+                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-800 transition-colors cursor-pointer group">
+                            <div
+                                class="w-8 h-8 rounded bg-primary-900/50 flex items-center justify-center text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <span>SMP Islam</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6 relative inline-block">
+                        Hubungi Kami <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary-500"></i>
+                            <span class="text-slate-400">Jl. Raya Pendidikan No. 123, Kel. Kebayoran, Jakarta Selatan
+                                12345</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-primary-500"></i>
+                            <span class="text-slate-400">(021) 789-0123</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2024 YPI Al-Intidhom. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================
+         JAVASCRIPT LOGIC
+    ========================================== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init Animation
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+
+        // Mobile Menu Logic
+        const btnMobile = document.getElementById('mobile-menu-btn');
+        const menuMobile = document.getElementById('mobile-menu');
+
+        if (btnMobile && menuMobile) {
+            btnMobile.addEventListener('click', () => {
+                menuMobile.classList.toggle('hidden');
+            });
+        }
+
+        // Dark Mode Logic
+        const themeToggleBtns = [document.getElementById('theme-toggle-desktop'), document.getElementById('theme-toggle-mobile')];
+        const themeToggleDarkIcon = document.querySelectorAll('.fa-moon');
+        const themeToggleLightIcon = document.querySelectorAll('.fa-sun');
+
+        function toggleTheme() {
+            themeToggleDarkIcon.forEach(el => el.classList.toggle('hidden'));
+            themeToggleLightIcon.forEach(el => el.classList.toggle('hidden'));
+
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        themeToggleBtns.forEach(btn => {
+            if (btn) btn.addEventListener('click', toggleTheme);
+        });
+
+        // Sync icon on load
+        if (document.documentElement.classList.contains('dark')) {
+            themeToggleDarkIcon.forEach(el => el.classList.add('hidden'));
+            themeToggleLightIcon.forEach(el => el.classList.remove('hidden'));
+        } else {
+            themeToggleDarkIcon.forEach(el => el.classList.remove('hidden'));
+            themeToggleLightIcon.forEach(el => el.classList.add('hidden'));
+        }
+
+        // Sticky Navbar Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md', 'bg-white/95', 'dark:bg-dark-bg/95');
+                navbar.classList.remove('glass-effect');
+            } else {
+                navbar.classList.remove('shadow-md', 'bg-white/95', 'dark:bg-dark-bg/95');
+                navbar.classList.add('glass-effect');
+            }
+        });
+
+        // COMMENTS SECTION LOGIC (SHOW/HIDE & REPLY)
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('toggle-comments-btn');
+            const content = document.getElementById('comments-content');
+            const chevron = document.getElementById('comments-chevron');
+
+            // 1. Show/Hide Logic
+            // Default hidden logic is handled by CSS class 'hidden' on content
+            toggleBtn.addEventListener('click', () => {
+                const isHidden = content.classList.contains('hidden');
+                if (isHidden) {
+                    content.classList.remove('hidden');
+                    chevron.classList.add('rotate-180');
+                    // Add smooth open animation if desired
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.classList.add('hidden');
+                    chevron.classList.remove('rotate-180');
+                    content.style.maxHeight = null;
+                }
+            });
+
+            // 2. Reply Button Logic
+            const replyBtns = document.querySelectorAll('.btn-reply');
+
+            replyBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const targetId = btn.getAttribute('data-target');
+                    const targetContainer = document.getElementById(targetId);
+
+                    // Check if form already exists
+                    if (targetContainer.innerHTML.trim() !== "") {
+                        // If open, just close it
+                        targetContainer.innerHTML = "";
+                        targetContainer.classList.remove('open');
+                        return;
+                    }
+
+                    // Close other reply forms (optional)
+                    document.querySelectorAll('.reply-form-container').forEach(el => {
+                        el.innerHTML = "";
+                        el.classList.remove('open');
+                    });
+
+                    // Inject Form HTML
+                    const replyFormHTML = `
+                        <div class="bg-white dark:bg-dark-card border border-primary-200 dark:border-primary-900/50 rounded-xl p-4 ml-4 md:ml-10 shadow-lg animate-fade-in-up">
+                            <h5 class="text-sm font-bold text-primary-600 mb-3">Balas Komentar</h5>
+                            <div class="grid grid-cols-1 gap-3 mb-3">
+                                <input type="text" placeholder="Nama Anda" class="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-1 focus:ring-primary-500 outline-none">
+                                <textarea rows="2" placeholder="Tulis balasan..." class="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-1 focus:ring-primary-500 outline-none"></textarea>
+                            </div>
+                            <div class="flex justify-end gap-2">
+                                <button type="button" class="px-3 py-1.5 text-xs font-bold text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors" onclick="this.closest('.reply-form-container').innerHTML=''; this.closest('.reply-form-container').classList.remove('open');">Batal</button>
+                                <button type="button" class="px-4 py-1.5 text-xs font-bold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors shadow-md shadow-primary-500/30">Kirim Balasan</button>
+                            </div>
+                        </div>
+                    `;
+
+                    targetContainer.innerHTML = replyFormHTML;
+
+                    // Add class for animation and adjust parent height
+                    requestAnimationFrame(() => {
+                        targetContainer.classList.add('open');
+
+                        // FIX: Perbarui tinggi container induk agar form tidak terpotong
+                        // Kita tambahkan extra tinggi (misal 500px) ke max-height yang sedang aktif
+                        if (content.style.maxHeight) {
+                            const currentHeight = parseInt(content.style.maxHeight);
+                            content.style.maxHeight = (currentHeight + 600) + "px"; // Tambah ruang yang cukup
+                        }
+
+                        // FIX: Auto scroll ke form balasan agar terlihat user
+                        setTimeout(() => {
+                            targetContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 300); // Tunggu sedikit agar transisi buka form mulai
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

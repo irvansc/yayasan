@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Modern Scrollbar --- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+.dark ::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Custom CSS untuk efek kaca & animasi */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.dark .glass-effect {
+    background: rgba(11, 17, 32, 0.85);
+}
+
+.hero-slide {
+    transition: opacity 1000ms ease-in-out, transform 8000ms ease-out;
+}
+.hero-slide.active { opacity: 1; transform: scale(1.05); }
+.hero-slide.inactive { opacity: 0; transform: scale(1); }
+
+.slide-content {
+    opacity: 0; transform: translateY(20px); transition: all 800ms ease-out 300ms;
+}
+.hero-slide.active .slide-content { opacity: 1; transform: translateY(0); }
+
+/* --- Glassmorphism Upgrade --- */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.dark .glass-nav {
+    background: rgba(15, 23, 42, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Card Hover Effects (Bento Style) --- */
+.bento-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.bento-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Text Highlight Decoration --- */
+.text-highlight {
+    position: relative;
+    z-index: 10;
+}
+.text-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: -2px;
+    right: -2px;
+    height: 12px;
+    background-color: #fde68a; /* Yellow highlight */
+    z-index: -1;
+    transform: rotate(-1deg);
+    opacity: 0.8;
+    border-radius: 4px;
+}
+.dark .text-highlight::after {
+    background-color: #059669; /* Green in dark mode */
+    opacity: 0.5;
+}
+
+/* --- Decorative Shapes --- */
+.shape-blob {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    transition: border-radius 0.5s ease;
+}

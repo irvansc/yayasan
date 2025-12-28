@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel & Berita - TK Al-Intidhom</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="./output.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+
+    <style>
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .slide-active {
+            opacity: 1;
+            z-index: 20;
+        }
+
+        .slide-hidden {
+            opacity: 0;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body
+    class="font-sans antialiased text-slate-600 bg-slate-50 dark:bg-dark-bg dark:text-slate-300 transition-colors duration-300 bg-pattern-paper">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div
+            class="absolute -top-24 -left-24 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob dark:bg-primary-900 dark:opacity-20">
+        </div>
+        <div
+            class="absolute top-0 -right-4 w-96 h-96 bg-kids-yellow rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 dark:bg-yellow-900 dark:opacity-10">
+        </div>
+        <div
+            class="absolute -bottom-32 left-20 w-96 h-96 bg-kids-pink rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000 dark:bg-pink-900 dark:opacity-10">
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 top-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <a href="tk_index.html" class="flex items-center gap-3 group">
+                    <div
+                        class="relative w-10 h-10 flex items-center justify-center bg-primary-600 rounded-xl text-white shadow-lg group-hover:rotate-6 transition-transform">
+                        <img src="assets/img/logo-tk.jpg" alt="Logo" class="w-full h-full object-contain">
+                        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                        </span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-xl font-bold font-kids text-slate-800 dark:text-white leading-none">Al-Intidhom</span>
+                        <span
+                            class="text-[10px] font-bold tracking-widest text-primary-600 uppercase">Kindergarten</span>
+                    </div>
+                </a>
+
+                <div
+                    class="hidden md:flex items-center space-x-1 p-1 bg-white/50 dark:bg-slate-800/50 rounded-full border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
+                    <a href="tk_index.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Beranda</a>
+                    <a href="profil_tk.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Profil</a>
+                    <a href="program_tk.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Program</a>
+                    <a href="galeri_tk.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Galeri</a>
+                    <a href="kontak_tk.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Kontak</a>
+                    <a href="artikel_tk.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Artikel</a>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+
+                    <button onclick="toggleSearch()"
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-300 hover:bg-primary-50 hover:text-primary-600 transition-colors flex items-center justify-center">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <button id="theme-toggle-desktop"
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 hover:bg-primary-50 transition-colors flex items-center justify-center">
+                        <i class="fas fa-sun dark:hidden"></i>
+                        <i class="fas fa-moon hidden dark:block"></i>
+                    </button>
+
+                    <a href="ppdb_tk.html"
+                        class="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 hover:to-primary-600 text-white rounded-full font-bold shadow-lg shadow-primary-500/30 transform hover:-translate-y-0.5 transition-all text-sm">
+                        <span>PPDB Online</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+
+                    <button id="mobile-menu-btn"
+                        class="relative z-50 p-2 -mr-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none lg:hidden">
+                        <div class="w-6 h-5 flex flex-col justify-between">
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-1"></span>
+                            <span class="w-3/4 h-0.5 bg-current rounded-full transition-all duration-300"
+                                id="bar-2"></span>
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-3"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="search-modal"
+        class="fixed inset-0 z-[80] opacity-0 invisible transition-all duration-300 flex items-start justify-center pt-20 md:pt-32 px-4">
+
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="toggleSearch()"></div>
+
+        <div class="relative z-10 w-full max-w-3xl bg-white dark:bg-dark-card rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300"
+            id="search-content">
+            <form action="#" class="relative flex items-center">
+                <div class="pl-5 md:pl-6 text-slate-400">
+                    <i class="fas fa-search text-lg md:text-xl"></i>
+                </div>
+                <input type="text" id="search-input"
+                    class="w-full py-5 md:py-6 px-4 bg-transparent border-none text-slate-800 dark:text-white text-base md:text-xl font-bold focus:ring-0 placeholder:text-slate-300 dark:placeholder:text-slate-600 font-kids"
+                    placeholder="Ketik pencarian..." autocomplete="off">
+                <button type="button" onclick="toggleSearch()"
+                    class="px-5 md:px-6 py-5 md:py-6 text-slate-400 hover:text-red-500 transition-colors">
+                    <i class="fas fa-times text-lg md:text-xl"></i>
+                </button>
+            </form>
+
+            <div
+                class="px-5 md:px-6 pb-5 md:pb-6 pt-2 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+                <p class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Pencarian
+                    Populer:
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="#"
+                        class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 transition-colors">Biaya
+                        Masuk</a>
+                    <a href="#"
+                        class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 transition-colors">PPDB</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-backdrop"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm opacity-0 invisible transition-all duration-300"
+        onclick="toggleSidebar()"></div>
+
+    <div id="mobile-sidebar"
+        class="fixed top-0 left-0 bottom-0 w-[280px] z-[70] bg-white dark:bg-dark-card shadow-2xl transform -translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col">
+
+        <div
+            class="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-800 bg-primary-50 dark:bg-slate-800/50">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-primary-600 text-white flex items-center justify-center">
+                    <img src="assets/img/logo-tk.jpg" alt="Logo" class="w-full h-full object-contain">
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="font-bold font-kids text-lg text-slate-800 dark:text-white leading-none">Al-Intidhom</span>
+                    <span
+                        class="text-[9px] font-bold text-primary-600 uppercase tracking-widest mt-0.5">Kindergarten</span>
+                </div>
+            </div>
+            <button onclick="toggleSidebar()"
+                class="p-2 rounded-full text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+
+            <a href="tk_index.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50 dark:bg-slate-800 text-primary-700 dark:text-primary-400 font-bold transition-all">
+                <i class="fas fa-home w-6 text-center"></i> Beranda
+            </a>
+
+            <a href="profil_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-user-tie w-6 text-center opacity-70"></i> Profil TK
+            </a>
+
+            <a href="program_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-graduation-cap w-6 text-center opacity-70"></i> Program
+            </a>
+
+            <a href="galeri_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Galeri
+            </a>
+
+            <a href="kontak_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Kontak
+            </a>
+
+            <a href="artikel_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Artikel
+            </a>
+
+            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+                <p class="px-4 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Informasi Lain</p>
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:text-primary-600 font-medium text-sm">
+                    <i class="fas fa-arrow-left w-6 text-center"></i> Kembali ke Yayasan
+                </a>
+            </div>
+
+        </div>
+
+        <div class="p-5 border-t border-slate-100 dark:border-slate-800">
+            <a href="ppdb_tk.html"
+                class="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-xl font-bold shadow-lg shadow-primary-500/30">
+                <i class="fas fa-rocket"></i> PPDB Online
+            </a>
+        </div>
+    </div>
+
+    <section class="relative pt-32 pb-10 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-wider mb-2">Buletin
+                    Sekolah</span>
+                <h1 class="text-3xl md:text-5xl font-bold font-kids text-slate-900 dark:text-white">Kabar <span
+                        class="text-primary-600">Al-Intidhom</span> 📢</h1>
+            </div>
+
+            <div
+                class="relative w-full h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl group border-4 border-white dark:border-slate-800">
+
+                <div class="slider-item absolute inset-0 transition-all duration-700 ease-in-out slide-active">
+                    <img src="https://placehold.co/1200x600" alt="Kegiatan 1" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 md:p-12 w-full md:w-2/3">
+                        <span
+                            class="inline-block px-3 py-1 bg-primary-600 text-white text-xs font-bold rounded-lg mb-3 shadow-lg">Kegiatan
+                            Sekolah</span>
+                        <h2 class="text-2xl md:text-4xl font-bold font-kids text-white mb-3 leading-tight">Keseruan
+                            Manasik Haji Cilik TK Al-Intidhom 2025</h2>
+                        <p class="text-slate-200 text-sm md:text-base mb-6 line-clamp-2">Ananda belajar tata cara haji
+                            sejak dini dengan penuh kegembiraan dan antusiasme di asrama haji.</p>
+                        <a href="#"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-600 rounded-full font-bold text-sm hover:bg-primary-50 transition-all transform hover:scale-105">
+                            Baca Selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="slider-item absolute inset-0 transition-all duration-700 ease-in-out slide-hidden">
+                    <img src="https://placehold.co/1200x600" alt="Kegiatan 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 md:p-12 w-full md:w-2/3">
+                        <span
+                            class="inline-block px-3 py-1 bg-pink-500 text-white text-xs font-bold rounded-lg mb-3 shadow-lg">Prestasi</span>
+                        <h2 class="text-2xl md:text-4xl font-bold font-kids text-white mb-3 leading-tight">Selamat!
+                            Juara 1 Lomba Mewarnai Tingkat Kecamatan</h2>
+                        <p class="text-slate-200 text-sm md:text-base mb-6 line-clamp-2">Alhamdulillah, ananda Siti
+                            Aisyah berhasil membawa pulang piala emas untuk sekolah kita tercinta.</p>
+                        <a href="#"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-white text-pink-600 rounded-full font-bold text-sm hover:bg-pink-50 transition-all transform hover:scale-105">
+                            Lihat Galeri <i class="fas fa-camera"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <button onclick="changeSlide(-1)"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center hover:bg-white hover:text-primary-600 transition-all opacity-0 group-hover:opacity-100 z-30">
+                    <i class="fas fa-chevron-left text-xl"></i>
+                </button>
+                <button onclick="changeSlide(1)"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center hover:bg-white hover:text-primary-600 transition-all opacity-0 group-hover:opacity-100 z-30">
+                    <i class="fas fa-chevron-right text-xl"></i>
+                </button>
+
+                <div class="absolute bottom-6 right-6 flex gap-2 z-30">
+                    <div class="w-3 h-3 rounded-full bg-white indicator active-indicator cursor-pointer"
+                        onclick="goToSlide(0)"></div>
+                    <div class="w-3 h-3 rounded-full bg-white/50 indicator cursor-pointer" onclick="goToSlide(1)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center text-xl">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold font-kids text-slate-900 dark:text-white">Terbaru Minggu Ini</h2>
+                    </div>
+
+                    <article
+                        class="bg-white dark:bg-dark-card rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="md:flex h-full">
+                            <div class="md:w-5/12 relative overflow-hidden h-48 md:h-auto">
+                                <img src="https://placehold.co/600x400" alt="Artikel"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-slate-800 shadow-sm">
+                                    <i class="far fa-calendar-alt text-primary-500 mr-1"></i> 28 Des 2025
+                                </div>
+                            </div>
+                            <div class="p-6 md:w-7/12 flex flex-col justify-center">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-wider text-primary-600 bg-primary-50 px-2 py-1 rounded-md">Parenting</span>
+                                </div>
+                                <h3
+                                    class="text-xl font-bold font-kids text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 transition-colors">
+                                    <a href="#">5 Cara Mengajarkan Adab Makan pada Anak Usia Dini</a>
+                                </h3>
+                                <p class="text-slate-500 text-sm mb-4 line-clamp-2">Mengajarkan sunnah makan dan minum
+                                    dengan tangan kanan serta duduk tenang bisa dimulai dengan cara yang menyenangkan.
+                                </p>
+                                <div
+                                    class="flex justify-between items-center mt-auto border-t border-slate-100 dark:border-slate-700 pt-4">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-6 h-6 rounded-full bg-slate-200 overflow-hidden"><img
+                                                src="https://ui-avatars.com/api/?name=Ustadzah+Ani" alt="Admin"></div>
+                                        <span class="text-xs font-bold text-slate-500">Ustadzah Ani</span>
+                                    </div>
+                                    <a href="#" class="text-primary-600 text-xs font-bold hover:underline">Baca <i
+                                            class="fas fa-chevron-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="bg-white dark:bg-dark-card rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="md:flex h-full">
+                            <div class="md:w-5/12 relative overflow-hidden h-48 md:h-auto">
+                                <img src="https://placehold.co/600x400" alt="Artikel"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-slate-800 shadow-sm">
+                                    <i class="far fa-calendar-alt text-primary-500 mr-1"></i> 25 Des 2025
+                                </div>
+                            </div>
+                            <div class="p-6 md:w-7/12 flex flex-col justify-center">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-1 rounded-md">Event</span>
+                                </div>
+                                <h3
+                                    class="text-xl font-bold font-kids text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 transition-colors">
+                                    <a href="#">Dokumentasi Market Day: Belajar Entrepreneurship Sejak Kecil</a>
+                                </h3>
+                                <p class="text-slate-500 text-sm mb-4 line-clamp-2">Ananda TK B belajar bertransaksi
+                                    jual beli menggunakan uang mainan. Seru sekali melihat mereka menawarkan
+                                    dagangannya!</p>
+                                <div
+                                    class="flex justify-between items-center mt-auto border-t border-slate-100 dark:border-slate-700 pt-4">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-6 h-6 rounded-full bg-slate-200 overflow-hidden"><img
+                                                src="https://ui-avatars.com/api/?name=Admin" alt="Admin"></div>
+                                        <span class="text-xs font-bold text-slate-500">Admin Sekolah</span>
+                                    </div>
+                                    <a href="#" class="text-primary-600 text-xs font-bold hover:underline">Baca <i
+                                            class="fas fa-chevron-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="bg-white dark:bg-dark-card rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="md:flex h-full">
+                            <div class="md:w-5/12 relative overflow-hidden h-48 md:h-auto">
+                                <img src="https://placehold.co/600x400" alt="Artikel"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-slate-800 shadow-sm">
+                                    <i class="far fa-calendar-alt text-primary-500 mr-1"></i> 20 Des 2025
+                                </div>
+                            </div>
+                            <div class="p-6 md:w-7/12 flex flex-col justify-center">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-wider text-green-600 bg-green-50 px-2 py-1 rounded-md">Kesehatan</span>
+                                </div>
+                                <h3
+                                    class="text-xl font-bold font-kids text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 transition-colors">
+                                    <a href="#">Tips Menyiapkan Bekal Sehat yang Disukai Anak</a>
+                                </h3>
+                                <p class="text-slate-500 text-sm mb-4 line-clamp-2">Bunda bingung mau bawakan bekal apa?
+                                    Yuk intip 5 resep praktis, bergizi, dan tentunya lezat untuk si kecil.</p>
+                                <div
+                                    class="flex justify-between items-center mt-auto border-t border-slate-100 dark:border-slate-700 pt-4">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-6 h-6 rounded-full bg-slate-200 overflow-hidden"><img
+                                                src="https://ui-avatars.com/api/?name=Bunda+Rina" alt="Admin"></div>
+                                        <span class="text-xs font-bold text-slate-500">Bunda Rina</span>
+                                    </div>
+                                    <a href="#" class="text-primary-600 text-xs font-bold hover:underline">Baca <i
+                                            class="fas fa-chevron-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="flex justify-center pt-8">
+                        <div class="flex gap-2">
+                            <button
+                                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-400 flex items-center justify-center hover:bg-primary-50 hover:text-primary-600 transition-all"><i
+                                    class="fas fa-chevron-left"></i></button>
+                            <button
+                                class="w-10 h-10 rounded-full bg-primary-600 text-white font-bold flex items-center justify-center shadow-lg shadow-primary-500/30">1</button>
+                            <button
+                                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-bold flex items-center justify-center hover:bg-primary-50 hover:text-primary-600 transition-all">2</button>
+                            <button
+                                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-primary-50 hover:text-primary-600 transition-all"><i
+                                    class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 space-y-8">
+
+                        <div
+                            class="bg-white dark:bg-dark-card p-6 rounded-[2rem] shadow-lg border border-slate-100 dark:border-slate-800">
+                            <h3 class="font-bold font-kids text-lg text-slate-900 dark:text-white mb-4">Cari Artikel
+                            </h3>
+                            <div class="relative">
+                                <input type="text" placeholder="Ketik kata kunci..."
+                                    class="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all text-sm">
+                                <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white dark:bg-dark-card p-6 rounded-[2rem] shadow-lg border border-slate-100 dark:border-slate-800">
+                            <h3
+                                class="font-bold font-kids text-lg text-slate-900 dark:text-white mb-5 flex items-center gap-2">
+                                <i class="fas fa-fire text-orange-500"></i> Terpopuler
+                            </h3>
+                            <div class="space-y-4">
+                                <a href="#" class="flex gap-4 group">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden shrink-0">
+                                        <img src="https://placehold.co/100x100"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-slate-800 dark:text-white leading-tight group-hover:text-primary-600 transition-colors mb-1">
+                                            Daftar Prestasi Siswa Tahun 2024</h4>
+                                        <span class="text-xs text-slate-400">120x dilihat</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex gap-4 group">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden shrink-0">
+                                        <img src="https://placehold.co/100x100"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-slate-800 dark:text-white leading-tight group-hover:text-primary-600 transition-colors mb-1">
+                                            Jadwal Penjemputan Bus Sekolah</h4>
+                                        <span class="text-xs text-slate-400">98x dilihat</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex gap-4 group">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden shrink-0">
+                                        <img src="https://placehold.co/100x100"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-slate-800 dark:text-white leading-tight group-hover:text-primary-600 transition-colors mb-1">
+                                            Kurikulum Merdeka di TK</h4>
+                                        <span class="text-xs text-slate-400">85x dilihat</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white dark:bg-dark-card p-6 rounded-[2rem] shadow-lg border border-slate-100 dark:border-slate-800">
+                            <h3
+                                class="font-bold font-kids text-lg text-slate-900 dark:text-white mb-5 flex items-center gap-2">
+                                <i class="fas fa-tags text-primary-500"></i> Topik
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="#"
+                                    class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-lg hover:bg-primary-600 hover:text-white transition-all">#Kegiatan</a>
+                                <a href="#"
+                                    class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-lg hover:bg-primary-600 hover:text-white transition-all">#Parenting</a>
+                                <a href="#"
+                                    class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-lg hover:bg-primary-600 hover:text-white transition-all">#Prestasi</a>
+                                <a href="#"
+                                    class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-lg hover:bg-primary-600 hover:text-white transition-all">#Pengumuman</a>
+                                <a href="#"
+                                    class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-lg hover:bg-primary-600 hover:text-white transition-all">#Islami</a>
+                                <a href="#"
+                                    class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-lg hover:bg-primary-600 hover:text-white transition-all">#MenuSehat</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer
+        class="bg-white dark:bg-dark-bg text-slate-600 dark:text-slate-300 pt-16 pb-8 md:pt-20 md:pb-10 border-t border-slate-200 dark:border-slate-800 font-sans transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6 text-slate-900 dark:text-white">
+                        <div
+                            class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold shadow-sm">
+                            <img src="assets/img/logo-tk.jpg" alt="Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="font-kids font-bold text-2xl tracking-tight">TK Al-Intidhom</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-600 dark:text-slate-400">
+                        Membangun generasi Rabbani yang cerdas, ceria, dan berakhlak mulia sejak usia dini melalui
+                        metode pembelajaran sentra.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-primary-600 hover:border-primary-600 hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Informasi <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Profil TK</a></li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Tenaga Pendidik</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Kegiatan Ekskul</a>
+                        </li>
+                        <li><a href="artikel_tk.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Artikel & Berita</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Jam Sekolah <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-kids-yellow rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm">
+                        <li
+                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
+                            <span>Senin - Kamis</span>
+                            <span class="font-bold text-primary-600">07:30 - 12:00</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
+                            <span>Jumat</span>
+                            <span class="font-bold text-primary-600">07:30 - 10:30</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2 text-slate-400">
+                            <span>Sabtu - Minggu</span>
+                            <span>Libur</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Hubungi Kami <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary-500"></i>
+                            <span class="text-slate-600 dark:text-slate-400">Jl. Raya Pendidikan No. 123, Kel.
+                                Kebayoran, Jakarta Selatan 12345</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-primary-500 text-lg"></i>
+                            <span class="text-slate-600 dark:text-slate-400 font-bold">+62 812-3456-7890</span>
+                        </li>
+                    </ul>
+                    <a href="ppdb_tk.html"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-lg text-xs font-bold hover:bg-primary-100 transition-all">
+                        <i class="fas fa-info-circle"></i> Info Pendaftaran
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>© 2025 TK Islam Al-Intidhom. All rights reserved.</p>
+                <div class="flex gap-6 items-center">
+                    <a href="index.html"
+                        class="flex items-center gap-2 hover:text-primary-600 dark:hover:text-white transition-colors">
+                        <i class="fas fa-arrow-left"></i> Website Yayasan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        // === SIMPLE FADE SLIDER SCRIPT ===
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-item');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        function showSlide(index) {
+            // Reset all
+            slides.forEach(slide => {
+                slide.classList.remove('slide-active');
+                slide.classList.add('slide-hidden');
+            });
+            indicators.forEach(ind => {
+                ind.classList.remove('active-indicator', 'bg-white', 'w-8');
+                ind.classList.add('bg-white/50');
+            });
+
+            // Show active
+            slides[index].classList.remove('slide-hidden');
+            slides[index].classList.add('slide-active');
+
+            // Update Indicator Style
+            indicators[index].classList.remove('bg-white/50');
+            indicators[index].classList.add('active-indicator', 'bg-white');
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+            resetTimer();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+            resetTimer();
+        }
+
+        function startAutoSlide() {
+            slideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 5000); // Ganti slide setiap 5 detik
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            startAutoSlide();
+        }
+
+        // Initialize
+        startAutoSlide();
+    </script>
+    <script>
+        // --- SEARCH TOGGLE FUNCTION ---
+        function toggleSearch() {
+            const modal = document.getElementById('search-modal');
+            const content = document.getElementById('search-content');
+            const input = document.getElementById('search-input');
+
+            if (modal.classList.contains('invisible')) {
+                // Open Modal
+                modal.classList.remove('invisible', 'opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                // Auto focus input after small delay for transition
+                setTimeout(() => input.focus(), 100);
+            } else {
+                // Close Modal
+                modal.classList.add('opacity-0');
+                content.classList.remove('scale-100');
+                content.classList.add('scale-95');
+
+                setTimeout(() => {
+                    modal.classList.add('invisible');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }, 300);
+            }
+        }
+
+        // Close search on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('search-modal');
+                if (!modal.classList.contains('invisible')) {
+                    toggleSearch();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
