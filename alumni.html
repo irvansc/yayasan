@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jejaring Alumni - YPI AL-INTIDHOM</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/svg/logo-yayasan.svg">
+    <title>Jejaring Alumni - YPI AVICENNA</title>
     <meta name="description"
-        content="Portal resmi ikatan alumni YPI Al-Intidhom. Temukan teman lama, peluang karir, dan agenda reuni.">
+        content="Portal resmi ikatan alumni YPI AVICENNA. Temukan teman lama, peluang karir, dan agenda reuni.">
 
     <!-- =========================================
          1. EXTERNAL LIBRARIES & FONTS
@@ -39,6 +40,69 @@
             document.documentElement.classList.remove('dark')
         }
     </script>
+
+    <style>
+        /* --- FORM VALIDATION STYLES --- */
+        .form-input-alumni {
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            /* slate-200 */
+        }
+
+        .dark .form-input-alumni {
+            border-color: #334155;
+            /* slate-700 */
+        }
+
+        /* Error State */
+        .form-input-alumni.is-invalid {
+            border-color: #ef4444 !important;
+            /* red-500 */
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23ef4444'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linecap='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23ef4444' stroke='none'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em 1em;
+            padding-right: 2.5rem;
+            animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+        }
+
+        /* Error Text */
+        .error-feedback {
+            display: none;
+            color: #ef4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            font-weight: 600;
+        }
+
+        .form-input-alumni.is-invalid~.error-feedback {
+            display: block;
+        }
+
+        @keyframes shake {
+
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+    </style>
 </head>
 
 <body
@@ -53,7 +117,7 @@
                 <span class="flex items-center gap-2"><i class="fas fa-phone-alt text-secondary-500"></i> (021)
                     789-0123</span>
                 <span class="flex items-center gap-2"><i class="fas fa-envelope text-secondary-500"></i>
-                    info@al-intidhom.sch.id</span>
+                    info@YPI AVICENNA.sch.id</span>
                 <span class="flex items-center gap-2"><i class="fas fa-clock text-secondary-500"></i> Senin - Jumat:
                     07.00 - 16.00</span>
             </div>
@@ -78,11 +142,12 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img src="assets/img/logo.png" alt="Logo YPI Al-Intidhom"
+                    <img src="assets/img/svg/logo-yayasan.svg" alt="Logo YPI AVICENNA"
                         class="w-11 h-11 rounded-xl shadow-lg shadow-primary-500/20 group-hover:scale-105 transition-transform duration-300 object-cover">
                     <div class="flex flex-col">
                         <span
-                            class="block font-extrabold text-xl tracking-tight text-primary-900 dark:text-white leading-none font-serif">AL-INTIDHOM</span>
+                            class="block font-extrabold text-xl tracking-tight text-primary-900 dark:text-white leading-none font-serif">YPI
+                            AVICENNA</span>
                         <span
                             class="block text-[10px] font-bold text-secondary-600 dark:text-secondary-500 tracking-[0.2em] uppercase mt-0.5">Islamic
                             Foundation</span>
@@ -133,7 +198,7 @@
                                 class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">MA</a>
                             <a href="stai_index.html"
                                 class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">STAI
-                                AL-INTIDHOM</a>
+                                YPI AVICENNA</a>
 
                         </div>
                     </div>
@@ -221,8 +286,8 @@
             <div class="flex items-center gap-3">
                 <img src="assets/img/logo.png" alt="Logo" class="w-8 h-8 rounded-lg shadow-sm">
                 <div class="flex flex-col">
-                    <span
-                        class="font-bold text-lg text-slate-800 dark:text-white leading-none tracking-tight">AL-INTIDHOM</span>
+                    <span class="font-bold text-lg text-slate-800 dark:text-white leading-none tracking-tight">YPI
+                        AVICENNA</span>
                     <span class="text-[9px] font-bold text-primary-600 uppercase tracking-widest mt-0.5">Islamic
                         School</span>
                 </div>
@@ -360,15 +425,15 @@
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-slate-900/80 to-slate-900/90 z-10">
             </div>
-            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-                alt="Alumni Reuni" class="w-full h-full object-cover grayscale opacity-40 animate-slow-zoom">
+            <img src="https://placehold.co/1920x1080?text=Alumni+Reuni" alt="Alumni Reuni"
+                class="w-full h-full object-cover grayscale opacity-40 animate-slow-zoom">
         </div>
 
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
             <span
-                class="inline-block py-1 px-4 rounded-full bg-secondary-500/20 border border-secondary-500 text-secondary-400 text-xs font-bold uppercase tracking-widest mb-6"
+                class="inline-block py-1 px-4 rounded-full bg-primary-500/20 border border-primary-500 text-primary-400 text-xs font-bold uppercase tracking-widest mb-6"
                 data-aos="fade-down">
-                Ikatan Alumni Al-Intidhom
+                Ikatan Alumni YPI AVICENNA
             </span>
             <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight" data-aos="fade-up"
                 data-aos-delay="100">
@@ -442,7 +507,7 @@
                 <!-- LEFT CONTENT (8 Cols) -->
                 <div class="lg:col-span-8 space-y-16">
 
-                    <!-- DIREKTORI PENCARIAN -->
+                    <!-- DIREKTORI PENCARIAN ALUMNI-->
                     <div id="direktori" class="scroll-mt-28" data-aos="fade-up">
                         <div class="flex items-center justify-between mb-6">
                             <h2
@@ -479,7 +544,7 @@
                                 </div>
                             </form>
 
-                            <!-- Hasil Pencarian Dummy -->
+                            <!-- Hasil Pencarian -->
                             <div class="mt-8 grid sm:grid-cols-2 gap-4">
                                 <!-- Card 1 -->
                                 <div
@@ -493,6 +558,7 @@
                                             class="text-[10px] bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 px-2 py-0.5 rounded-full">Software
                                             Engineer</span>
                                     </div>
+
                                 </div>
                                 <!-- Card 2 -->
                                 <div
@@ -520,6 +586,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- END DIREKTORI PENCARIAN ALUMNI-->
 
                     <!-- KISAH SUKSES (SLIDER) -->
                     <div data-aos="fade-up">
@@ -564,7 +631,8 @@
                                             </div>
                                             <p
                                                 class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4 italic">
-                                                "Pondasi agama yang kuat dari Al-Intidhom menjadi bekal utama saya dalam
+                                                "Pondasi agama yang kuat dari YPI AVICENNA menjadi bekal utama saya
+                                                dalam
                                                 melayani pasien dengan hati. Ilmu tanpa adab itu sia-sia."
                                             </p>
                                             <a href="#" class="text-sm font-bold text-primary-600 hover:underline">Baca
@@ -666,23 +734,95 @@
                     <div id="daftar-alumni"
                         class="bg-gradient-to-br from-primary-900 to-primary-800 rounded-2xl shadow-xl p-6 text-white relative overflow-hidden scroll-mt-28"
                         data-aos="fade-left">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10">
+                        <div class="text-center">
+                            <h3 class="font-serif font-bold text-xl mb-2">Belum Terdaftar?</h3>
+                            <p class="text-primary-100 text-sm mb-1">Mari perbarui data Anda agar tetap terhubung dengan
+                                almamater dan rekan seangkatan. untuk mendapatkan akses ke jaringan alumni, info karir,
+                                dan
+                                undangan
+                                reuni akbar.</p>
                         </div>
-                        <h3 class="font-serif font-bold text-xl mb-2">Belum Terdaftar?</h3>
-                        <p class="text-primary-100 text-sm mb-6">Mari perbarui data Anda agar tetap terhubung dengan
-                            almamater dan rekan seangkatan.</p>
-                        <form class="space-y-3">
-                            <input type="text" placeholder="Nama Lengkap"
-                                class="w-full px-4 py-2.5 rounded-lg text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-secondary-500">
-                            <input type="text" placeholder="Tahun Lulus (Contoh: 2015)"
-                                class="w-full px-4 py-2.5 rounded-lg text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-secondary-500">
-                            <input type="email" placeholder="Email Aktif"
-                                class="w-full px-4 py-2.5 rounded-lg text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-secondary-500">
-                            <button
-                                class="w-full bg-secondary-500 hover:bg-secondary-600 text-slate-900 font-bold py-2.5 rounded-lg text-sm transition-colors shadow-lg shadow-secondary-500/30">
-                                Daftar Sekarang
-                            </button>
-                        </form>
+                        <div class="flex flex-row flex-wrap gap-4 items-center justify-center
+                             
+                             text-white/80 text-sm font-medium mb-6 text-center">
+
+                            <span class="flex items-center gap-2 whitespace-nowrap">
+                                <i class="fas fa-check-circle text-secondary-500"></i>
+                                Info Loker
+                            </span>
+
+                            <span class="flex items-center gap-2 whitespace-nowrap">
+                                <i class="fas fa-check-circle text-secondary-500"></i>
+                                Networking
+                            </span>
+
+                            <span class="flex items-center gap-2 whitespace-nowrap">
+                                <i class="fas fa-check-circle text-secondary-500"></i>
+                                E-Newsletter
+                            </span>
+                        </div>
+
+                        <div class="bg-white/10  border border-white/20 p-6 md:p-8 rounded-3xl  relative">
+
+                            <form id="alumniForm" novalidate>
+                                <h3 class="text-2xl font-bold text-white mb-6 text-center">Formulir Registrasi Alumni
+                                </h3>
+
+                                <div class="space-y-4">
+                                    <div>
+                                        <input type="text" id="nama"
+                                            class="form-input-alumni w-full px-4 py-3 rounded-xl bg-white/90 focus:bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary-500"
+                                            placeholder="Nama Lengkap Sesuai Ijazah" required>
+                                        <p class="error-feedback">Nama wajib diisi</p>
+                                    </div>
+
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <input type="number" id="tahun"
+                                                class="form-input-alumni w-full px-4 py-3 rounded-xl bg-white/90 focus:bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary-500"
+                                                placeholder="Thn Lulus" required min="1990" max="2025">
+                                            <p class="error-feedback">Tahun wajib diisi</p>
+                                        </div>
+                                        <div>
+                                            <input type="number" id="whatsapp"
+                                                class="form-input-alumni w-full px-4 py-3 rounded-xl bg-white/90 focus:bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary-500"
+                                                placeholder="No. WhatsApp" required>
+                                            <p class="error-feedback">No. WA wajib diisi</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <input type="email" id="email"
+                                            class="form-input-alumni w-full px-4 py-3 rounded-xl bg-white/90 focus:bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary-500"
+                                            placeholder="Alamat Email Aktif" required>
+                                        <p class="error-feedback">Email tidak valid</p>
+                                    </div>
+
+                                    <button type="submit" id="btnSubmit"
+                                        class="w-full py-4 bg-secondary-500 hover:bg-secondary-600 text-white font-bold rounded-xl shadow-lg transition-all transform hover:scale-[1.02] mt-2">
+                                        Daftar Sekarang <i class="fas fa-paper-plane ml-2"></i>
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div id="successState" class="hidden text-center py-10">
+                                <div
+                                    class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl animate-bounce">
+                                    <i class="fas fa-check text-4xl text-white"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-2">Registrasi Berhasil!</h3>
+                                <p class="text-white/80 mb-6">
+                                    Data Anda sedang di <strong>Review oleh Admin</strong>. <br>
+                                    Mohon tunggu konfirmasi selanjutnya melalui WhatsApp atau Email.
+                                </p>
+                                <div class="p-4 bg-white/10 rounded-xl border border-white/10 inline-block">
+                                    <p class="text-xs text-secondary-400 uppercase tracking-wider mb-1">Estimasi
+                                        Verifikasi</p>
+                                    <p class="text-white font-mono font-bold">1 x 24 Jam</p>
+                                </div>
+                            </div>
+
+                        </div>
                         <p class="text-[10px] text-center mt-4 text-primary-200">Data Anda aman dan hanya digunakan
                             untuk keperluan internal IKA.</p>
                     </div>
@@ -723,26 +863,32 @@
                             Galeri Nostalgia
                         </h3>
                         <div class="grid grid-cols-3 gap-2">
-                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                                class="rounded-lg h-20 w-full object-cover cursor-pointer hover:opacity-80 transition-opacity">
-                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                                class="rounded-lg h-20 w-full object-cover cursor-pointer hover:opacity-80 transition-opacity">
-                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                                class="rounded-lg h-20 w-full object-cover cursor-pointer hover:opacity-80 transition-opacity">
-                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                                class="rounded-lg h-20 w-full object-cover cursor-pointer hover:opacity-80 transition-opacity">
+                            <img src="https://placehold.co/300x300/1d4ed8/ffffff?text=Reuni"
+                                class="w-full aspect-square rounded-lg object-cover hover:opacity-80 transition">
+
+                            <img src="https://placehold.co/300x300/16a34a/ffffff?text=Wisuda"
+                                class="w-full aspect-square rounded-lg object-cover hover:opacity-80 transition">
+
+                            <img src="https://placehold.co/300x300/9333ea/ffffff?text=Kelas"
+                                class="w-full aspect-square rounded-lg object-cover hover:opacity-80 transition">
+
+                            <img src="https://placehold.co/300x300/ea580c/ffffff?text=Outbond"
+                                class="w-full aspect-square rounded-lg object-cover hover:opacity-80 transition">
+                            <img src="https://placehold.co/300x300/16a34a/ffffff?text=Ulin"
+                                class="w-full aspect-square rounded-lg object-cover hover:opacity-80 transition">
+
                             <div
-                                class="bg-slate-100 dark:bg-slate-800 rounded-lg h-20 w-full flex items-center justify-center text-slate-400 hover:bg-slate-200 transition-colors cursor-pointer">
+                                class="w-full aspect-square rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 dark:text-slate-600 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer">
                                 <span class="text-xs font-bold">+12</span>
                             </div>
                         </div>
+
                     </div>
 
                 </aside>
             </div>
         </div>
     </section>
-
     <!-- =========================================
          FOOTER
     ========================================== -->
@@ -752,23 +898,23 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <div>
                     <div class="flex items-center gap-3 mb-6 text-slate-900 dark:text-white">
-                        <img src="assets/img/logo.png" alt="Logo YPI Al-Intidhom"
+                        <img src="assets/img/logo-yayasan.png" alt="Logo YPI AVICENNA"
                             class="w-10 h-10 rounded-lg object-cover shadow-sm">
-                        <span class="font-serif font-bold text-2xl tracking-tight">AL-INTIDHOM</span>
+                        <span class="font-serif font-bold text-2xl tracking-tight">YPI AVICENNA</span>
                     </div>
                     <p class="text-sm leading-relaxed mb-6 text-slate-600 dark:text-slate-400">Yayasan Pendidikan Islam
-                        Al-Intidhom
+                        YPI AVICENNA
                         berkomitmen menyelenggarakan pendidikan berkualitas, terjangkau, dan berlandaskan
                         nilai-nilai Islam Ahlussunnah Wal Jamaah.</p>
                     <div class="flex gap-4">
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-primary-600 hover:border-primary-600 hover:text-white transition-all"><i
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-primary-600 hover:border-primary-600 hover:text-white transition-all dark:hover:bg-primary-600 dark:hover:border-primary-600 dark:hover:text-white"><i
                                 class="fab fa-facebook-f"></i></a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all"><i
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all dark:hover:bg-pink-600 dark:hover:border-pink-600 dark:hover:text-white"><i
                                 class="fab fa-instagram"></i></a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all"><i
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all dark:hover:bg-red-600 dark:hover:border-red-600 dark:hover:text-white"><i
                                 class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -826,7 +972,7 @@
                                 class="w-8 h-8 rounded bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
                                 <i class="fas fa-user-graduate"></i>
                             </div>
-                            <span>SD IT Al-Intidhom</span>
+                            <span>SD IT YPI AVICENNA</span>
                         </li>
                         <li
                             class="flex items-center gap-3 p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer group">
@@ -880,7 +1026,7 @@
 
             <div
                 class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-                <p>&copy; 2024 YPI Al-Intidhom. All rights reserved.</p>
+                <p>&copy; 2024 YPI AVICENNA. All rights reserved.</p>
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-primary-600 dark:hover:text-white transition-colors">Privacy
                         Policy</a>
@@ -891,9 +1037,91 @@
             </div>
         </div>
     </footer>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Kembali ke atas" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="fixed bottom-6 right-6 z-[100] 
+               w-10 h-10 rounded-full 
+               bg-gradient-to-r from-primary-600 to-primary-500 
+               text-white shadow-lg shadow-primary-500/40 
+               flex items-center justify-center 
+               transition-all duration-500 ease-in-out transform 
+               opacity-0 invisible translate-y-10 
+               hover:scale-110 hover:-translate-y-1 hover:shadow-2xl 
+               group border border-white/20 backdrop-blur-sm">
+
+        <i class="fas fa-arrow-up text-lg transition-transform duration-300 group-hover:-translate-y-0.5"></i>
+    </button>
     <script src="assets/js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // --- ALUMNI FORM VALIDATION & SUBMIT ---
+        document.getElementById('alumniForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Mencegah reload halaman
+
+            let isValid = true;
+            const inputs = this.querySelectorAll('input');
+
+            // 1. Reset Error Styles
+            inputs.forEach(input => {
+                input.classList.remove('is-invalid');
+            });
+
+            // 2. Simple Validation Loop
+            inputs.forEach(input => {
+                // Cek kosong
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('is-invalid');
+                }
+                // Validasi khusus Email
+                if (input.type === 'email' && input.value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value)) {
+                        isValid = false;
+                        input.classList.add('is-invalid');
+                    }
+                }
+                // Validasi khusus No HP (Min 10 digit)
+                if (input.id === 'whatsapp' && input.value) {
+                    if (input.value.length < 10) {
+                        isValid = false;
+                        input.classList.add('is-invalid');
+                    }
+                }
+
+                // Hapus error saat user mengetik
+                input.addEventListener('input', function () {
+                    this.classList.remove('is-invalid');
+                });
+            });
+
+            // 3. Jika Valid, Proses Submit (Simulasi)
+            if (isValid) {
+                const btn = document.getElementById('btnSubmit');
+                const originalText = btn.innerHTML;
+
+                // Efek Loading di Button
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
+
+                // Simulasi delay server (1.5 detik)
+                setTimeout(() => {
+                    // Sembunyikan Form
+                    document.getElementById('alumniForm').classList.add('hidden');
+
+                    // Tampilkan Pesan Sukses dengan animasi fade in
+                    const successState = document.getElementById('successState');
+                    successState.classList.remove('hidden');
+                    successState.classList.add('animate-fade-in-up'); // Asumsi ada class animasi di tailwind/css
+
+                }, 1500);
+            } else {
+                // Efek getar form jika error (Optional)
+                this.classList.add('animate-shake');
+                setTimeout(() => this.classList.remove('animate-shake'), 500);
+            }
+        });
+    </script>
     <script>
         // Init Animation
         AOS.init({

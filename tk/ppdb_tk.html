@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPDB Online - TK Al-Intidhom</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link href="../output.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <style>
+        .input-ppdb {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            /* slate-200 */
+            background-color: #f8fafc;
+            /* slate-50 */
+            transition: all 0.2s;
+            outline: none;
+        }
+
+        .dark .input-ppdb {
+            background-color: #1e293b;
+            /* slate-800 */
+            border-color: #334155;
+            /* slate-700 */
+        }
+
+        .input-ppdb:focus {
+            ring: 2px solid #0ea5e9;
+            /* primary-500 */
+            border-color: #0ea5e9;
+        }
+    </style>
+</head>
+
+<body
+    class="font-sans antialiased text-slate-600 bg-slate-50 dark:bg-dark-bg dark:text-slate-300 transition-colors duration-300 bg-pattern-paper">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div
+            class="absolute -top-24 -left-24 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob dark:bg-primary-900 dark:opacity-20">
+        </div>
+        <div
+            class="absolute top-0 -right-4 w-96 h-96 bg-kids-yellow rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 dark:bg-yellow-900 dark:opacity-10">
+        </div>
+        <div
+            class="absolute -bottom-32 left-20 w-96 h-96 bg-kids-pink rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000 dark:bg-pink-900 dark:opacity-10">
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 top-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <a href="tk_index.html" class="flex items-center gap-3 group">
+                    <div
+                        class="relative w-10 h-10 flex items-center justify-center bg-primary-600 rounded-xl text-white shadow-lg group-hover:rotate-6 transition-transform">
+                        <img src="../assets/img/logo-tk.png" alt="Logo" class="w-full h-full object-contain">
+                        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                        </span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold font-kids text-slate-800 dark:text-white leading-none">TKIT
+                            AVICENNA</span>
+                        <span
+                            class="text-[10px] font-bold tracking-widest text-primary-600 uppercase">Kindergarten</span>
+                    </div>
+                </a>
+
+                <div
+                    class="hidden md:flex items-center space-x-1 p-1 bg-white/50 dark:bg-slate-800/50 rounded-full border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
+                    <a href="tk_index.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Beranda</a>
+                    <a href="profil_tk.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Profil</a>
+                    <a href="program_tk.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Program</a>
+                    <a href="galeri_tk.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Galeri</a>
+                    <a href="kontak_tk.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Kontak</a>
+                    <a href="artikel_tk.html"
+                        class="desktop-link-tk  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Artikel</a>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+
+                    <button onclick="toggleSearch()"
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-300 hover:bg-primary-50 hover:text-primary-600 transition-colors flex items-center justify-center">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <button id="theme-toggle-desktop"
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 hover:bg-primary-50 transition-colors flex items-center justify-center">
+                        <i class="fas fa-sun dark:hidden"></i>
+                        <i class="fas fa-moon hidden dark:block"></i>
+                    </button>
+
+                    <a href="ppdb_tk.html"
+                        class="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 hover:to-primary-600 text-white rounded-full font-bold shadow-lg shadow-primary-500/30 transform hover:-translate-y-0.5 transition-all text-sm">
+                        <span>PPDB Online</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+
+                    <button id="mobile-menu-btn"
+                        class="relative z-50 p-2 -mr-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none lg:hidden">
+                        <div class="w-6 h-5 flex flex-col justify-between">
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-1"></span>
+                            <span class="w-3/4 h-0.5 bg-current rounded-full transition-all duration-300"
+                                id="bar-2"></span>
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-3"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="search-modal"
+        class="fixed inset-0 z-[80] opacity-0 invisible transition-all duration-300 flex items-start justify-center pt-20 md:pt-32 px-4">
+
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="toggleSearch()"></div>
+
+        <div class="relative z-10 w-full max-w-3xl bg-white dark:bg-dark-card rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300"
+            id="search-content">
+            <form action="#" class="relative flex items-center">
+                <div class="pl-5 md:pl-6 text-slate-400">
+                    <i class="fas fa-search text-lg md:text-xl"></i>
+                </div>
+                <input type="text" id="search-input"
+                    class="w-full py-5 md:py-6 px-4 bg-transparent border-none text-slate-800 dark:text-white text-base md:text-xl font-bold focus:ring-0 placeholder:text-slate-300 dark:placeholder:text-slate-600 font-kids"
+                    placeholder="Ketik pencarian..." autocomplete="off">
+                <button type="button" onclick="toggleSearch()"
+                    class="px-5 md:px-6 py-5 md:py-6 text-slate-400 hover:text-red-500 transition-colors">
+                    <i class="fas fa-times text-lg md:text-xl"></i>
+                </button>
+            </form>
+
+            <div
+                class="px-5 md:px-6 pb-5 md:pb-6 pt-2 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+                <p class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Pencarian
+                    Populer:
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="#"
+                        class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 transition-colors">Biaya
+                        Masuk</a>
+                    <a href="#"
+                        class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 transition-colors">PPDB</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-backdrop"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm opacity-0 invisible transition-all duration-300"
+        onclick="toggleSidebar()"></div>
+
+    <div id="mobile-sidebar"
+        class="fixed top-0 left-0 bottom-0 w-[280px] z-[70] bg-white dark:bg-dark-card shadow-2xl transform -translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col">
+
+        <div
+            class="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-800 bg-primary-50 dark:bg-slate-800/50">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-primary-600 text-white flex items-center justify-center">
+                    <img src="../assets/img/logo-tk.png" alt="Logo" class="w-full h-full object-contain">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold font-kids text-lg text-slate-800 dark:text-white leading-none">TKIT
+                        AVICENNA</span>
+                    <span
+                        class="text-[9px] font-bold text-primary-600 uppercase tracking-widest mt-0.5">Kindergarten</span>
+                </div>
+            </div>
+            <button onclick="toggleSidebar()"
+                class="p-2 rounded-full text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+
+            <a href="tk_index.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50 dark:bg-slate-800 text-primary-700 dark:text-primary-400 font-bold transition-all">
+                <i class="fas fa-home w-6 text-center"></i> Beranda
+            </a>
+
+            <a href="profil_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-user-tie w-6 text-center opacity-70"></i> Profil TK
+            </a>
+
+            <a href="program_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-graduation-cap w-6 text-center opacity-70"></i> Program
+            </a>
+
+            <a href="galeri_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Galeri
+            </a>
+
+            <a href="kontak_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Kontak
+            </a>
+
+            <a href="artikel_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Artikel
+            </a>
+
+            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+                <p class="px-4 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Informasi Lain</p>
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:text-primary-600 font-medium text-sm">
+                    <i class="fas fa-arrow-left w-6 text-center"></i> Kembali ke Yayasan
+                </a>
+            </div>
+
+        </div>
+
+        <div class="p-5 border-t border-slate-100 dark:border-slate-800">
+            <a href="ppdb_tk.html"
+                class="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-xl font-bold shadow-lg shadow-primary-500/30">
+                <i class="fas fa-rocket"></i> PPDB Online
+            </a>
+        </div>
+    </div>
+
+    <section class="relative pt-32 pb-12 overflow-hidden text-center">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="inline-block p-3 rounded-2xl bg-white dark:bg-slate-800 shadow-xl mb-6 animate-bounce">
+                <span class="text-4xl">🚀</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold font-kids text-slate-900 dark:text-white mb-4">
+                Formulir Pendaftaran Siswa Baru
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                Silakan lengkapi data Ananda di bawah ini dengan benar. <br>
+                <span class="text-primary-600 font-bold">Data Anda aman dan terjaga kerahasiaannya.</span>
+            </p>
+        </div>
+    </section>
+
+    <section class="pb-10">
+        <div class=" container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+
+                <form id="ppdbForm" class="space-y-6" onsubmit="submitPPDB(event)">
+
+                    <div
+                        class="bg-white dark:bg-dark-card rounded-2xl shadow-md border border-slate-200 dark:border-slate-700 overflow-hidden">
+                        <div
+                            class="bg-primary-50 dark:bg-primary-900/20 px-5 py-4 border-b border-primary-100 dark:border-primary-800 flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-primary-600 text-white flex items-center justify-center shadow-sm">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h2 class="font-bold font-kids text-lg text-slate-800 dark:text-white">I. Data Calon Siswa
+                            </h2>
+                        </div>
+
+                        <div class="p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                            <div class="col-span-1 md:col-span-2">
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Nama Lengkap Anak
+                                    <span class="text-red-500">*</span></label>
+                                <input type="text" required class="input-ppdb" placeholder="Sesuai Akta Kelahiran">
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Nama
+                                    Panggilan</label>
+                                <input type="text" class="input-ppdb">
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Jenis Kelamin <span
+                                        class="text-red-500">*</span></label>
+                                <select class="input-ppdb">
+                                    <option>Laki-laki</option>
+                                    <option>Perempuan</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Tempat Lahir <span
+                                        class="text-red-500">*</span></label>
+                                <input type="text" required class="input-ppdb">
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Tanggal Lahir <span
+                                        class="text-red-500">*</span></label>
+                                <input type="date" required class="input-ppdb">
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Usia
+                                    (Tahun/Bulan)</label>
+                                <input type="text" placeholder="Contoh: 4 Th 2 Bln" class="input-ppdb">
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Agama</label>
+                                <input type="text" value="Islam" class="input-ppdb">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Anak
+                                        ke-</label>
+                                    <input type="number" class="input-ppdb">
+                                </div>
+                                <div>
+                                    <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Jml Sdr</label>
+                                    <input type="number" class="input-ppdb">
+                                </div>
+                            </div>
+
+                            <div class="col-span-1 md:col-span-2">
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Alamat Lengkap
+                                    <span class="text-red-500">*</span></label>
+                                <textarea rows="3" required class="input-ppdb"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Kelurahan /
+                                    Kecamatan</label>
+                                <input type="text" class="input-ppdb">
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Kota /
+                                    Provinsi</label>
+                                <input type="text" class="input-ppdb">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-dark-card rounded-2xl shadow-md border border-slate-200 dark:border-slate-700 overflow-hidden">
+                        <div
+                            class="bg-blue-50 dark:bg-blue-900/20 px-5 py-4 border-b border-blue-100 dark:border-blue-800 flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-500 text-white flex items-center justify-center shadow-sm">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h2 class="font-bold font-kids text-lg text-slate-800 dark:text-white">II. Data Orang Tua
+                            </h2>
+                        </div>
+
+                        <div class="p-4 md:p-8 space-y-8">
+                            <div class="relative pl-4 border-l-4 border-blue-200 dark:border-blue-800">
+                                <h3 class="font-bold text-blue-600 mb-4 text-sm uppercase tracking-wider">A. Data Ayah
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="col-span-1 md:col-span-2">
+                                        <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Nama
+                                            Lengkap Ayah</label>
+                                        <input type="text" class="input-ppdb">
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="text-xs font-bold text-slate-500 uppercase mb-1 block">Pekerjaan</label>
+                                        <input type="text" class="input-ppdb">
+                                    </div>
+                                    <div>
+                                        <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">No.
+                                            WhatsApp <span class="text-red-500">*</span></label>
+                                        <input type="tel" required class="input-ppdb" placeholder="0812...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative pl-4 border-l-4 border-pink-200 dark:border-pink-800">
+                                <h3 class="font-bold text-pink-500 mb-4 text-sm uppercase tracking-wider">B. Data Ibu
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="col-span-1 md:col-span-2">
+                                        <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Nama
+                                            Lengkap Ibu</label>
+                                        <input type="text" class="input-ppdb">
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="text-xs font-bold text-slate-500 uppercase mb-1 block">Pekerjaan</label>
+                                        <input type="text" class="input-ppdb">
+                                    </div>
+                                    <div>
+                                        <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">No.
+                                            WhatsApp <span class="text-red-500">*</span></label>
+                                        <input type="tel" required class="input-ppdb" placeholder="0812...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div
+                            class="bg-white dark:bg-dark-card rounded-2xl shadow-md border border-slate-200 dark:border-slate-700 p-4 md:p-6">
+                            <h2
+                                class="font-bold font-kids text-lg text-slate-800 dark:text-white mb-4 flex items-center gap-2">
+                                <i class="fas fa-graduation-cap text-yellow-500"></i> III. Info Pendidikan
+                            </h2>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Pilihan Kelas
+                                        <span class="text-red-500">*</span></label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label
+                                            class="cursor-pointer border border-slate-200 dark:border-slate-700 rounded-lg p-3 flex items-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-800">
+                                            <input type="radio" name="kelas" value="A"
+                                                class="accent-primary-600 w-4 h-4">
+                                            <span class="text-sm font-bold">TK A</span>
+                                        </label>
+                                        <label
+                                            class="cursor-pointer border border-slate-200 dark:border-slate-700 rounded-lg p-3 flex items-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-800">
+                                            <input type="radio" name="kelas" value="B"
+                                                class="accent-primary-600 w-4 h-4">
+                                            <span class="text-sm font-bold">TK B</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Tahun
+                                        Ajaran</label>
+                                    <input type="text" value="2025/2026" readonly
+                                        class="input-ppdb bg-slate-100 text-slate-500">
+                                </div>
+                                <div>
+                                    <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Asal Sekolah
+                                        (PAUD)</label>
+                                    <input type="text" class="input-ppdb" placeholder="-">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white dark:bg-dark-card rounded-2xl shadow-md border border-slate-200 dark:border-slate-700 p-4 md:p-6">
+                            <h2
+                                class="font-bold font-kids text-lg text-slate-800 dark:text-white mb-4 flex items-center gap-2">
+                                <i class="fas fa-heartbeat text-red-500"></i> IV. Data Kesehatan
+                            </h2>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Riwayat
+                                        Penyakit</label>
+                                    <input type="text" class="input-ppdb" placeholder="Contoh: Asma (Jika ada)">
+                                </div>
+                                <div>
+                                    <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Alergi</label>
+                                    <input type="text" class="input-ppdb" placeholder="Makanan/Obat">
+                                </div>
+                                <div>
+                                    <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Catatan
+                                        Ortu</label>
+                                    <textarea rows="2" class="input-ppdb" placeholder="Pesan khusus..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-dark-card rounded-2xl shadow-md border border-slate-200 dark:border-slate-700 overflow-hidden">
+                        <div
+                            class="bg-purple-50 dark:bg-purple-900/20 px-5 py-4 border-b border-purple-100 dark:border-purple-800 flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-purple-500 text-white flex items-center justify-center shadow-sm">
+                                <i class="fas fa-file-upload"></i>
+                            </div>
+                            <h2 class="font-bold font-kids text-lg text-slate-800 dark:text-white">V. Upload Dokumen
+                            </h2>
+                        </div>
+
+                        <div class="p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div
+                                class="bg-slate-50 dark:bg-slate-800 p-3 rounded-xl border border-dashed border-slate-300 dark:border-slate-600">
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-2 block">Akta
+                                    Kelahiran</label>
+                                <input type="file"
+                                    class="text-xs w-full text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200 transition-all">
+                            </div>
+
+                            <div
+                                class="bg-slate-50 dark:bg-slate-800 p-3 rounded-xl border border-dashed border-slate-300 dark:border-slate-600">
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-2 block">Kartu
+                                    Keluarga</label>
+                                <input type="file"
+                                    class="text-xs w-full text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200 transition-all">
+                            </div>
+
+                            <div
+                                class="bg-slate-50 dark:bg-slate-800 p-3 rounded-xl border border-dashed border-slate-300 dark:border-slate-600">
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-2 block">Pas Foto
+                                    Anak</label>
+                                <input type="file"
+                                    class="text-xs w-full text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200 transition-all">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-primary-50 dark:bg-slate-900 rounded-2xl p-5 md:p-8 border border-primary-100 dark:border-slate-700">
+                        <h2 class="font-bold font-kids text-lg text-slate-800 dark:text-white mb-4">VI. Konfirmasi</h2>
+
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 mb-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-sm text-slate-500">Biaya Pendaftaran</span>
+                                <span class="font-bold text-primary-600 text-lg">Rp 200.000</span>
+                            </div>
+                            <div
+                                class="p-3 bg-primary-50 dark:bg-primary-900/20 rounded-lg text-xs text-yellow-600 dark:text-yellow-200 border border-primary-100 dark:border-primary-900/50 mb-3">
+                                <i class="fas fa-info-circle mr-1"></i> Transfer ke <b>BSI 1234567890 a.n TK
+                                    Al-Intidhom</b>
+                            </div>
+                            <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Upload Bukti
+                                Transfer</label>
+                            <input type="file"
+                                class="text-xs w-full text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700">
+                        </div>
+
+                        <div class="flex gap-3 mb-6">
+                            <div class="pt-1">
+                                <input type="checkbox" required
+                                    class="w-5 h-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Saya menyatakan data di atas benar. Saya bersedia mengikuti aturan TK Al-Intidhom.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Nama
+                                    Pemohon</label>
+                                <input type="text" required class="input-ppdb bg-white" placeholder="Nama Orang Tua">
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-slate-500 uppercase mb-1 block">Tanggal</label>
+                                <input type="date" id="dateNow" readonly
+                                    class="input-ppdb bg-slate-200 cursor-not-allowed">
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-4 bg-gradient-to-r from-primary-600 to-primary-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Kirim Pendaftaran
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+
+    <footer
+        class="bg-white dark:bg-dark-bg text-slate-600 dark:text-slate-300 pt-16 pb-8 md:pt-20 md:pb-10 border-t border-slate-200 dark:border-slate-800 font-sans transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6 text-slate-900 dark:text-white">
+                        <div
+                            class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold shadow-sm">
+                            <img src="../assets/img/logo-tk.png" alt="Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="font-kids font-bold text-2xl tracking-tight">TKIT AVICENNA</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-600 dark:text-slate-400">
+                        Membangun generasi Rabbani yang cerdas, ceria, dan berakhlak mulia sejak usia dini melalui
+                        metode pembelajaran sentra.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-primary-600 hover:border-primary-600 hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Informasi <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="profil_tk.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Profil TK</a></li>
+                        <li><a href="tenaga_pendidik.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Tenaga Pendidik</a>
+                        </li>
+                        <li><a href="kegiatan_ekskul.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Kegiatan Ekskul</a>
+                        </li>
+                        <li><a href="artikel_tk.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Artikel TK</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Jam Sekolah <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-kids-yellow rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm">
+                        <li
+                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
+                            <span>Senin - Kamis</span>
+                            <span class="font-bold text-primary-600">07:30 - 12:00</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
+                            <span>Jumat</span>
+                            <span class="font-bold text-primary-600">07:30 - 10:30</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2 text-slate-400">
+                            <span>Sabtu - Minggu</span>
+                            <span>Libur</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Hubungi Kami <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary-500"></i>
+                            <span class="text-slate-600 dark:text-slate-400">Jl. Raya Pendidikan No. 123, Kel.
+                                Kebayoran, Jakarta Selatan 12345</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-primary-500 text-lg"></i>
+                            <span class="text-slate-600 dark:text-slate-400 font-bold">+62 812-0000-0000</span>
+                        </li>
+                    </ul>
+                    <a href="ppdb_tk.html"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-lg text-xs font-bold hover:bg-primary-100 transition-all">
+                        <i class="fas fa-info-circle"></i> Info Pendaftaran
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2025 TKIT AVICENNA. All rights reserved.</p>
+                <div class="flex gap-6 items-center">
+                    <a href="index.html"
+                        class="flex items-center gap-2 hover:text-primary-600 dark:hover:text-white transition-colors">
+                        <i class="fas fa-arrow-left"></i> Website Yayasan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Kembali ke atas" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="fixed bottom-6 right-6 z-[100] 
+                   w-10 h-10 rounded-full 
+                   bg-gradient-to-r from-primary-600 to-primary-500 
+                   text-white shadow-lg shadow-primary-500/40 
+                   flex items-center justify-center 
+                   transition-all duration-500 ease-in-out transform 
+                   opacity-0 invisible translate-y-10 
+                   hover:scale-110 hover:-translate-y-1 hover:shadow-2xl 
+                   group border border-white/20 backdrop-blur-sm">
+
+        <i class="fas fa-arrow-up text-lg transition-transform duration-300 group-hover:-translate-y-0.5"></i>
+    </button>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // --- 3. Auto Date Script ---
+        document.getElementById('dateNow').valueAsDate = new Date();
+
+        // --- 4. Submit Animation (SweetAlert2) ---
+        function submitPPDB(e) {
+            e.preventDefault();
+
+            // Simulasi Loading
+            Swal.fire({
+                title: 'Mengirim Data...',
+                html: 'Mohon tunggu sebentar ya Ayah/Bunda.',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            }).then((result) => {
+                // Notifikasi Sukses
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Alhamdulillah!',
+                    text: 'Formulir pendaftaran berhasil terkirim. Admin kami akan segera menghubungi Ayah/Bunda via WhatsApp untuk konfirmasi selanjutnya.',
+                    confirmButtonColor: '#0ea5e9',
+                    confirmButtonText: 'Terima Kasih'
+                }).then(() => {
+                    // Reset form (optional)
+                    document.getElementById('ppdbForm').reset();
+                    document.getElementById('dateNow').valueAsDate = new Date();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        }
+    </script>
+
+
+
+    <script>
+        // --- SEARCH TOGGLE FUNCTION ---
+        function toggleSearch() {
+            const modal = document.getElementById('search-modal');
+            const content = document.getElementById('search-content');
+            const input = document.getElementById('search-input');
+
+            if (modal.classList.contains('invisible')) {
+                // Open Modal
+                modal.classList.remove('invisible', 'opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                // Auto focus input after small delay for transition
+                setTimeout(() => input.focus(), 100);
+            } else {
+                // Close Modal
+                modal.classList.add('opacity-0');
+                content.classList.remove('scale-100');
+                content.classList.add('scale-95');
+
+                setTimeout(() => {
+                    modal.classList.add('invisible');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }, 300);
+            }
+        }
+
+        // Close search on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('search-modal');
+                if (!modal.classList.contains('invisible')) {
+                    toggleSearch();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+/* --- FILE: assets/css/sd_style.css --- */
+/* Style spesifik untuk halaman SD yang lebih clean dan modern */
+
+/* 1. Custom Scrollbar (Sedikit lebih tipis dari TK) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+.dark ::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* 2. Glass Navigation Override */
+/* Menggunakan border bottom yang lebih tegas di SD */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.9); /* Sedikit lebih solid */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+.dark .glass-nav {
+    background: rgba(15, 23, 42, 0.85);
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+/* 3. SD Active Navigation State (Pill Style) */
+/* Menggunakan nuansa Biru (Blue-700) sebagai pembeda dari TK (Green) */
+.desktop-link-sd.active {
+    background-color: #eff6ff; /* blue-50 */
+    color: #1d4ed8; /* blue-700 */
+    font-weight: 700;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.dark .desktop-link-sd.active {
+    background-color: #1e3a8a; /* blue-900 */
+    color: #60a5fa; /* blue-400 */
+}
+
+/* Mobile Active State */
+.mobile-nav-link-sd.active {
+    background-color: #eff6ff; /* blue-50 */
+    color: #1d4ed8; /* blue-700 */
+    font-weight: 700;
+}
+.dark .mobile-nav-link-sd.active {
+    background-color: #172554;
+    color: #60a5fa;
+}
+
+/* 4. Smooth Card Hover (Lebih subtle dibanding TK) */
+.hover-card-sd {
+    transition: all 0.3s ease;
+}
+.hover-card-sd:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Section Divider Shapes */
+/* Untuk pemisah antar section yang lebih dinamis */
+.section-divider-curve {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}

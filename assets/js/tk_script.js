@@ -1,119 +1,94 @@
-/* --- FILE: assets/js/tk_script.js --- */
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Ambil URL browser saat ini tanpa query string (?id=...)
+  const currentUrl = window.location.href.split(/[?#]/)[0];
 
-document.addEventListener("DOMContentLoaded", function () {
-    
-    // --- 1. SETUP VARIABLES ---
-    const currentPath = window.location.pathname;
-    const currentPage = currentPath.split("/").pop() || "index_tk.html";
-    
-    // Element Navigasi
-    const navLinks = document.querySelectorAll('.desktop-link, .mobile-nav-link');
-    const sections = document.querySelectorAll('section');
-    
-    // Class Definitions (Pill Style Button)
-    const activeClasses = ['bg-primary-50', 'text-primary-700', 'font-bold', 'shadow-sm', 'active'];
-    const inactiveClasses = ['text-slate-600', 'dark:text-slate-300', 'hover:text-primary-600', 'hover:bg-white/80', 'dark:hover:bg-slate-700', 'font-semibold'];
+  // Ambil nama file saja untuk backup logic (misal: profil_tk.html)
+  const currentFilename = window.location.pathname.split("/").pop();
 
-    // --- 2. ACTIVE STATE LOGIC (PAGE LOAD) ---
-    function setActivePage() {
-        navLinks.forEach(link => {
-            const linkHref = link.getAttribute('href');
-            let isActive = false;
+  const activeClasses = [
+    "bg-primary-50",
+    "text-primary-700",
+    "font-bold",
+    "shadow-sm",
+    "active",
+  ];
 
-            // Logic Match
-            if (linkHref === currentPage) {
-                isActive = true;
-            } else if ((currentPage === 'index_tk.html' || currentPage === '') && (linkHref === './' || linkHref === '/' || linkHref === 'index_tk.html')) {
-                // Default active di home, kecuali nanti di-override scroll spy
-                isActive = true;
-            }
+  const inactiveClasses = [
+    "text-slate-600",
+    "dark:text-slate-300",
+    "hover:text-primary-600",
+    "hover:bg-white/80",
+    "hover:bg-slate-50",
+    "dark:hover:bg-slate-700",
+    "dark:hover:bg-slate-800",
+    "font-semibold",
+    "font-medium",
+  ];
 
-            // Apply Style
-            if (isActive) {
-                if (link.classList.contains('desktop-link')) {
-                    link.classList.add(...activeClasses);
-                    link.classList.remove(...inactiveClasses);
-                } else {
-                    link.classList.add('active'); // Untuk mobile
-                }
-            }
-        });
-    }
+  function initActiveMenu({
+    selector,
+    indexPages = [],
+    usePill = false,
+    useDropdown = false,
+    parentUsePill = false,
+  }) {
+    document.querySelectorAll(selector).forEach((link) => {
+      // 2. Ambil URL PENUH dari link (bukan "../tk/...", tapi "http://127.0.0.1/tk/...")
+      // link.href otomatis dikonversi browser menjadi alamat lengkap
+      const linkUrl = link.href.split(/[?#]/)[0];
 
-    // --- 3. SCROLL SPY (Highlight Menu saat Scroll) ---
-    function scrollSpy() {
-        // Hanya jalan di halaman index_tk
-        if (currentPage !== 'index_tk.html' && currentPage !== '') return;
+      // Ambil nama file target dari link untuk pengecekan index
+      const linkFilename = linkUrl.split("/").pop();
 
-        let currentSectionId = "";
+      // 3. LOGIKA BARU:
+      // - Cek apakah URL Link SAMA PERSIS dengan URL Browser
+      // - ATAU jika kita sedang di salah satu halaman index (tk_index/index)
+      const isIndexPage =
+        indexPages.includes(currentFilename) || currentFilename === "";
+      const isLinkToIndex = indexPages.includes(linkFilename);
 
-        // Deteksi posisi scroll
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 150) {
-                currentSectionId = section.getAttribute("id");
-            }
-        });
+      const isActive = linkUrl === currentUrl || (isIndexPage && isLinkToIndex);
 
-        // Update Link Classes
-        navLinks.forEach((link) => {
-            const href = link.getAttribute("href");
-            
-            // Khusus Anchor Link (#profil, #program, dll)
-            if (href.includes("#")) {
-                // Reset dulu ke inactive
-                if (link.classList.contains('desktop-link')) {
-                    link.classList.remove(...activeClasses);
-                    link.classList.add(...inactiveClasses);
-                } else {
-                    link.classList.remove('active');
-                }
+      // --- Debugging (Lihat Console Browser jika masih error) ---
+      // console.log(`Cek Link: ${linkFilename} | Current: ${currentFilename} | Active: ${isActive}`);
 
-                // Jika section match, set active
-                if (currentSectionId && href.includes(currentSectionId)) {
-                    if (link.classList.contains('desktop-link')) {
-                        link.classList.add(...activeClasses);
-                        link.classList.remove(...inactiveClasses);
-                    } else {
-                        link.classList.add('active');
-                    }
-                }
-            }
-            
-            // Khusus Link "Beranda" (index_tk.html) saat di paling atas
-            if (window.scrollY < 100 && (href === 'index_tk.html' || href === './')) {
-                 if (link.classList.contains('desktop-link')) {
-                    link.classList.add(...activeClasses);
-                    link.classList.remove(...inactiveClasses);
-                }
-            } else if (window.scrollY > 100 && (href === 'index_tk.html' || href === './')) {
-                // Matikan highlight Beranda saat sudah scroll ke bawah
-                 if (link.classList.contains('desktop-link')) {
-                    link.classList.remove(...activeClasses);
-                    link.classList.add(...inactiveClasses);
-                }
-            }
-        });
-    }
+      if (isActive) {
+        link.classList.add("active");
 
-    // --- 4. MOBILE SIDEBAR TOGGLE ---
-    // Pastikan function ini bisa dipanggil global (window) untuk onclick HTML
-    window.toggleSidebar = function() {
-        const sidebar = document.getElementById('mobile-sidebar');
-        const backdrop = document.getElementById('mobile-backdrop');
-        
-        if (sidebar && backdrop) {
-            if (sidebar.classList.contains('-translate-x-full')) {
-                sidebar.classList.remove('-translate-x-full');
-                backdrop.classList.remove('opacity-0', 'invisible');
-            } else {
-                sidebar.classList.add('-translate-x-full');
-                backdrop.classList.add('opacity-0', 'invisible');
-            }
+        if (usePill) {
+          link.classList.add(...activeClasses);
+          link.classList.remove(...inactiveClasses);
         }
-    };
 
-    // --- 5. INITIALIZE ---
-    setActivePage();
-    window.addEventListener("scroll", scrollSpy);
+        if (useDropdown) {
+          const parent = link.closest(".group");
+          const btn = parent?.querySelector("button");
+
+          if (btn) {
+            btn.classList.add("active");
+            if (usePill || parentUsePill) {
+              btn.classList.add(...activeClasses);
+              btn.classList.remove(...inactiveClasses);
+            } else {
+              btn.classList.add("text-primary-600", "font-bold");
+              btn.classList.remove("text-slate-700", "dark:text-slate-200");
+            }
+          }
+        }
+      } else if (usePill) {
+        link.classList.remove(...activeClasses);
+        link.classList.add(...inactiveClasses);
+      }
+    });
+  }
+
+  /* ================= CONFIG ================= */
+  // TK
+  initActiveMenu({
+    selector: ".desktop-link-tk, .mobile-nav-link-tk",
+    // Masukkan semua variasi nama file halaman depan
+    indexPages: ["tk_index.html", "index.html", ""],
+    usePill: true,
+  });
+  
 });

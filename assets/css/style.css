@@ -151,4 +151,16 @@
     font-weight: 700;
     border-left: 4px solid #059669; /* Indikator di kiri */
 }
+/* --- Active State Khusus Dropdown SD (Flat Style) --- */
+.dropdown-link-sd.active {
+    background-color: #ecfdf5; /* Hijau muda transparan (primary-50) */
+    color: #059669;            /* Hijau tua teks (primary-600) */
+    font-weight: 700;          /* Teks tebal */
+    border-radius: 0.5rem;     /* Sudut sedikit melengkung rapi */
+}
 
+/* Dark Mode Support */
+.dark .dropdown-link-sd.active {
+    background-color: rgba(5, 150, 105, 0.2);
+    color: #34d399;
+}

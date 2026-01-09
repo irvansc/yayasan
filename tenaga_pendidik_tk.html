@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/svg/logo-tk.svg" />
+    <title>Tenaga Pendidik - TKIT AVICENNA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link href="./output.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <script>
+        if (
+            localStorage.theme === "dark" ||
+            (!("theme" in localStorage) &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+    <style>
+        .avatar-ring {
+            position: absolute;
+            /* Inset negatif membuat ring lebih besar dari foto dan presisi di tengah */
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            border: 3px solid #fbbf24;
+            /* Warna Kuning */
+            border-top-color: transparent;
+            /* Bagian putus */
+            transform: rotate(-45deg);
+            transition: transform 0.7s ease;
+            z-index: 0;
+        }
+
+        .profile-card:hover .avatar-ring {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body
+    class="font-sans antialiased text-slate-600 bg-slate-50 dark:bg-dark-bg dark:text-slate-300 transition-colors duration-300 bg-pattern-paper">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div
+            class="absolute -top-24 -left-24 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob dark:bg-primary-900 dark:opacity-20">
+        </div>
+        <div
+            class="absolute top-0 -right-4 w-96 h-96 bg-kids-yellow rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 dark:bg-yellow-900 dark:opacity-10">
+        </div>
+        <div
+            class="absolute -bottom-32 left-20 w-96 h-96 bg-kids-pink rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000 dark:bg-pink-900 dark:opacity-10">
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 top-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="tk_index.html" class="flex items-center gap-3 group">
+                    <div
+                        class="relative w-10 h-10 flex items-center justify-center bg-primary-600 rounded-xl text-white shadow-lg group-hover:rotate-6 transition-transform">
+                        <img src="assets/img/logo-tk.png" alt="Logo" class="w-full h-full object-contain" />
+                        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                        </span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-xl font-bold font-kids text-slate-800 dark:text-white leading-none">AVICENNA</span>
+                        <span
+                            class="text-[10px] font-bold tracking-widest text-primary-600 uppercase">Kindergarten</span>
+                    </div>
+                </a>
+
+                <div
+                    class="hidden md:flex items-center space-x-1 p-1 bg-white/50 dark:bg-slate-800/50 rounded-full border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
+                    <a href="tk_index.html"
+                        class="desktop-link-tk px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Beranda</a>
+                    <a href="profil_tk.html"
+                        class="desktop-link-tk px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Profil</a>
+                    <a href="program_tk.html"
+                        class="desktop-link-tk px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Program</a>
+                    <a href="galeri_tk.html"
+                        class="desktop-link-tk px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Galeri</a>
+                    <a href="kontak_tk.html"
+                        class="desktop-link-tk px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Kontak</a>
+                    <a href="artikel_tk.html"
+                        class="desktop-link-tk px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Artikel</a>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button onclick="toggleSearch()"
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-300 hover:bg-primary-50 hover:text-primary-600 transition-colors flex items-center justify-center">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <button id="theme-toggle-desktop"
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 hover:bg-primary-50 transition-colors flex items-center justify-center">
+                        <i class="fas fa-sun dark:hidden"></i>
+                        <i class="fas fa-moon hidden dark:block"></i>
+                    </button>
+
+                    <a href="ppdb_tk.html"
+                        class="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 hover:to-primary-600 text-white rounded-full font-bold shadow-lg shadow-primary-500/30 transform hover:-translate-y-0.5 transition-all text-sm">
+                        <span>PPDB Online</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+
+                    <button id="mobile-menu-btn"
+                        class="relative z-50 p-2 -mr-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none lg:hidden">
+                        <div class="w-6 h-5 flex flex-col justify-between">
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-1"></span>
+                            <span class="w-3/4 h-0.5 bg-current rounded-full transition-all duration-300"
+                                id="bar-2"></span>
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-3"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="search-modal"
+        class="fixed inset-0 z-[80] opacity-0 invisible transition-all duration-300 flex items-start justify-center pt-20 md:pt-32 px-4">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="toggleSearch()"></div>
+
+        <div class="relative z-10 w-full max-w-3xl bg-white dark:bg-dark-card rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300"
+            id="search-content">
+            <form action="#" class="relative flex items-center">
+                <div class="pl-5 md:pl-6 text-slate-400">
+                    <i class="fas fa-search text-lg md:text-xl"></i>
+                </div>
+                <input type="text" id="search-input"
+                    class="w-full py-5 md:py-6 px-4 bg-transparent border-none text-slate-800 dark:text-white text-base md:text-xl font-bold focus:ring-0 placeholder:text-slate-300 dark:placeholder:text-slate-600 font-kids"
+                    placeholder="Ketik pencarian..." autocomplete="off" />
+                <button type="button" onclick="toggleSearch()"
+                    class="px-5 md:px-6 py-5 md:py-6 text-slate-400 hover:text-red-500 transition-colors">
+                    <i class="fas fa-times text-lg md:text-xl"></i>
+                </button>
+            </form>
+
+            <div
+                class="px-5 md:px-6 pb-5 md:pb-6 pt-2 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+                <p class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
+                    Pencarian Populer:
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="#"
+                        class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 transition-colors">Biaya
+                        Masuk</a>
+                    <a href="#"
+                        class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 transition-colors">PPDB</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-backdrop"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm opacity-0 invisible transition-all duration-300"
+        onclick="toggleSidebar()"></div>
+
+    <div id="mobile-sidebar"
+        class="fixed top-0 left-0 bottom-0 w-[280px] z-[70] bg-white dark:bg-dark-card shadow-2xl transform -translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col">
+        <div
+            class="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-800 bg-primary-50 dark:bg-slate-800/50">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-primary-600 text-white flex items-center justify-center">
+                    <img src="assets/img/logo-tk.png" alt="Logo" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="font-bold font-kids text-lg text-slate-800 dark:text-white leading-none">AVICENNA</span>
+                    <span
+                        class="text-[9px] font-bold text-primary-600 uppercase tracking-widest mt-0.5">Kindergarten</span>
+                </div>
+            </div>
+            <button onclick="toggleSidebar()"
+                class="p-2 rounded-full text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+            <a href="tk_index.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50 dark:bg-slate-800 text-primary-700 dark:text-primary-400 font-bold transition-all">
+                <i class="fas fa-home w-6 text-center"></i> Beranda
+            </a>
+
+            <a href="profil_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-user-tie w-6 text-center opacity-70"></i> Profil TK
+            </a>
+
+            <a href="program_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-graduation-cap w-6 text-center opacity-70"></i>
+                Program
+            </a>
+
+            <a href="galeri_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Galeri
+            </a>
+
+            <a href="kontak_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Kontak
+            </a>
+
+            <a href="artikel_tk.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-tk flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Artikel
+            </a>
+
+            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+                <p class="px-4 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                    Informasi Lain
+                </p>
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:text-primary-600 font-medium text-sm">
+                    <i class="fas fa-arrow-left w-6 text-center"></i> Kembali ke Yayasan
+                </a>
+            </div>
+        </div>
+
+        <div class="p-5 border-t border-slate-100 dark:border-slate-800">
+            <a href="ppdb_tk.html"
+                class="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-xl font-bold shadow-lg shadow-primary-500/30">
+                <i class="fas fa-rocket"></i> PPDB Online
+            </a>
+        </div>
+    </div>
+
+    <section class="relative pt-32 pb-16 overflow-hidden text-center">
+        <div class="container mx-auto px-4 relative z-10">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-wider mb-4">Tenaga
+                Pendidik</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-kids text-slate-900 dark:text-white mb-6">
+                Tenaga Pendidik <br /><span class="text-primary-600">TKIT AVICENNA</span>
+                👋
+            </h1>
+        </div>
+    </section>
+    <!-- PAGE CONTENT -->
+
+    <section class="py-12 min-h-screen relative z-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto mb-16 relative z-20">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-1 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-200">
+                    </div>
+                    <div
+                        class="relative bg-white dark:bg-slate-800 rounded-3xl shadow-xl flex items-center p-2 border border-slate-100 dark:border-slate-700">
+                        <div class="pl-5 text-slate-400">
+                            <i class="fas fa-search text-lg"></i>
+                        </div>
+                        <input type="text" id="teacher-search"
+                            class="w-full py-2.5 px-3 bg-transparent border-none focus:ring-0 text-slate-700 dark:text-slate-200 font-kids placeholder-slate-400 text-lg"
+                            placeholder="Cari guru..." autocomplete="off" />
+                    </div>
+                </div>
+                <p id="result-count" class="text-center text-sm text-slate-500 mt-4 font-bold uppercase tracking-wider">
+                    Menampilkan halaman 1 dari 2
+                </p>
+            </div>
+
+            <div id="teacher-grid"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-6xl mx-auto">
+                <!-- CARD 1 -->
+                <div class="teacher-item profile-card w-full max-w-[350px] bg-white dark:bg-slate-800 rounded-4xl border-b-[12px] border-secondary-400 border-solid shadow-card hover:-translate-y-2 relative overflow-hidden transition-transform duration-300 ease"
+                    data-name="Siti Aminah" data-role="Kepala Sekolah">
+                    <div
+                        class="absolute top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center z-20 shadow-md">
+                        <img src="assets/img/logo-tk.png" alt="Logo"
+                            class="w-7 h-7 object-contain transition-transform duration-300 hover:scale-110" />
+                    </div>
+                    <div class="pt-16">
+                        <div class="relative mx-auto w-32 h-32 z-10">
+                            <div class="avatar-ring"></div>
+                            <img src="https://i.pravatar.cc/300?u=1" alt="Profile"
+                                class="relative w-full h-full rounded-full object-cover border-[5px] border-slate-800 bg-slate-200 z-10" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center pb-4 w-full">
+                        <h3 class="font-kids text-slate-800 dark:text-slate-200 text-2xl font-semibold mt-6 mb-1">
+                            Siti Aminah, S.Pd
+                        </h3>
+                        <h3
+                            class="inline-block text-slate-800 dark:text-slate-200 text-sm font-medium tracking-wide mb-6 border-b-4 border-kids-yellow pb-2 px-1 rounded">
+                            Kepala Sekolah
+                        </h3>
+                        <p class="text-slate-800 dark:text-slate-200 text-sm leading-relaxed text-center px-8 mb-8">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        </p>
+                        <a href="#"
+                            class="inline-block whitespace-nowrap px-6 py-3 mb-8 bg-primary-600 hover:bg-primary-700 text-white text-[0.9rem] font-semibold rounded-xl shadow-[0_4px_15px_rgba(5,150,105,0.3)] transition-all duration-200 hover:scale-[1.02]">
+                            siti@tk-avicenna.sch.id
+                        </a>
+                        <div class="flex gap-6 text-slate-500 text-lg">
+                            <a href="#" class="hover:text-pink-600 transition-colors"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="hover:text-blue-600 transition-colors"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="#" class="hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="teacher-item profile-card w-full max-w-[350px] bg-white dark:bg-slate-800 rounded-4xl border-b-[12px] border-secondary-400 border-solid shadow-card hover:-translate-y-2 relative overflow-hidden transition-transform duration-300 ease"
+                    data-name="Ahmad Fauzi" data-role="Wakil Kepala Sekolah">
+                    <div
+                        class="absolute top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center z-20 shadow-md">
+                        <img src="assets/img/logo-tk.png" alt="Logo" class="w-7 h-7 object-contain" />
+                    </div>
+                    <div class="pt-16">
+                        <div class="relative mx-auto w-32 h-32 z-10">
+                            <div class="avatar-ring"></div>
+                            <img src="https://i.pravatar.cc/300?u=2" alt="Profile"
+                                class="relative w-full h-full rounded-full object-cover border-[5px] border-slate-800 bg-slate-200 z-10" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center pb-4 w-full">
+                        <h3 class="font-kids text-slate-800 dark:text-slate-200 text-2xl font-semibold mt-6 mb-1">
+                            Ahmad Fauzi, S.Pd
+                        </h3>
+                        <h3
+                            class="inline-block text-slate-800 dark:text-slate-200 text-sm font-medium tracking-wide mb-6 border-b-4 border-kids-yellow pb-2 px-1 rounded">
+                            Wakil Kepala Sekolah
+                        </h3>
+                        <p class="text-slate-800 dark:text-slate-200 text-sm leading-relaxed text-center px-8 mb-8">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <a href="#"
+                            class="inline-block whitespace-nowrap px-6 py-3 mb-8 bg-primary-600 hover:bg-primary-700 text-white text-[0.9rem] font-semibold rounded-xl shadow-[0_4px_15px_rgba(5,150,105,0.3)] transition-all duration-200 hover:scale-[1.02]">
+                            ahmad@tk-avicenna.sch.id
+                        </a>
+                        <div class="flex gap-6 text-slate-500 text-lg">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="teacher-item profile-card w-full max-w-[350px] bg-white dark:bg-slate-800 rounded-4xl border-b-[12px] border-secondary-400 border-solid shadow-card hover:-translate-y-2 relative overflow-hidden transition-transform duration-300 ease"
+                    data-name="Dewi Lestari" data-role="Guru Kelas A">
+                    <div
+                        class="absolute top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center z-20 shadow-md">
+                        <img src="assets/img/logo-tk.png" alt="Logo" class="w-7 h-7 object-contain" />
+                    </div>
+                    <div class="pt-16">
+                        <div class="relative mx-auto w-32 h-32 z-10">
+                            <div class="avatar-ring"></div>
+                            <img src="https://i.pravatar.cc/300?u=3" alt="Profile"
+                                class="relative w-full h-full rounded-full object-cover border-[5px] border-slate-800 bg-slate-200 z-10" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center pb-4 w-full">
+                        <h3 class="font-kids text-slate-800 dark:text-slate-200 text-2xl font-semibold mt-6 mb-1">
+                            Dewi Lestari, S.Pd
+                        </h3>
+                        <h3
+                            class="inline-block text-slate-800 dark:text-slate-200 text-sm font-medium tracking-wide mb-6 border-b-4 border-kids-yellow pb-2 px-1 rounded">
+                            Guru Kelas A
+                        </h3>
+                        <p class="text-slate-800 dark:text-slate-200 text-sm leading-relaxed text-center px-8 mb-8">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                        <a href="#"
+                            class="inline-block whitespace-nowrap px-6 py-3 mb-8 bg-primary-600 hover:bg-primary-700 text-white text-[0.9rem] font-semibold rounded-xl shadow-[0_4px_15px_rgba(5,150,105,0.3)] transition-all duration-200 hover:scale-[1.02]">
+                            dewi@tk-avicenna.sch.id
+                        </a>
+                        <div class="flex gap-6 text-slate-500 text-lg">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 4 -->
+                <div class="teacher-item profile-card w-full max-w-[350px] bg-white dark:bg-slate-800 rounded-4xl border-b-[12px] border-secondary-400 border-solid shadow-card hover:-translate-y-2 relative overflow-hidden transition-transform duration-300 ease"
+                    data-name="Andi Setiawan" data-role="Guru Kelas B">
+                    <div
+                        class="absolute top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center z-20 shadow-md">
+                        <img src="assets/img/logo-tk.png" alt="Logo" class="w-7 h-7 object-contain" />
+                    </div>
+                    <div class="pt-16">
+                        <div class="relative mx-auto w-32 h-32 z-10">
+                            <div class="avatar-ring"></div>
+                            <img src="https://i.pravatar.cc/300?u=4" alt="Profile"
+                                class="relative w-full h-full rounded-full object-cover border-[5px] border-slate-800 bg-slate-200 z-10" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center pb-4 w-full">
+                        <h3 class="font-kids text-slate-800 dark:text-slate-200 text-2xl font-semibold mt-6 mb-1">
+                            Andi Setiawan, S.Pd
+                        </h3>
+                        <h3
+                            class="inline-block text-slate-800 dark:text-slate-200 text-sm font-medium tracking-wide mb-6 border-b-4 border-kids-yellow pb-2 px-1 rounded">
+                            Guru Kelas B
+                        </h3>
+                        <p class="text-slate-800 dark:text-slate-200 text-sm leading-relaxed text-center px-8 mb-8">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                        <a href="#"
+                            class="inline-block whitespace-nowrap px-6 py-3 mb-8 bg-primary-600 hover:bg-primary-700 text-white text-[0.9rem] font-semibold rounded-xl shadow-[0_4px_15px_rgba(5,150,105,0.3)] transition-all duration-200 hover:scale-[1.02]">
+                            andi@tk-avicenna.sch.id
+                        </a>
+                        <div class="flex gap-6 text-slate-500 text-lg">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 5 -->
+                <div class="teacher-item profile-card w-full max-w-[350px] bg-white dark:bg-slate-800 rounded-4xl border-b-[12px] border-secondary-400 border-solid shadow-card hover:-translate-y-2 relative overflow-hidden transition-transform duration-300 ease"
+                    data-name="Andi Fauzi" data-role="Guru Kelas C">
+                    <div
+                        class="absolute top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center z-20 shadow-md">
+                        <img src="assets/img/logo-tk.png" alt="Logo" class="w-7 h-7 object-contain" />
+                    </div>
+                    <div class="pt-16">
+                        <div class="relative mx-auto w-32 h-32 z-10">
+                            <div class="avatar-ring"></div>
+                            <img src="https://i.pravatar.cc/300?u=5" alt="Profile"
+                                class="relative w-full h-full rounded-full object-cover border-[5px] border-slate-800 bg-slate-200 z-10" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center pb-4 w-full">
+                        <h3 class="font-kids text-slate-800 dark:text-slate-200 text-2xl font-semibold mt-6 mb-1">
+                            Andi Fauzi, S.Ag
+                        </h3>
+                        <h3
+                            class="inline-block text-slate-800 dark:text-slate-200 text-sm font-medium tracking-wide mb-6 border-b-4 border-kids-yellow pb-2 px-1 rounded">
+                            Guru Kelas C
+                        </h3>
+                        <p class="text-slate-800 dark:text-slate-200 text-sm leading-relaxed text-center px-8 mb-8">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                        <a href="#"
+                            class="inline-block whitespace-nowrap px-6 py-3 mb-8 bg-primary-600 hover:bg-primary-700 text-white text-[0.9rem] font-semibold rounded-xl shadow-[0_4px_15px_rgba(5,150,105,0.3)] transition-all duration-200 hover:scale-[1.02]">
+                            fauzi@tk-avicenna.sch.id
+                        </a>
+                        <div class="flex gap-6 text-slate-500 text-lg">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 6 -->
+                <div class="teacher-item profile-card w-full max-w-[350px] bg-white dark:bg-slate-800 rounded-4xl border-b-[12px] border-secondary-400 border-solid shadow-card hover:-translate-y-2 relative overflow-hidden transition-transform duration-300 ease"
+                    data-name="Rismon Sianipar" data-role="Guru Kelas D">
+                    <div
+                        class="absolute top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center z-20 shadow-md">
+                        <img src="assets/img/logo-tk.png" alt="Logo" class="w-7 h-7 object-contain" />
+                    </div>
+                    <div class="pt-16">
+                        <div class="relative mx-auto w-32 h-32 z-10">
+                            <div class="avatar-ring"></div>
+                            <img src="https://i.pravatar.cc/300?u=6" alt="Profile"
+                                class="relative w-full h-full rounded-full object-cover border-[5px] border-slate-800 bg-slate-200 z-10" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center pb-4 w-full">
+                        <h3 class="font-kids text-slate-800 dark:text-slate-200 text-2xl font-semibold mt-6 mb-1">
+                            Rismon Sianipar, S.Kom
+                        </h3>
+                        <h3
+                            class="inline-block text-slate-800 dark:text-slate-200 text-sm font-medium tracking-wide mb-6 border-b-4 border-kids-yellow pb-2 px-1 rounded">
+                            Guru Kelas D
+                        </h3>
+                        <p class="text-slate-800 dark:text-slate-200 text-sm leading-relaxed text-center px-8 mb-8">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                        <a href="#"
+                            class="inline-block whitespace-nowrap px-6 py-3 mb-8 bg-primary-600 hover:bg-primary-700 text-white text-[0.9rem] font-semibold rounded-xl shadow-[0_4px_15px_rgba(5,150,105,0.3)] transition-all duration-200 hover:scale-[1.02]">
+                            rismon@tk-avicenna.sch.id
+                        </a>
+                        <div class="flex gap-6 text-slate-500 text-lg">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 7 -->
+                <div class="teacher-item profile-card w-full max-w-[350px] bg-white dark:bg-slate-800 rounded-4xl border-b-[12px] border-secondary-400 border-solid shadow-card hover:-translate-y-2 relative overflow-hidden transition-transform duration-300 ease"
+                    data-name="Galih Sanjaya" data-role="Guru Kelas E">
+                    <div
+                        class="absolute top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center z-20 shadow-md">
+                        <img src="assets/img/logo-tk.png" alt="Logo" class="w-7 h-7 object-contain" />
+                    </div>
+                    <div class="pt-16">
+                        <div class="relative mx-auto w-32 h-32 z-10">
+                            <div class="avatar-ring"></div>
+                            <img src="https://i.pravatar.cc/300?u=7" alt="Profile"
+                                class="relative w-full h-full rounded-full object-cover border-[5px] border-slate-800 bg-slate-200 z-10" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center pb-4 w-full">
+                        <h3 class="font-kids text-slate-800 dark:text-slate-200 text-2xl font-semibold mt-6 mb-1">
+                            Galih Sanjaya, S.Pd
+                        </h3>
+                        <h3
+                            class="inline-block text-slate-800 dark:text-slate-200 text-sm font-medium tracking-wide mb-6 border-b-4 border-kids-yellow pb-2 px-1 rounded">
+                            Guru Kelas E
+                        </h3>
+                        <p class="text-slate-800 dark:text-slate-200 text-sm leading-relaxed text-center px-8 mb-8">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                        <a href="#"
+                            class="inline-block whitespace-nowrap px-6 py-3 mb-8 bg-primary-600 hover:bg-primary-700 text-white text-[0.9rem] font-semibold rounded-xl shadow-[0_4px_15px_rgba(5,150,105,0.3)] transition-all duration-200 hover:scale-[1.02]">
+                            galih@tk-avicenna.sch.id
+                        </a>
+                        <div class="flex gap-6 text-slate-500 text-lg">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="pagination-container" class="mt-16 flex justify-center gap-3"></div>
+
+            <div id="empty-state" class="hidden text-center py-10">
+                <i class="fas fa-search text-4xl text-slate-300 mb-3"></i>
+                <p class="text-slate-500 font-bold">Guru tidak ditemukan.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer
+        class="bg-white dark:bg-dark-bg text-slate-600 dark:text-slate-300 pt-16 pb-8 md:pt-20 md:pb-10 border-t border-slate-200 dark:border-slate-800 font-sans transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6 text-slate-900 dark:text-white">
+                        <div
+                            class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold shadow-sm">
+                            <img src="assets/img/logo-tk.png" alt="Logo" class="w-full h-full object-contain" />
+                        </div>
+                        <span class="font-kids font-bold text-2xl tracking-tight">TKIT AVICENNA</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-600 dark:text-slate-400">
+                        Membangun generasi Rabbani yang cerdas, ceria, dan berakhlak mulia
+                        sejak usia dini melalui metode pembelajaran sentra.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-primary-600 hover:border-primary-600 hover:text-white transition-all dark:hover:bg-primary-600 dark:hover:border-primary-600 dark:hover:text-white"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all dark:hover:bg-pink-600 dark:hover:border-pink-600 dark:hover:text-white"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all dark:hover:bg-red-600 dark:hover:border-red-600 dark:hover:text-white"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Informasi
+                        <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li>
+                            <a href="profil_tk.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i>
+                                Profil TK</a>
+                        </li>
+                        <li>
+                            <a href="tenaga_pendidik_tk.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i>
+                                Tenaga Pendidik</a>
+                        </li>
+                        <li>
+                            <a href="ekskul_tk.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i>
+                                Kegiatan Ekskul</a>
+                        </li>
+                        <li>
+                            <a href="artikel_tk.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i>
+                                Artikel & Berita</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Jam Sekolah
+                        <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-kids-yellow rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm">
+                        <li
+                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
+                            <span>Senin - Kamis</span>
+                            <span class="font-bold text-primary-600">07:30 - 12:00</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
+                            <span>Jumat</span>
+                            <span class="font-bold text-primary-600">07:30 - 10:30</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2 text-slate-400">
+                            <span>Sabtu - Minggu</span>
+                            <span>Libur</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Hubungi Kami
+                        <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary-500"></i>
+                            <span class="text-slate-600 dark:text-slate-400">Jl. Raya Pendidikan No. 123, Kel.
+                                Kebayoran, Jakarta Selatan
+                                12345</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-primary-500 text-lg"></i>
+                            <span class="text-slate-600 dark:text-slate-400 font-bold">+62 812-0000-0000</span>
+                        </li>
+                    </ul>
+                    <a href="ppdb_tk.html"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-lg text-xs font-bold hover:bg-primary-100 transition-all">
+                        <i class="fas fa-info-circle"></i> Info Pendaftaran
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>© 2025 TK Islam Al-Intidhom. All rights reserved.</p>
+                <div class="flex gap-6 items-center">
+                    <a href="index.html"
+                        class="flex items-center gap-2 hover:text-primary-600 dark:hover:text-white transition-colors">
+                        <i class="fas fa-arrow-left"></i> Website Yayasan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchInput = document.getElementById("teacher-search");
+            const gridContainer = document.getElementById("teacher-grid");
+            const paginationContainer = document.getElementById(
+                "pagination-container"
+            );
+            const emptyState = document.getElementById("empty-state");
+            const resultCount = document.getElementById("result-count");
+
+            // Ambil semua card yang sudah di-hardcode di HTML
+            const allCards = Array.from(document.querySelectorAll(".teacher-item"));
+
+            // Config Pagination
+            const itemsPerPage = 6;
+            let currentPage = 1;
+            let visibleCards = allCards;
+
+            function render() {
+                allCards.forEach((card) => card.classList.add("hidden"));
+
+                if (visibleCards.length === 0) {
+                    emptyState.classList.remove("hidden");
+                    paginationContainer.innerHTML = "";
+                    resultCount.classList.add("opacity-0");
+                    return;
+                }
+
+                emptyState.classList.add("hidden");
+                resultCount.classList.remove("opacity-0");
+
+                const totalPages = Math.ceil(visibleCards.length / itemsPerPage);
+                if (currentPage > totalPages) currentPage = 1;
+
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+
+                const currentSlice = visibleCards.slice(start, end);
+                currentSlice.forEach((card) => card.classList.remove("hidden"));
+
+                resultCount.textContent = `Menampilkan halaman ${currentPage} dari ${totalPages} (${visibleCards.length} Data)`;
+                renderPaginationControls(totalPages);
+            }
+
+            function renderPaginationControls(totalPages) {
+                paginationContainer.innerHTML = "";
+                if (totalPages <= 1) return;
+
+                const prevBtn = document.createElement("button");
+                prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevBtn.className = `w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center transition-colors ${currentPage === 1
+                    ? "text-slate-300 cursor-not-allowed"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-primary-600"
+                    }`;
+                prevBtn.onclick = () => {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        render();
+                        gridContainer.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                };
+                paginationContainer.appendChild(prevBtn);
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const btn = document.createElement("button");
+                    btn.textContent = i;
+                    btn.className = `w-10 h-10 rounded-full font-bold transition-all shadow-sm ${i === currentPage
+                        ? "bg-primary-600 text-white transform scale-110"
+                        : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 hover:text-primary-600"
+                        }`;
+
+                    btn.onclick = () => {
+                        currentPage = i;
+                        render();
+                        gridContainer.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    };
+                    paginationContainer.appendChild(btn);
+                }
+
+                const nextBtn = document.createElement("button");
+                nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextBtn.className = `w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center transition-colors ${currentPage === totalPages
+                    ? "text-slate-300 cursor-not-allowed"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-primary-600"
+                    }`;
+                nextBtn.onclick = () => {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        render();
+                        gridContainer.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                };
+                paginationContainer.appendChild(nextBtn);
+            }
+
+            searchInput.addEventListener("input", (e) => {
+                const term = e.target.value.toLowerCase();
+                visibleCards = allCards.filter((card) => {
+                    const name = card.getAttribute("data-name").toLowerCase();
+                    const role = card.getAttribute("data-role").toLowerCase();
+                    return name.includes(term) || role.includes(term);
+                });
+                currentPage = 1;
+                render();
+            });
+
+            render();
+        });
+    </script>
+    <script>
+        // --- SEARCH TOGGLE FUNCTION ---
+        function toggleSearch() {
+            const modal = document.getElementById("search-modal");
+            const content = document.getElementById("search-content");
+            const input = document.getElementById("search-input");
+
+            if (modal.classList.contains("invisible")) {
+                // Open Modal
+                modal.classList.remove("invisible", "opacity-0");
+                content.classList.remove("scale-95");
+                content.classList.add("scale-100");
+                document.body.style.overflow = "hidden"; // Prevent scrolling
+                // Auto focus input after small delay for transition
+                setTimeout(() => input.focus(), 100);
+            } else {
+                // Close Modal
+                modal.classList.add("opacity-0");
+                content.classList.remove("scale-100");
+                content.classList.add("scale-95");
+
+                setTimeout(() => {
+                    modal.classList.add("invisible");
+                    document.body.style.overflow = ""; // Restore scrolling
+                }, 300);
+            }
+        }
+
+        // Close search on Escape key
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                const modal = document.getElementById("search-modal");
+                if (!modal.classList.contains("invisible")) {
+                    toggleSearch();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
