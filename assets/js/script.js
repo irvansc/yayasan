@@ -84,7 +84,7 @@ if (navbar) {
         "shadow-md",
         "bg-white/95",
         "dark:bg-dark-bg/95",
-        "py-0"
+        "py-0",
       );
       navbar.classList.remove("glass-effect");
     } else {
@@ -92,7 +92,7 @@ if (navbar) {
         "shadow-md",
         "bg-white/95",
         "dark:bg-dark-bg/95",
-        "py-0"
+        "py-0",
       );
       navbar.classList.add("glass-effect");
     }
@@ -181,9 +181,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // YAYASAN
   initActiveMenu({
-    selector: ".desktop-link, .mobile-nav-link, .dropdown-link",
+    selector: ".mobile-nav-link, .dropdown-link",
     indexPages: ["index.html", ""],
     useDropdown: true,
+    parentUsePill: true,
+  });
+  initActiveMenu({
+    selector: ".desktop-link",
+    indexPages: ["index.html", ""],
+    useDropdown: true,
+    parentUsePill: false,
   });
 
   // SD - MENU UTAMA
@@ -197,6 +204,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // SD - SUBMENU DROPDOWN
   initActiveMenu({
     selector: ".dropdown-link-sd",
+    indexPages: [],
+    usePill: false,
+    useDropdown: true,
+    parentUsePill: true,
+  });
+  // SMP - MENU UTAMA
+  initActiveMenu({
+    selector: ".desktop-link-smp, .mobile-nav-link-smp",
+    indexPages: ["smp_index.html", ""],
+    usePill: true,
+    useDropdown: true,
+  });
+
+  // SMP - SUBMENU DROPDOWN
+  initActiveMenu({
+    selector: ".dropdown-link-smp",
+    indexPages: [],
+    usePill: false,
+    useDropdown: true,
+    parentUsePill: true,
+  });
+  // SMA - MENU UTAMA
+  initActiveMenu({
+    selector: ".desktop-link-sma, .mobile-nav-link-sma",
+    indexPages: ["sma_index.html", ""],
+    usePill: true,
+    useDropdown: true,
+  });
+
+  // SMA - SUBMENU DROPDOWN
+  initActiveMenu({
+    selector: ".dropdown-link-sma",
     indexPages: [],
     usePill: false,
     useDropdown: true,
@@ -217,4 +256,185 @@ window.addEventListener("scroll", () => {
     scrollBtn.classList.add("opacity-0", "invisible", "translate-y-10");
     scrollBtn.classList.remove("opacity-100", "visible", "translate-y-0");
   }
+});
+
+/* --- SEARCH MODAL LOGIC --- */
+const searchModal = document.getElementById("search-modal");
+const searchInput = document.getElementById("search-input");
+
+function toggleSearch() {
+  // Toggle Classes untuk Visibilitas
+  if (searchModal.classList.contains("invisible")) {
+    // Buka Modal
+    searchModal.classList.remove("invisible", "opacity-0", "scale-95");
+    searchModal.classList.add("opacity-100", "scale-100");
+    // Disable Scroll Body
+    document.body.style.overflow = "hidden";
+    // Auto Focus Input setelah transisi (sedikit delay)
+    setTimeout(() => {
+      searchInput.focus();
+    }, 100);
+  } else {
+    // Tutup Modal
+    searchModal.classList.add("invisible", "opacity-0", "scale-95");
+    searchModal.classList.remove("opacity-100", "scale-100");
+    // Enable Scroll Body
+    document.body.style.overflow = "";
+  }
+}
+
+// Tutup dengan tombol ESC
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && !searchModal.classList.contains("invisible")) {
+    toggleSearch();
+  }
+});
+
+// Shortcut Tombol Ctrl + K atau Cmd + K untuk membuka search
+document.addEventListener("keydown", function (event) {
+  if ((event.ctrlKey || event.metaKey) && event.key === "k") {
+    event.preventDefault();
+    toggleSearch();
+  }
+});
+
+/* --- NEWSLETTER SIMULATION & VALIDATION --- */
+document.addEventListener("DOMContentLoaded", function () {
+  const newsForm = document.getElementById("newsletter-form");
+  const newsInput = document.getElementById("newsletter-email");
+  const newsMsg = document.getElementById("newsletter-msg");
+  const newsError = document.getElementById("email-error");
+
+  if (newsForm) {
+    newsForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Mencegah Reload Halaman
+
+      const emailValue = newsInput.value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex validasi email sederhana
+
+      // 1. Validasi
+      if (emailValue === "" || !emailPattern.test(emailValue)) {
+        // STATE: INVALID
+        newsInput.classList.add(
+          "border-red-500",
+          "bg-red-50",
+          "dark:bg-red-900/20",
+        );
+        newsInput.classList.remove(
+          "border-transparent",
+          "bg-slate-100",
+          "dark:bg-slate-800",
+        );
+
+        newsError.classList.remove("hidden");
+        newsMsg.classList.add("hidden");
+
+        // Animasi getar (shake) sederhana
+        newsInput.parentElement.classList.add("animate-shake");
+        setTimeout(
+          () => newsInput.parentElement.classList.remove("animate-shake"),
+          500,
+        );
+      } else {
+        // STATE: VALID / SUCCESS
+        // Menghapus state error
+        newsInput.classList.remove(
+          "border-red-500",
+          "bg-red-50",
+          "dark:bg-red-900/20",
+        );
+        newsInput.classList.add(
+          "border-green-500",
+          "bg-green-50",
+          "dark:bg-green-900/20",
+        );
+        newsError.classList.add("hidden");
+
+        // Menampilkan Pesan Sukses
+        newsMsg.innerText = "✓ Terimakasih! Email Anda berhasil terdaftar.";
+        newsMsg.className =
+          "text-[10px] font-bold mb-2 block text-green-600 dark:text-green-400 animate-fade-in";
+        newsMsg.classList.remove("hidden");
+
+        // Simulasi Loading & Reset Form
+        const btn = newsForm.querySelector("button");
+        const originalIcon = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin text-xs"></i>';
+        btn.disabled = true;
+
+        setTimeout(() => {
+          newsInput.value = ""; // Reset field
+          newsInput.className =
+            "bg-slate-100 dark:bg-slate-800 border-2 border-transparent rounded-l-lg px-3 py-2 text-xs w-full focus:ring-0 focus:outline-none text-slate-900 dark:text-white transition-all duration-300";
+          btn.innerHTML = originalIcon;
+          btn.disabled = false;
+
+          // Hilangkan notifikasi sukses setelah 5 detik
+          setTimeout(() => {
+            newsMsg.classList.add("opacity-0");
+            setTimeout(() => {
+              newsMsg.classList.add("hidden");
+              newsMsg.classList.remove("opacity-0");
+            }, 300);
+          }, 5000);
+        }, 1500);
+      }
+    });
+
+    // Hapus tanda merah saat user mulai mengetik lagi
+    newsInput.addEventListener("input", function () {
+      if (this.classList.contains("border-red-500")) {
+        this.classList.remove(
+          "border-red-500",
+          "bg-red-50",
+          "dark:bg-red-900/20",
+        );
+        this.classList.add(
+          "border-transparent",
+          "bg-slate-100",
+          "dark:bg-slate-800",
+        );
+        newsError.classList.add("hidden");
+      }
+    });
+  }
+});
+
+// --- SCRIPT ANIMASI CUSTOM (PENGGANTI AOS) ---
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Pilih semua elemen yang punya class animasi
+  const animatedElements = document.querySelectorAll(
+    ".fade-up, .fade-down, .fade-left, .fade-right, .zoom-in, .zoom-out",
+  );
+
+  // 2. Setting Observer (Kapan animasi mulai?)
+  const observerOptions = {
+    root: null, // viewport
+    rootMargin: "0px",
+    threshold: 0.1, // Animasi jalan saat 10% elemen muncul
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+
+        // A. Memicu Animasi
+        target.classList.add("aos-animate");
+
+        // B. Cleanup (PENTING!)
+        // Hapus transform setelah animasi selesai (1.2 detik)
+        // Supaya elemen fixed (seperti modal) di dalamnya kembali normal
+        setTimeout(() => {
+          target.classList.add("aos-done");
+        }, 1200);
+
+        // C. Stop observing (Animasi cuma sekali seumur hidup page load)
+        observer.unobserve(target);
+      }
+    });
+  }, observerOptions);
+
+  // 3. Mulai memantau semua elemen
+  animatedElements.forEach((el) => observer.observe(el));
 });

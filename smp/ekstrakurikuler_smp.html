@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/img/svg/logo-smp.svg" type="image/svg+xml">
+
+    <title>OSIS & Ekstrakurikuler - SMPIT AVICENNA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="../output.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body
+    class="font-sans antialiased text-slate-700 bg-white dark:bg-dark-bg dark:text-slate-300 transition-colors duration-300">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div
+            class="absolute -top-24 -left-24 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob dark:bg-primary-900 dark:opacity-20">
+        </div>
+        <div
+            class="absolute top-0 -right-4 w-96 h-96 bg-kids-yellow rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 dark:bg-yellow-900 dark:opacity-10">
+        </div>
+        <div
+            class="absolute -bottom-32 left-20 w-96 h-96 bg-kids-pink rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000 dark:bg-pink-900 dark:opacity-10">
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 top-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <a href="smp_index.html" class="flex items-center gap-3 group">
+                    <div
+                        class="relative w-10 h-10 flex items-center justify-center bg-primary-600 rounded-xl text-white shadow-lg group-hover:rotate-6 transition-transform">
+                        <img src="../assets/img/logo-smp.png" alt="Logo" class="w-full h-full object-contain">
+                        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                        </span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold font-kids text-slate-800 dark:text-white leading-none">SMPIT
+                            AVICENNA</span>
+                        <span class="text-[10px] font-bold tracking-widest text-primary-600 uppercase">Junior
+                            High School</span>
+                    </div>
+                </a>
+
+                <div
+                    class="hidden md:flex items-center space-x-1 p-1 bg-white/50 dark:bg-slate-800/50 rounded-full border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
+                    <a href="smp_index.html"
+                        class="desktop-link-smp  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Beranda</a>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 desktop-link-smp  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">
+                            Profile <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="sambutan_smp.html"
+                                class="dropdown-link-smp block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">Sambutan
+                                Ketua</a>
+                            <a href="sejarah_smp.html"
+                                class="dropdown-link-smp block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Sejarah
+                                & Visi Misi</a>
+                            <a href="struktur_smp.html"
+                                class="dropdown-link-smp block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">Struktur
+                                Sekolah</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 desktop-link-smp  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">
+                            Kesiswaan <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="program_smp.html"
+                                class="dropdown-link-smp block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">Program
+                                Sekolah</a>
+                            <a href="ekstrakurikuler_smp.html"
+                                class="dropdown-link-smp block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Osis
+                                & Ekstrakurikuler
+                            </a>
+                            <a href="struktur_osis_smp.html"
+                                class="dropdown-link-smp block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">OSIS
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 desktop-link-smp  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">
+                            Akademik <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="kurikulum_smp.html"
+                                class="dropdown-link-smp block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">Kurikulum
+                            </a>
+                            <a href="struktur_program_smp.html"
+                                class="dropdown-link-smp block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Struktur
+                                Program
+                            </a>
+                            <a href="kalender_akademik_smp.html"
+                                class="dropdown-link-smp block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Kalender
+                                Akademik
+                            </a>
+                            <a href="prestasi_smp.html"
+                                class="dropdown-link-smp block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Prestasi
+                            </a>
+
+                        </div>
+                    </div>
+                    <a href="galeri_smp.html"
+                        class="desktop-link-smp  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Galeri</a>
+                    <a href="kontak_smp.html"
+                        class="desktop-link-smp  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Kontak</a>
+                    <a href="artikel_smp.html"
+                        class="desktop-link-smp  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Artikel</a>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+
+                    <button onclick="toggleSearch()"
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-300 hover:bg-primary-50 hover:text-primary-600 transition-colors flex items-center justify-center">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <button id="theme-toggle-desktop"
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 hover:bg-primary-50 transition-colors flex items-center justify-center">
+                        <i class="fas fa-sun dark:hidden"></i>
+                        <i class="fas fa-moon hidden dark:block"></i>
+                    </button>
+
+                    <a href="ppdb_smp.html"
+                        class="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 hover:to-primary-600 text-white rounded-full font-bold shadow-lg shadow-primary-500/30 transform hover:-translate-y-0.5 transition-all text-sm">
+                        <span>PPDB Online</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+
+                    <button id="mobile-menu-btn"
+                        class="relative z-50 p-2 -mr-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none lg:hidden">
+                        <div class="w-6 h-5 flex flex-col justify-between">
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-1"></span>
+                            <span class="w-3/4 h-0.5 bg-current rounded-full transition-all duration-300"
+                                id="bar-2"></span>
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-3"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="search-modal"
+        class="fixed inset-0 z-[80] opacity-0 invisible transition-all duration-300 flex items-start justify-center pt-20 md:pt-32 px-4">
+
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="toggleSearch()"></div>
+
+        <div class="relative z-10 w-full max-w-3xl bg-white dark:bg-dark-card rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300"
+            id="search-content">
+            <form action="#" class="relative flex items-center">
+                <div class="pl-5 md:pl-6 text-slate-400">
+                    <i class="fas fa-search text-lg md:text-xl"></i>
+                </div>
+                <input type="text" id="search-input"
+                    class="w-full py-5 md:py-6 px-4 bg-transparent border-none text-slate-800 dark:text-white text-base md:text-xl font-bold focus:ring-0 placeholder:text-slate-300 dark:placeholder:text-slate-600 font-kids"
+                    placeholder="Ketik pencarian..." autocomplete="off">
+                <button type="button" onclick="toggleSearch()"
+                    class="px-5 md:px-6 py-5 md:py-6 text-slate-400 hover:text-red-500 transition-colors">
+                    <i class="fas fa-times text-lg md:text-xl"></i>
+                </button>
+            </form>
+
+            <div
+                class="px-5 md:px-6 pb-5 md:pb-6 pt-2 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+                <p class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Pencarian
+                    Populer:
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="#"
+                        class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 transition-colors">Biaya
+                        Masuk</a>
+                    <a href="#"
+                        class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 transition-colors">PPDB</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-backdrop"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm opacity-0 invisible transition-all duration-300"
+        onclick="toggleSidebar()"></div>
+
+    <div id="mobile-sidebar"
+        class="fixed top-0 left-0 bottom-0 w-[280px] z-[70] bg-white dark:bg-dark-card shadow-2xl transform -translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col">
+
+        <div
+            class="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-800 bg-primary-50 dark:bg-slate-800/50">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-primary-600 text-white flex items-center justify-center">
+                    <img src="../assets/img/logo-smp.png" alt="Logo" class="w-full h-full object-contain">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold font-kids text-lg text-slate-800 dark:text-white leading-none">SMPIT
+                        AVICENNA</span>
+                    <span class="text-[9px] font-bold text-primary-600 uppercase tracking-widest mt-0.5">Junior
+                        High School</span>
+                </div>
+            </div>
+            <button onclick="toggleSidebar()"
+                class="p-2 rounded-full text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+
+            <a href="smp_index.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-smp flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50 dark:bg-slate-800 text-primary-700 dark:text-primary-400 font-bold transition-all">
+                <i class="fas fa-home w-6 text-center"></i> Beranda
+            </a>
+
+
+            <div class="group">
+                <button onclick="toggleSub('menu-profil', 'arrow-profil')"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                    <span class="flex items-center gap-3">
+                        <i class="fas fa-user-tie w-6 text-center opacity-70"></i>
+                        <span>Profile</span>
+                    </span>
+                    <i id="arrow-profil" class="fas fa-chevron-right text-xs transition-transform duration-300"></i>
+                </button>
+
+                <div id="menu-profil" class="hidden pl-12 pr-2 space-y-1 py-1">
+                    <a href="sambutan_smp.html"
+                        class="dropdown-link-smp block py-2 text-sm text-slate-500 hover:text-primary-600">Sambutan
+                        Ketua</a>
+                    <a href="sejarah_smp.html"
+                        class="dropdown-link-smp block py-2 text-sm text-slate-500 hover:text-primary-600">Sejarah &
+                        Visi</a>
+                    <a href="struktur_smp.html"
+                        class="dropdown-link-smp block py-2 text-sm text-slate-500 hover:text-primary-600">Struktur
+                        Sekolah</a>
+                </div>
+            </div>
+            <a href="program_smp.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-smp flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-graduation-cap w-6 text-center opacity-70"></i> Program
+            </a>
+
+            <a href="galeri_smp.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-smp flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Galeri
+            </a>
+
+            <a href="kontak_smp.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-smp flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Kontak
+            </a>
+
+            <a href="artikel_smp.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-smp flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                <i class="fas fa-images w-6 text-center opacity-70"></i> Artikel
+            </a>
+
+            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+                <p class="px-4 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Informasi Lain</p>
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:text-primary-600 font-medium text-sm">
+                    <i class="fas fa-arrow-left w-6 text-center"></i> Kembali ke Yayasan
+                </a>
+            </div>
+
+        </div>
+
+        <div class="p-5 border-t border-slate-100 dark:border-slate-800">
+            <a href="ppdb_smp.html"
+                class="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-xl font-bold shadow-lg shadow-primary-500/30">
+                <i class="fas fa-rocket"></i> PPDB Online
+            </a>
+        </div>
+    </div>
+
+    <section class="relative pt-32 pb-24 md:pt-22 md:pb-22 bg-slate-900 overflow-hidden ">
+
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/1600/900?grayscale&blur=2" alt="Background Header"
+                class="w-full h-full object-cover opacity-30 transform scale-105 animate-slow-zoom">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/30"></div>
+            <div class="absolute inset-0 opacity-[0.03]"
+                style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;">
+            </div>
+        </div>
+
+        <div
+            class="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen">
+        </div>
+        <div
+            class="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-secondary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen">
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+
+            <div
+                class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6 animate-fade-in-up">
+                <span class="w-2 h-2 rounded-full bg-primary-400 animate-pulse"></span>
+                <span class="text-primary-200 text-[10px] font-bold uppercase tracking-[0.2em]">Kesiswaan</span>
+            </div>
+
+            <h1
+                class="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-2xl animate-fade-in-up delay-100">
+                OSIS & Ekstrakurikuler
+            </h1>
+
+            <div class="animate-fade-in-up delay-200">
+                <nav
+                    class="inline-flex items-center p-1 rounded-full bg-white/10 border border-white/10 backdrop-blur-md shadow-2xl">
+                    <ol class="flex items-center gap-1">
+
+                        <li>
+                            <a href="index.html"
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-primary-600 hover:scale-110 transition-all duration-300"
+                                title="Kembali ke Beranda">
+                                <i class="fas fa-home text-xs"></i>
+                            </a>
+                        </li>
+
+                        <li class="text-slate-500 px-1">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="px-2 py-1 text-xs font-medium text-slate-300 hover:text-white transition-colors rounded-md hover:bg-white/5">
+                                Profil
+                            </a>
+                        </li>
+
+                        <li class="text-slate-500 px-1">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </li>
+
+                        <li>
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-primary-600/90 text-white text-xs font-bold shadow-lg border border-primary-500/50">
+                                Kesiswaan
+                            </span>
+                        </li>
+
+                    </ol>
+                </nav>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 bg-primary-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+                <div class="w-full lg:w-1/2 relative group">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-[2.5rem] opacity-20 group-hover:opacity-40 blur-2xl transition duration-500">
+                    </div>
+                    <div
+                        class="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 transform rotate-2 hover:rotate-0 transition-all duration-500">
+                        <img src="../assets/img/smp/osis.png" alt="Pengurus OSIS SMPIT Avicenna"
+                            class="w-full h-full object-cover">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 pt-20">
+                            <span
+                                class="inline-block px-3 py-1 bg-yellow-500 text-slate-900 text-[10px] font-bold rounded-full uppercase tracking-widest mb-2">Leadership</span>
+                            <h3 class="text-white font-kids font-bold text-2xl">Kabinet Generasi Rabbani</h3>
+                            <p class="text-slate-200 text-sm mt-1">Masa Bakti 2025/2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                        <span
+                            class="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Organisasi
+                            Siswa</span>
+                    </div>
+
+                    <h2
+                        class="text-3xl md:text-5xl font-kids font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+                        OSIS SMPIT <span class="text-primary-600">AVICENNA</span>
+                    </h2>
+
+                    <p class="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
+                        Organisasi Siswa Intra Sekolah (OSIS) SMPIT Avicenna merupakan wadah bagi siswa untuk
+                        mengembangkan jiwa kepemimpinan, kemandirian, dan tanggung jawab. Kami aktif menyelenggarakan
+                        berbagai kegiatan positif mulai dari event akademik, sosial, hingga keagamaan.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div
+                            class="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-primary-200 transition-colors">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center shrink-0">
+                                <i class="fas fa-users-cog text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-white">Latihan Dasar Kepemimpinan</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Membentuk karakter pemimpin
+                                    yang tangguh dan amanah.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-primary-200 transition-colors">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center shrink-0">
+                                <i class="fas fa-hand-holding-heart text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-white">Avicenna Peduli</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Program bakti sosial dan
+                                    kepedulian terhadap lingkungan sekitar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="struktur_osis_smp.html"
+                        class="inline-flex items-center gap-2 text-primary-600 font-bold hover:gap-3 transition-all">
+                        Lihat Struktur OSIS <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ekstrakurikuler -->
+    <section class="py-24 bg-white dark:bg-dark-bg relative min-h-screen">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span
+                    class="text-primary-600 dark:text-primary-400 font-bold tracking-widest text-xs uppercase bg-primary-50 dark:bg-primary-900/30 px-3 py-1 rounded-full mb-3 inline-block">
+                    Ekstrakurikuler
+                </span>
+                <h2 class="text-3xl md:text-4xl font-kids font-bold text-slate-900 dark:text-white mb-4">
+                    Salurkan Minat & Potensi Juara! 🚀
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed">
+                    SMPIT Avicenna memfasilitasi beragam kegiatan untuk mengasah *soft skill*, kreativitas, dan prestasi
+                    akademik siswa sebagai bekal masa depan.
+                </p>
+            </div>
+
+            <div id="filter-container" class="sticky top-24 z-30 mb-10 mx-auto max-w-4xl">
+                <div
+                    class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row gap-4 justify-between items-center transition-all">
+
+                    <div class="relative w-full md:w-2/3 group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <i
+                                class="fas fa-search text-slate-400 group-focus-within:text-primary-500 transition-colors"></i>
+                        </div>
+                        <input type="text" id="searchInput"
+                            class="block w-full pl-11 pr-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-bold text-slate-700 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white dark:focus:bg-black transition-all"
+                            placeholder="Cari ekstrakurikuler (misal: Robotik)...">
+                    </div>
+
+                    <div class="relative w-full md:w-1/3">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <i class="fas fa-filter text-slate-400"></i>
+                        </div>
+                        <select id="categorySelect"
+                            class="block w-full pl-11 pr-10 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-bold text-slate-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 cursor-pointer appearance-none transition-all">
+                            <option value="Semua">Semua Kategori</option>
+                            <option value="Olahraga">Olahraga</option>
+                            <option value="Seni">Seni & Bahasa</option>
+                            <option value="Teknologi">Sains & Teknologi</option>
+                            <option value="Agama">Keagamaan</option>
+                            <option value="Wajib">Ekskul Wajib</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                            <i class="fas fa-chevron-down text-xs text-slate-400"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="no-result" class="hidden text-center py-12">
+                <div
+                    class="inline-flex items-center justify-center w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full mb-4">
+                    <i class="fas fa-search text-slate-400 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-700 dark:text-white">Tidak ditemukan</h3>
+                <p class="text-slate-500 text-sm">Coba kata kunci atau kategori lain.</p>
+            </div>
+
+            <div id="ekskul-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+
+                <div class="ekskul-item group bg-white dark:bg-dark-card rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col"
+                    data-category="Semua Wajib" onclick="openModal(this)">
+
+                    <div class="hidden data-details">
+                        <span class="d-title">Pramuka Inti (Pasus)</span>
+                        <span class="d-category">Wajib</span>
+                        <span class="d-image">../assets/img/smp/eskul/1.png</span>
+                        <span class="d-schedule">Rabu, 15.30 - 17.00 WIB</span>
+                        <span class="d-location">Lapangan Utama</span>
+                        <span class="d-mentor">Kak Budi (Kwarcab)</span>
+                        <div class="d-desc">Ekskul wajib yang membentuk karakter kepemimpinan, kemandirian, dan survival
+                            skill.
+                            Fokus pada materi kepramukaan tingkat Penggalang Rakit & Terap serta persiapan Lomba Tingkat
+                            (LT).</div>
+                    </div>
+
+                    <div class="aspect-[3/2] overflow-hidden relative">
+                        <div class="absolute top-5 left-5 z-20">
+                            <span
+                                class="bg-orange-500/90 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg border border-white/20">Wajib</span>
+                        </div>
+                        <img src="../assets/img/smp/eskul/1.png"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-5 pb-0 flex-1 flex flex-col">
+                        <h3
+                            class="text-lg font-kids font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-500 transition-colors line-clamp-1 d-name">
+                            Pramuka Inti</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2">Membentuk
+                            karakter
+                            pemimpin tangguh dan disiplin.</p>
+                    </div>
+
+                    <div
+                        class="mt-4 p-3 bg-orange-50 dark:bg-orange-900/20 flex items-center justify-between transition-colors group-hover:bg-orange-100 dark:group-hover:bg-orange-900/40">
+                        <div class="flex items-center gap-2 text-orange-700 dark:text-orange-300">
+                            <i class="far fa-clock text-xs"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-wide">Rabu Sore</span>
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-white dark:bg-slate-800 text-orange-500 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ekskul-item group bg-white dark:bg-dark-card rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col"
+                    data-category="Semua Olahraga" onclick="openModal(this)">
+
+                    <div class="hidden data-details">
+                        <span class="d-title">Avicenna Futsal Club</span>
+                        <span class="d-category">Olahraga</span>
+                        <span class="d-image">../assets/img/smp/eskul/2.png</span>
+                        <span class="d-schedule">Sabtu, 08.00 - 11.00 WIB</span>
+                        <span class="d-location">GOR Sport Center</span>
+                        <span class="d-mentor">Coach Rian (Lisensi C AFC)</span>
+                        <div class="d-desc">Pembinaan prestasi olahraga futsal. Fokus pada strategi permainan, fisik,
+                            dan kerjasama
+                            tim untuk menghadapi Liga Pelajar SMP tingkat Kota dan Provinsi.</div>
+                    </div>
+
+                    <div class="aspect-[3/2] overflow-hidden relative">
+                        <div class="absolute top-5 left-5 z-20">
+                            <span
+                                class="bg-blue-500/90 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg border border-white/20">Olahraga</span>
+                        </div>
+                        <img src="../assets/img/smp/eskul/2.png"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-5 pb-0 flex-1 flex flex-col">
+                        <h3
+                            class="text-lg font-kids font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors line-clamp-1 d-name">
+                            Avicenna FC</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2">Strategi dan
+                            mental juara
+                            di lapangan.</p>
+                    </div>
+
+                    <div
+                        class="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 flex items-center justify-between transition-colors group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40">
+                        <div class="flex items-center gap-2 text-blue-700 dark:text-blue-300">
+                            <i class="far fa-clock text-xs"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-wide">Sabtu Pagi</span>
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-white dark:bg-slate-800 text-blue-500 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ekskul-item group bg-white dark:bg-dark-card rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col"
+                    data-category="Semua Teknologi" onclick="openModal(this)">
+
+                    <div class="hidden data-details">
+                        <span class="d-title">Robotics & IoT Club</span>
+                        <span class="d-category">Teknologi</span>
+                        <span class="d-image">../assets/img/smp/eskul/3.png</span>
+                        <span class="d-schedule">Kamis, 15.30 - 17.00 WIB</span>
+                        <span class="d-location">Lab Komputer & Fisika</span>
+                        <span class="d-mentor">Mr. David, S.Kom</span>
+                        <div class="d-desc">Belajar merakit dan memprogram robot menggunakan Arduino & Raspberry Pi.
+                            Siswa diajarkan
+                            konsep dasar Internet of Things (IoT) dan persiapan lomba Line Follower & Sumo Robot.</div>
+                    </div>
+
+                    <div class="aspect-[3/2] overflow-hidden relative">
+                        <div class="absolute top-5 left-5 z-20">
+                            <span
+                                class="bg-purple-500/90 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg border border-white/20">Teknologi</span>
+                        </div>
+                        <img src="../assets/img/smp/eskul/3.png"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-5 pb-0 flex-1 flex flex-col">
+                        <h3
+                            class="text-lg font-kids font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-500 transition-colors line-clamp-1 d-name">
+                            Robotics & IoT</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2">Coding
+                            Arduino dan
+                            teknologi masa depan.</p>
+                    </div>
+
+                    <div
+                        class="mt-4 p-3 bg-purple-50 dark:bg-purple-900/20 flex items-center justify-between transition-colors group-hover:bg-purple-100 dark:group-hover:bg-purple-900/40">
+                        <div class="flex items-center gap-2 text-purple-700 dark:text-purple-300">
+                            <i class="far fa-clock text-xs"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-wide">Kamis Sore</span>
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ekskul-item group bg-white dark:bg-dark-card rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col"
+                    data-category="Semua Olahraga" onclick="openModal(this)">
+
+                    <div class="hidden data-details">
+                        <span class="d-title">Archery Elite Team</span>
+                        <span class="d-category">Olahraga</span>
+                        <span class="d-image">../assets/img/smp/eskul/4.png</span>
+                        <span class="d-schedule">Minggu, 07.30 - 10.00 WIB</span>
+                        <span class="d-location">Area Panahan</span>
+                        <span class="d-mentor">Coach Hendra (Perpani)</span>
+                        <div class="d-desc">Olahraga sunnah yang melatih fokus, ketenangan, dan kekuatan otot. Materi
+                            meliputi
+                            teknik dasar Standard Bow hingga Horsebow, serta adab-adab memanah dalam Islam.</div>
+                    </div>
+
+                    <div class="aspect-[3/2] overflow-hidden relative">
+                        <div class="absolute top-5 left-5 z-20">
+                            <span
+                                class="bg-teal-500/90 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg border border-white/20">Sunnah</span>
+                        </div>
+                        <img src="../assets/img/smp/eskul/4.png"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-5 pb-0 flex-1 flex flex-col">
+                        <h3
+                            class="text-lg font-kids font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-500 transition-colors line-clamp-1 d-name">
+                            Archery Elite</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2">Melatih fokus
+                            dan
+                            kekuatan fisik.</p>
+                    </div>
+
+                    <div
+                        class="mt-4 p-3 bg-teal-50 dark:bg-teal-900/20 flex items-center justify-between transition-colors group-hover:bg-teal-100 dark:group-hover:bg-teal-900/40">
+                        <div class="flex items-center gap-2 text-teal-700 dark:text-teal-300">
+                            <i class="far fa-clock text-xs"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-wide">Minggu Pagi</span>
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-white dark:bg-slate-800 text-teal-500 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ekskul-item group bg-white dark:bg-dark-card rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col"
+                    data-category="Semua Agama" onclick="openModal(this)">
+
+                    <div class="hidden data-details">
+                        <span class="d-title">Tahfidz Takhassus</span>
+                        <span class="d-category">Agama</span>
+                        <span class="d-image">../assets/img/smp/eskul/5.png</span>
+                        <span class="d-schedule">Senin - Kamis (Pagi/Sore)</span>
+                        <span class="d-location">Masjid & Ruang Tahfidz</span>
+                        <span class="d-mentor">Ustadz Hafiz (Sanad)</span>
+                        <div class="d-desc">Program intensif bagi siswa yang ingin menambah hafalan Al-Qur'an (Ziyadah)
+                            dan
+                            memperlancar hafalan lama (Murajaah). Target minimal 3 Juz mutqin saat lulus SMP.</div>
+                    </div>
+
+                    <div class="aspect-[3/2] overflow-hidden relative">
+                        <div class="absolute top-5 left-5 z-20">
+                            <span
+                                class="bg-green-500/90 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg border border-white/20">Religius</span>
+                        </div>
+                        <img src="../assets/img/smp/eskul/5.png"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-5 pb-0 flex-1 flex flex-col">
+                        <h3
+                            class="text-lg font-kids font-bold text-slate-900 dark:text-white mb-2 group-hover:text-green-500 transition-colors line-clamp-1 d-name">
+                            Tahfidz Takhassus</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2">Menjaga kalam
+                            ilahi dalam
+                            dada.</p>
+                    </div>
+
+                    <div
+                        class="mt-4 p-3 bg-green-50 dark:bg-green-900/20 flex items-center justify-between transition-colors group-hover:bg-green-100 dark:group-hover:bg-green-900/40">
+                        <div class="flex items-center gap-2 text-green-700 dark:text-green-300">
+                            <i class="far fa-clock text-xs"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-wide">Setiap Hari</span>
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-white dark:bg-slate-800 text-green-500 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ekskul-item group bg-white dark:bg-dark-card rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col"
+                    data-category="Semua Seni" onclick="openModal(this)">
+
+                    <div class="hidden data-details">
+                        <span class="d-title">English Club & Broadcasting</span>
+                        <span class="d-category">Bahasa</span>
+                        <span class="d-image">../assets/img/smp/eskul/6.png</span>
+                        <span class="d-schedule">Jumat, 13.00 - 15.00 WIB</span>
+                        <span class="d-location">Language Lab</span>
+                        <span class="d-mentor">Ms. Sarah & Mr. John</span>
+                        <div class="d-desc">Meningkatkan kepercayaan diri berbicara bahasa Inggris melalui Story
+                            Telling, Speech,
+                            Debate, dan News Casting. Persiapan kompetisi bahasa tingkat nasional.</div>
+                    </div>
+
+                    <div class="aspect-[3/2] overflow-hidden relative">
+                        <div class="absolute top-5 left-5 z-20">
+                            <span
+                                class="bg-pink-500/90 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg border border-white/20">Bahasa</span>
+                        </div>
+                        <img src="../assets/img/smp/eskul/6.png"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-5 pb-0 flex-1 flex flex-col">
+                        <h3
+                            class="text-lg font-kids font-bold text-slate-900 dark:text-white mb-2 group-hover:text-pink-500 transition-colors line-clamp-1 d-name">
+                            English Club</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2">Public
+                            speaking dan debat
+                            bahasa Inggris.</p>
+                    </div>
+
+                    <div
+                        class="mt-4 p-3 bg-pink-50 dark:bg-pink-900/20 flex items-center justify-between transition-colors group-hover:bg-pink-100 dark:group-hover:bg-pink-900/40">
+                        <div class="flex items-center gap-2 text-pink-700 dark:text-pink-300">
+                            <i class="far fa-clock text-xs"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-wide">Jumat Siang</span>
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-white dark:bg-slate-800 text-pink-500 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ekskul-item group bg-white dark:bg-dark-card rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col"
+                    data-category="Semua Olahraga" onclick="openModal(this)">
+
+                    <div class="hidden data-details">
+                        <span class="d-title">Avicenna Basketball</span>
+                        <span class="d-category">Olahraga</span>
+                        <span class="d-image">../assets/img/smp/eskul/7.png</span>
+                        <span class="d-schedule">Sabtu, 15.30 - 17.30 WIB</span>
+                        <span class="d-location">Lapangan Basket</span>
+                        <span class="d-mentor">Coach Dimas</span>
+                        <div class="d-desc">Mengasah skill dribble, passing, dan shooting. Membangun kerjasama tim yang
+                            solid serta
+                            persiapan fisik untuk mengikuti turnamen DBL Junior atau kejuaraan antar sekolah.</div>
+                    </div>
+
+                    <div class="aspect-[3/2] overflow-hidden relative">
+                        <div class="absolute top-5 left-5 z-20">
+                            <span
+                                class="bg-red-500/90 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg border border-white/20">Olahraga</span>
+                        </div>
+                        <img src="../assets/img/smp/eskul/7.png"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-5 pb-0 flex-1 flex flex-col">
+                        <h3
+                            class="text-lg font-kids font-bold text-slate-900 dark:text-white mb-2 group-hover:text-red-500 transition-colors line-clamp-1 d-name">
+                            Basketball Team</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2">Sportivitas
+                            dan kerjasama
+                            tim yang solid.</p>
+                    </div>
+
+                    <div
+                        class="mt-4 p-3 bg-red-50 dark:bg-red-900/20 flex items-center justify-between transition-colors group-hover:bg-red-100 dark:group-hover:bg-red-900/40">
+                        <div class="flex items-center gap-2 text-red-700 dark:text-red-300">
+                            <i class="far fa-clock text-xs"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-wide">Sabtu Sore</span>
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-white dark:bg-slate-800 text-red-500 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ekskul-item group bg-white dark:bg-dark-card rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col"
+                    data-category="Semua Seni Teknologi" onclick="openModal(this)">
+
+                    <div class="hidden data-details">
+                        <span class="d-title">Jurnalistik & Multimedia</span>
+                        <span class="d-category">Kreatif</span>
+                        <span class="d-image">../assets/img/smp/eskul/8.png</span>
+                        <span class="d-schedule">Selasa, 15.30 - 17.00 WIB</span>
+                        <span class="d-location">Studio Multimedia</span>
+                        <span class="d-mentor">Kak Fajar (Videographer)</span>
+                        <div class="d-desc">Mempelajari fotografi, videografi, editing video, dan penulisan artikel
+                            berita. Siswa
+                            dilibatkan langsung dalam mendokumentasikan event sekolah dan mengelola majalah
+                            dinding/digital.</div>
+                    </div>
+
+                    <div class="aspect-[3/2] overflow-hidden relative">
+                        <div class="absolute top-5 left-5 z-20">
+                            <span
+                                class="bg-indigo-500/90 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg border border-white/20">Kreatif</span>
+                        </div>
+                        <img src="../assets/img/smp/eskul/8.png"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-5 pb-0 flex-1 flex flex-col">
+                        <h3
+                            class="text-lg font-kids font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-500 transition-colors line-clamp-1 d-name">
+                            Multimedia Club</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2">Fotografi,
+                            videografi,
+                            dan konten kreator.</p>
+                    </div>
+
+                    <div
+                        class="mt-4 p-3 bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-between transition-colors group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/40">
+                        <div class="flex items-center gap-2 text-indigo-700 dark:text-indigo-300">
+                            <i class="far fa-clock text-xs"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-wide">Selasa Sore</span>
+                        </div>
+                        <div
+                            class="w-6 h-6 rounded-full bg-white dark:bg-slate-800 text-indigo-500 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="pagination-container" class="mt-16 flex justify-center items-center gap-2">
+            </div>
+
+        </div>
+    </section>
+
+    <div id="ekskul-modal"
+        class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-300 flex items-center justify-center px-3 sm:px-6">
+
+        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onclick="closeModal()"></div>
+
+        <div id="modal-content-box" class="relative w-full max-w-md sm:max-w-lg bg-white dark:bg-dark-card rounded-2xl shadow-2xl overflow-hidden
+               max-h-[85vh] flex flex-col scale-95 transition-transform duration-300">
+
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-30 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60
+                   text-white flex items-center justify-center">
+                ✕
+            </button>
+
+            <div class="relative w-full aspect-[16/10] sm:aspect-[3/2] shrink-0">
+                <img id="modal-img" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                    <span id="modal-category"
+                        class="inline-block px-3 py-1 mb-1 rounded-full bg-primary-600 text-[10px] font-bold uppercase">
+                        Kategori
+                    </span>
+                    <h3 id="modal-title" class="font-kids font-bold text-lg sm:text-xl leading-tight">
+                        Judul Ekskul
+                    </h3>
+                </div>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-4 sm:p-6 text-sm">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5 p-3 rounded-xl
+                       bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+
+                    <div class="flex gap-2">
+                        <div
+                            class="w-7 h-7 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs">
+                            ⏰
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase text-slate-400 font-bold">Jadwal</p>
+                            <p id="modal-schedule" class="font-semibold text-slate-800 dark:text-white text-xs">
+                                -
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:border-l sm:pl-3 border-slate-200 dark:border-slate-700">
+                        <div
+                            class="w-7 h-7 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs">
+                            📍
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase text-slate-400 font-bold">Lokasi</p>
+                            <p id="modal-location" class="font-semibold text-slate-800 dark:text-white text-xs">
+                                -
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-kids font-bold uppercase tracking-wider text-xs mb-2">
+                        Tentang Kegiatan
+                    </h4>
+                    <p id="modal-desc" class="text-slate-600 dark:text-slate-300 leading-relaxed text-justify text-sm">
+                        -
+                    </p>
+                </div>
+
+                <div class="flex items-center gap-3 pt-4 border-t border-slate-200 dark:border-slate-700">
+                    <div
+                        class="w-9 h-9 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 flex items-center justify-center">
+                        👨‍🏫
+                    </div>
+
+                    <div class="flex-1 min-w-0">
+                        <p class="text-[10px] uppercase font-bold text-slate-400">Pembimbing</p>
+                        <p id="modal-mentor" class="font-semibold text-slate-800 dark:text-white truncate">
+                            -
+                        </p>
+                    </div>
+
+                    <a href="#" class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-xl
+                           font-bold text-xs flex items-center gap-2">
+                        WhatsApp
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="py-20 relative bg-slate-900 overflow-hidden">
+        <div class="absolute inset-0 opacity-20"
+            style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-kids font-bold text-white mb-6 leading-tight">
+                Bergabung Bersama Kami!
+            </h2>
+            <p class="text-slate-300 text-lg max-w-2xl mx-auto mb-10 font-medium">
+                Siapkan masa depan ananda dengan pondasi iman, ilmu, dan kepemimpinan yang kokoh bersama SMPIT AVICENNA.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="ppdb_smp.html"
+                    class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-kids-yellow text-slate-900 rounded-full font-bold shadow-lg shadow-yellow-500/20 hover:bg-yellow-300 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-rocket"></i> Daftar Sekarang
+                </a>
+                <a href="kontak_smp.html"
+                    class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-bold hover:bg-white/20 transition-all duration-300">
+                    <i class="fab fa-whatsapp"></i> Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer
+        class="bg-white dark:bg-dark-bg text-slate-600 dark:text-slate-300 pt-16 pb-8 md:pt-20 md:pb-10 border-t border-slate-200 dark:border-slate-800 font-sans transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6 text-slate-900 dark:text-white">
+                        <div
+                            class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold shadow-sm">
+                            <img src="../assets/img/logo-smp.png" alt="Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="font-kids font-bold text-2xl tracking-tight">SMPIT AVICENNA</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-600 dark:text-slate-400">
+                        Mencetak generasi pemimpin masa depan yang berakhlak mulia, berwawasan global, dan cinta
+                        Al-Qur'an.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-primary-600 hover:border-primary-600 hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Informasi <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="sambutan_smp.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Profil SMPIT</a></li>
+                        <li><a href="tenaga_pendidik_smp.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Tenaga Pendidik</a>
+                        </li>
+                        <li><a href="ekstrakurikuler_smp.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Osis & Ekskul</a>
+                        </li>
+                        <li><a href="artikel_smp.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Artikel</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Jam Sekolah <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-kids-yellow rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm">
+                        <li
+                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
+                            <span>Senin - Kamis</span>
+                            <span class="font-bold text-primary-600">07:15 - 15:30</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
+                            <span>Jumat</span>
+                            <span class="font-bold text-primary-600">07:15 - 11:30</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2 text-slate-400">
+                            <span>Sabtu - Minggu</span>
+                            <span>Libur / Ekskul</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Hubungi Kami <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary-500"></i>
+                            <span class="text-slate-600 dark:text-slate-400">Jl. Raya Pendidikan No. 123, Kel.
+                                Kebayoran, Jakarta Selatan 12345</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-primary-500 text-lg"></i>
+                            <span class="text-slate-600 dark:text-slate-400 font-bold">+62 812-3456-7890</span>
+                        </li>
+                    </ul>
+                    <a href="ppdb_smp.html"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-lg text-xs font-bold hover:bg-primary-100 transition-all">
+                        <i class="fas fa-info-circle"></i> Info Pendaftaran
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2025 SMPIT AVICENNA. All rights reserved.</p>
+                <div class="flex gap-6 items-center">
+                    <a href="/index.html"
+                        class="flex items-center gap-2 hover:text-primary-600 dark:hover:text-white transition-colors">
+                        <i class="fas fa-arrow-left"></i> Website Yayasan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollToTopBtn" title="Kembali ke atas" onclick="window.scrollTo({top: 0, behavior: 'smooth'});"
+        class="fixed bottom-6 right-6 z-[100] w-10 h-10 rounded-full bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg shadow-primary-500/40 flex items-center justify-center transition-all duration-500 ease-in-out transform opacity-0 invisible translate-y-10 hover:scale-110 hover:-translate-y-1 hover:shadow-2xl group border border-white/20 backdrop-blur-sm">
+        <i class="fas fa-arrow-up text-lg transition-transform duration-300 group-hover:-translate-y-0.5"></i>
+    </button>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Konfigurasi
+        const itemsPerPage = 8;
+        let currentPage = 1;
+        let currentCategory = 'Semua';
+        let searchQuery = '';
+        let visibleItems = [];
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            applyFilters(); // Initial render
+        });
+
+        // Event Listeners for Filters
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value.toLowerCase();
+            applyFilters();
+        });
+
+        document.getElementById('categorySelect').addEventListener('change', (e) => {
+            currentCategory = e.target.value;
+            applyFilters();
+        });
+
+        // 1. Logic Filtering Combined
+        function applyFilters() {
+            currentPage = 1; // Reset page on filter change
+
+            // Ambil semua item dari DOM
+            const allItems = Array.from(document.querySelectorAll('.ekskul-item'));
+
+            // Filter Data
+            visibleItems = allItems.filter(item => {
+                const itemCategoryStr = item.getAttribute('data-category');
+                const itemTitle = item.querySelector('.d-name').innerText.toLowerCase();
+
+                // Cek Kategori
+                const isCategoryMatch = currentCategory === 'Semua' || itemCategoryStr.includes(currentCategory);
+
+                // Cek Search Text
+                const isSearchMatch = itemTitle.includes(searchQuery);
+
+                return isCategoryMatch && isSearchMatch;
+            });
+
+            // Show "No Result" if empty
+            const noResultDiv = document.getElementById('no-result');
+            if (visibleItems.length === 0) {
+                noResultDiv.classList.remove('hidden');
+            } else {
+                noResultDiv.classList.add('hidden');
+            }
+
+            renderPagination();
+        }
+
+        // 2. Logic Pagination & Rendering
+        function renderPagination() {
+            // Sembunyikan semua kartu dulu
+            const allItems = document.querySelectorAll('.ekskul-item');
+            allItems.forEach(item => item.classList.add('hidden'));
+
+            // Hitung index slice
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+
+            // Tampilkan item yang sesuai page & filter
+            const itemsToShow = visibleItems.slice(startIndex, endIndex);
+            itemsToShow.forEach(item => {
+                item.classList.remove('hidden');
+                // Efek fade-in simple
+                item.style.opacity = '0';
+                setTimeout(() => item.style.opacity = '1', 50);
+            });
+
+            // Buat Tombol Pagination
+            const totalPages = Math.ceil(visibleItems.length / itemsPerPage);
+            const paginationContainer = document.getElementById('pagination-container');
+            paginationContainer.innerHTML = '';
+
+            if (totalPages > 1) {
+                // Prev
+                const prevBtn = createPageBtn('<i class="fas fa-chevron-left"></i>', currentPage > 1, () => changePage(currentPage - 1));
+                paginationContainer.appendChild(prevBtn);
+
+                // Numbers
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageBtn = document.createElement('button');
+                    pageBtn.className = `w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all ${i === currentPage ? 'bg-primary-600 text-white shadow-lg' : 'border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800'}`;
+                    pageBtn.innerText = i;
+                    pageBtn.onclick = () => changePage(i);
+                    paginationContainer.appendChild(pageBtn);
+                }
+
+                // Next
+                const nextBtn = createPageBtn('<i class="fas fa-chevron-right"></i>', currentPage < totalPages, () => changePage(currentPage + 1));
+                paginationContainer.appendChild(nextBtn);
+            }
+        }
+
+        function createPageBtn(html, isEnabled, onClick) {
+            const btn = document.createElement('button');
+            btn.innerHTML = html;
+            btn.className = `w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center transition-colors ${isEnabled ? 'text-slate-500 hover:bg-primary-50 hover:text-primary-600 cursor-pointer' : 'text-slate-300 cursor-not-allowed'}`;
+            if (isEnabled) btn.onclick = onClick;
+            return btn;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderPagination();
+            // Scroll sedikit ke atas agar nyaman
+            document.getElementById('filter-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // 3. Logic Modal (Membaca Data dari HTML)
+        function openModal(element) {
+            const modal = document.getElementById('ekskul-modal');
+            const contentBox = document.getElementById('modal-content-box');
+
+            // Ambil data dari div hidden .data-details
+            const details = element.querySelector('.data-details');
+            if (!details) return;
+
+            // Isi Konten Modal
+            document.getElementById('modal-title').innerText = details.querySelector('.d-title').innerText;
+            document.getElementById('modal-category').innerText = details.querySelector('.d-category').innerText;
+            document.getElementById('modal-img').src = details.querySelector('.d-image').innerText;
+
+            // Handle HTML inside elements
+            document.getElementById('modal-schedule').innerHTML = details.querySelector('.d-schedule').innerText;
+            document.getElementById('modal-location').innerHTML = details.querySelector('.d-location').innerText;
+            document.getElementById('modal-desc').innerText = details.querySelector('.d-desc').innerText;
+            document.getElementById('modal-mentor').innerText = details.querySelector('.d-mentor').innerText;
+
+            // Tampilkan Modal
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                contentBox.classList.remove('scale-95');
+                contentBox.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('ekskul-modal');
+            const contentBox = document.getElementById('modal-content-box');
+
+            modal.classList.add('opacity-0');
+            contentBox.classList.remove('scale-100');
+            contentBox.classList.add('scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !document.getElementById('ekskul-modal').classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+
+    <script>
+        // --- SEARCH TOGGLE FUNCTION ---
+        function toggleSearch() {
+            const modal = document.getElementById('search-modal');
+            const content = document.getElementById('search-content');
+            const input = document.getElementById('search-input');
+
+            if (modal.classList.contains('invisible')) {
+                // Open Modal
+                modal.classList.remove('invisible', 'opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                // Auto focus input after small delay for transition
+                setTimeout(() => input.focus(), 100);
+            } else {
+                // Close Modal
+                modal.classList.add('opacity-0');
+                content.classList.remove('scale-100');
+                content.classList.add('scale-95');
+
+                setTimeout(() => {
+                    modal.classList.add('invisible');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }, 300);
+            }
+        }
+
+        // Close search on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('search-modal');
+                if (!modal.classList.contains('invisible')) {
+                    toggleSearch();
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

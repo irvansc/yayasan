@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri & Dokumentasi | YPI AL-INTIDHOM</title>
-    <meta name="description" content="Dokumentasi kegiatan, fasilitas, dan prestasi YPI Al-Intidhom.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/svg/logo-yayasan.svg">
+
+    <title>Galeri & Dokumentasi | YPI AVICENNA</title>
+    <meta name="description" content="Dokumentasi kegiatan, fasilitas, dan prestasi YPI AVICENNA.">
 
     <!-- =========================================
          1. EXTERNAL LIBRARIES & FONTS
@@ -19,8 +21,12 @@
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind CSS (Pastikan file output.css Anda ada di folder yang sama) -->
+    <!-- LightGallery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-share.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnail.min.css" />
+    <!-- Tailwind CSS (Pastikan file output.css Anda ada di folder yang sama)-->
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Custom CSS Tambahan untuk Gallery -->
@@ -89,12 +95,11 @@
             document.documentElement.classList.remove('dark')
         }
     </script>
+
 </head>
 
 <body
     class="bg-slate-50 text-slate-800 dark:bg-dark-bg dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-primary-600 selection:text-white flex flex-col min-h-screen">
-
-    <!-- 4. HEADER SECTION -->
     <!-- Top Bar -->
     <div
         class="bg-primary-900 text-white py-2 text-xs font-medium hidden md:block z-50 relative border-b border-primary-800">
@@ -103,7 +108,7 @@
                 <span class="flex items-center gap-2"><i class="fas fa-phone-alt text-secondary-500"></i> (021)
                     789-0123</span>
                 <span class="flex items-center gap-2"><i class="fas fa-envelope text-secondary-500"></i>
-                    info@al-intidhom.sch.id</span>
+                    info@Avicenna.sch.id</span>
                 <span class="flex items-center gap-2"><i class="fas fa-clock text-secondary-500"></i> Senin - Jumat:
                     07.00 - 16.00</span>
             </div>
@@ -119,7 +124,6 @@
             </div>
         </div>
     </div>
-
     <!-- Main Navigation -->
     <header
         class="sticky top-0 w-full z-40 transition-all duration-300 glass-effect border-b border-gray-200 dark:border-dark-border shadow-sm"
@@ -127,27 +131,32 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img src="assets/img/logo.png" alt="Logo YPI Al-Intidhom"
-                        class="w-11 h-11 rounded-xl shadow-lg shadow-primary-500/20 group-hover:scale-105 transition-transform duration-300 object-cover">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div
+                        class="relative w-10 h-10 flex items-center justify-center rounded-xl text-white shadow-lg group-hover:rotate-6 transition-transform">
+                        <img src="../assets/img/logo-yayasan.png" alt="Logo" class="w-full h-full object-contain">
+                        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                        </span>
+                    </div>
                     <div class="flex flex-col">
-                        <span
-                            class="block font-extrabold text-xl tracking-tight text-primary-900 dark:text-white leading-none font-serif">AL-INTIDHOM</span>
-                        <span
-                            class="block text-[10px] font-bold text-secondary-600 dark:text-secondary-500 tracking-[0.2em] uppercase mt-0.5">Islamic
+                        <span class="text-xl font-bold font-kids text-slate-800 dark:text-white leading-none">YPI
+                            AVICENNA</span>
+                        <span class="text-[10px] font-bold tracking-widest text-primary-600 uppercase">Islamic
                             Foundation</span>
                     </div>
-                </div>
-
+                </a>
                 <!-- Desktop Menu -->
                 <nav class="hidden lg:flex space-x-8 items-center">
                     <a href="index.html"
-                        class="desktop-link  text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Beranda</a>
+                        class="desktop-link text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Beranda</a>
 
                     <!-- Dropdown -->
                     <div class="relative group">
                         <button
-                            class="flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                            class="desktop-link  flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                             Profil <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
                         </button>
                         <div
@@ -173,17 +182,17 @@
                         </button>
                         <div
                             class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <a href="tk_index.html"
+                            <a href="tk/tk_index.html"
                                 class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">TK/PAUD</a>
-                            <a href="sd_index.html"
+                            <a href="sd/sd_index.html"
                                 class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">SD</a>
-                            <a href="mts_index.html"
-                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">MTS</a>
-                            <a href="ma_index.html"
-                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">MA</a>
-                            <a href="stai_index.html"
+                            <a href="smp/smp_index.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">SMPIT</a>
+                            <a href="sma/smait_index.html"
+                                class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">SMAIT</a>
+                            <a href="stai/stai_index.html"
                                 class="desktop-link block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">STAI
-                                AL-INTIDHOM</a>
+                                Avicenna</a>
 
                         </div>
                     </div>
@@ -208,7 +217,7 @@
                     </div>
                     <div class="relative group">
                         <button
-                            class="desktop-link flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                            class="flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                             Informasi <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
                         </button>
                         <div
@@ -227,24 +236,34 @@
                         class="desktop-link  text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Alumni</a>
                     <a href="kontak.html"
                         class="desktop-link  text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Kontak</a>
-                    <!-- Theme Toggle -->
-                    <button id="theme-toggle-desktop"
-                        class="ml-2 w-9 h-9 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:block"></i>
-                    </button>
+                    <div class="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-slate-700 h-8">
+                        <button onclick="toggleSearch()"
+                            class="w-9 h-9 rounded-full bg-transparent text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary-600 transition-all flex items-center justify-center">
+                            <i class="fas fa-search"></i>
+                        </button>
+
+                        <button id="theme-toggle-desktop"
+                            class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 hover:bg-primary-50 transition-colors flex items-center justify-center">
+                            <i class="fas fa-sun dark:hidden"></i>
+                            <i class="fas fa-moon hidden dark:block"></i>
+                        </button>
+                    </div>
                 </nav>
 
                 <!-- Mobile Menu Button -->
-                <div class="flex items-center lg:hidden gap-4">
+                <div class="flex items-center lg:hidden gap-2"> <button onclick="toggleSearch()"
+                        class="w-9 h-9 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary-50 transition-colors flex items-center justify-center">
+                        <i class="fas fa-search"></i>
+                    </button>
+
                     <button id="theme-toggle-mobile"
-                        class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 focus:outline-none transition-colors">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:block"></i>
+                        class="w-9 h-9 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:bg-primary-50 transition-colors flex items-center justify-center">
+                        <i class="fas fa-sun dark:hidden"></i>
+                        <i class="fas fa-moon hidden dark:block"></i>
                     </button>
 
                     <button id="mobile-menu-btn"
-                        class="relative z-50 p-2 -mr-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none">
+                        class="relative z-50 p-1 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none ml-1">
                         <div class="w-6 h-5 flex flex-col justify-between">
                             <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
                                 id="bar-1"></span>
@@ -256,7 +275,6 @@
                     </button>
                 </div>
             </div>
-        </div>
     </header>
     <!-- Mobile Menu Dropdown -->
     <div id="mobile-backdrop"
@@ -269,12 +287,12 @@
 
         <div class="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-800">
             <div class="flex items-center gap-3">
-                <img src="assets/img/logo.png" alt="Logo" class="w-8 h-8 rounded-lg shadow-sm">
+                <img src="assets/img/logo-yayasan.png" alt="Logo" class="w-9 h-9 rounded-lg shadow-sm">
                 <div class="flex flex-col">
-                    <span
-                        class="font-bold text-lg text-slate-800 dark:text-white leading-none tracking-tight">AL-INTIDHOM</span>
-                    <span class="text-[9px] font-bold text-primary-600 uppercase tracking-widest mt-0.5">Islamic
-                        School</span>
+                    <span class="font-bold text-lg text-slate-800 dark:text-white leading-none tracking-tight">YPI
+                        AVICENNA</span>
+                    <span class="text-[10px] font-bold text-primary-600 uppercase tracking-widest mt-0.5">Islamic
+                        Foundation</span>
                 </div>
             </div>
             <button onclick="toggleSidebar()"
@@ -286,7 +304,7 @@
         <div class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
 
             <a href="index.html" onclick="toggleSidebar()"
-                class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
                 <i class="fas fa-home w-5 text-center opacity-70"></i> Beranda
             </a>
             <!-- PROFIL -->
@@ -341,7 +359,7 @@
             <!-- AKADEMIK -->
             <div class="group">
                 <button onclick="toggleSub('menu-akademik', 'arrow-akademik')"
-                    class="mobile-nav-link w-full flex items-center justify-between px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
                     <span class="flex items-center gap-3"><i
                             class="fas fa-graduation-cap w-5 text-center opacity-70"></i>
                         Akademik</span>
@@ -363,7 +381,7 @@
             <!-- INFORMASI -->
             <div class="group">
                 <button onclick="toggleSub('menu-informasi', 'arrow-informasi')"
-                    class="mobile-nav-link  w-full flex items-center justify-between px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
                     <span class="flex items-center gap-3"><i class="fas fa-newspaper w-5 text-center opacity-70"></i>
                         Informasi</span>
                     <i id="arrow-informasi" class="fas fa-chevron-right text-xs transition-transform duration-300"></i>
@@ -401,249 +419,265 @@
         </div>
 
     </div>
+    <div id="search-modal"
+        class="fixed inset-0 z-[100] opacity-0 invisible transition-all duration-300 flex items-center justify-center p-4 sm:p-6"
+        role="dialog" aria-modal="true">
+
+        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onclick="toggleSearch()"></div>
+        <div id="search-content"
+            class="relative w-full max-w-2xl mx-auto transform transition-all scale-95 px-4 sm:px-0">
+
+            <button onclick="toggleSearch()"
+                class="absolute z-[100] cursor-pointer flex items-center justify-center transition-all duration-300 shadow-xl
+                       w-9 h-9 sm:w-10 sm:h-10 rounded-full 
+                       bg-white text-slate-900 border-2 border-slate-200
+                       dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700
+                       top-0 right-0 
+                       translate-x-1 -translate-y-1/2
+                       hover:bg-red-600 hover:text-white hover:border-red-600 hover:rotate-90 hover:scale-110 dark:hover:bg-red-600 dark:hover:text-white dark:hover:border-red-600 dark:hover:rotate-90 dark:hover:scale-110">
+
+                <i class="fas fa-times text-sm sm:text-base"></i>
+            </button>
+
+            <div
+                class="bg-white dark:bg-dark-card rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-700 relative w-full">
+
+                <div class="relative flex items-center border-b border-slate-100 dark:border-slate-700/50 p-4 sm:p-5">
+                    <i class="fas fa-search text-primary-500 text-xl ml-2"></i>
+                    <input type="text" id="search-input"
+                        class="w-full py-2 px-4 bg-transparent border-none focus:ring-0 text-base sm:text-lg text-slate-800 dark:text-white placeholder-slate-400 font-medium"
+                        placeholder="Apa yang ingin Anda cari?" autocomplete="off">
+                </div>
+
+                <div class="p-5 sm:p-6 bg-slate-50/50 dark:bg-slate-800/30 max-h-[60vh] overflow-y-auto">
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">PENCARIAN POPULER</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-2">
+                        <a href="ppdb.html"
+                            class="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:border-primary-500 hover:shadow-md transition-all group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-primary-50 dark:bg-primary-900/50 text-primary-600 flex items-center justify-center group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate-600 dark:text-slate-200">Info PPDB</span>
+                        </a>
+
+                        <a href="beasiswa.html"
+                            class="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:border-blue-500 hover:shadow-md transition-all group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-900/50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate-600 dark:text-slate-200">Beasiswa</span>
+                        </a>
+
+                        <a href="unduhan.html"
+                            class="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:border-secondary-500 hover:shadow-md transition-all group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-secondary-50 dark:bg-secondary-900/50 text-secondary-600 flex items-center justify-center group-hover:bg-secondary-600 group-hover:text-primary-600 transition-colors">
+                                <i class="fas fa-file-download"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate-600 dark:text-slate-200">Download Brosur</span>
+                        </a>
+
+                        <a href="kontak.html"
+                            class="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:border-green-500 hover:shadow-md transition-all group">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-green-50 dark:bg-green-900/50 text-green-600 flex items-center justify-center group-hover:bg-green-600 group-hover:text-white transition-colors">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate-600 dark:text-slate-200">Hubungi Admin</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- =========================================
          3. PAGE HEADER
     ========================================== -->
-    <section class="relative pt-10 pb-10 lg:pt-20 lg:pb-20 overflow-hidden">
-        <!-- Background Pattern/Image -->
-        <div class="absolute inset-0 z-0">
-            <!-- Ganti URL ini dengan gambar header sekolah yang relevan -->
-            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop"
-                alt="Header Background" class="w-full h-full object-cover opacity-20 dark:opacity-10">
-            <div
-                class="absolute inset-0 bg-gradient-to-b from-slate-50/0 to-slate-50 dark:from-dark-bg/0 dark:to-dark-bg">
-            </div>
-        </div>
-
-        <div class="container mx-auto px-4 relative z-10 text-center">
+    <section class="relative pt-8 pb-8 overflow-hidden text-center">
+        <div class="container mx-auto px-4 relative z-10">
             <span
-                class="inline-block py-1 px-3 rounded-full bg-secondary-100 text-secondary-700 text-xs font-bold tracking-wide mb-4 animate-fade-in-up">DOKUMENTASI
-                KAMI</span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 dark:text-white mb-6 animate-fade-in-up"
-                style="animation-delay: 100ms;">
-                Galeri <span class="text-primary-600 italic">Kegiatan</span>
+                class="inline-block py-1 px-3 rounded-full bg-pink-100 text-pink-600 text-xs font-bold uppercase tracking-wider mb-4">Galeri</span>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold font-sans text-slate-900 dark:text-white mb-6">
+                Galeri <span class="text-primary-600">YPI AVICENNA</span>📸
             </h1>
-            <p class="max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-300 animate-fade-in-up"
-                style="animation-delay: 200ms;">
-                Menyimpan kenangan indah dan momen berharga dalam perjalanan pendidikan di YPI Al-Intidhom. Jelajahi
+            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
+                Menyimpan kenangan indah dan momen berharga dalam perjalanan pendidikan di YPI AVICENNA. Jelajahi
                 aktivitas, fasilitas, dan prestasi kami.
             </p>
-        </div>
-    </section>
 
-    <!-- =========================================
-         4. GALLERY MAIN CONTENT
-    ========================================== -->
-    <section class="py-12 bg-slate-50 dark:bg-dark-bg min-h-screen" id="gallery-section">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- FILTER BUTTONS -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12 hide-scrollbar overflow-x-auto pb-4 sm:pb-0"
-                id="gallery-filters">
+            <div class="md:hidden max-w-xs mx-auto relative mb-6">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-primary-600">
+                    <i class="fas fa-filter"></i>
+                </div>
+                <select id="mobile-filter"
+                    class="appearance-none w-full bg-white dark:bg-slate-800 border border-primary-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 py-3 pl-10 pr-8 rounded-xl font-bold focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-lg">
+                    <option value="all">📸 Semua Galeri</option>
+                    <option value="belajar">📚 Kegiatan Akademik</option>
+                    <option value="bermain">🛝 Outbound & Kebersamaan</option>
+                    <option value="karya">🎨 Kreasi & Prestasi Siswa</option>
+
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-500">
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </div>
+            </div>
+
+            <div class="hidden md:flex flex-wrap justify-center gap-3" id="desktop-filters">
                 <button
-                    class="filter-btn active px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-primary-600 text-white shadow-lg hover:shadow-primary-500/30 hover:-translate-y-1"
+                    class="filter-btn active px-6 py-2 rounded-full bg-primary-600 text-white border border-primary-600 font-bold text-sm transition-all shadow-sm flex items-center gap-2"
                     data-filter="all">
-                    Semua
+                    <i class="fas fa-th-large"></i> Semua
                 </button>
                 <button
-                    class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-white dark:bg-dark-card text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-dark-border hover:border-primary-500 hover:text-primary-600"
-                    data-filter="akademik">
-                    Akademik
+                    class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-bold text-sm hover:bg-primary-600 hover:text-white transition-all shadow-sm flex items-center gap-2"
+                    data-filter="belajar">
+                    <i class="fas fa-book-reader"></i> Kegiatan Akademik
                 </button>
                 <button
-                    class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-white dark:bg-dark-card text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-dark-border hover:border-primary-500 hover:text-primary-600"
-                    data-filter="ekskul">
-                    Ekstrakurikuler
+                    class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-bold text-sm hover:bg-primary-600 hover:text-white transition-all shadow-sm flex items-center gap-2"
+                    data-filter="bermain">
+                    <i class="fas fa-smile-beam"></i> Outbound & Kebersamaan
                 </button>
                 <button
-                    class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-white dark:bg-dark-card text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-dark-border hover:border-primary-500 hover:text-primary-600"
-                    data-filter="fasilitas">
-                    Fasilitas
-                </button>
-                <button
-                    class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-white dark:bg-dark-card text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-dark-border hover:border-primary-500 hover:text-primary-600"
-                    data-filter="video">
-                    <i class="fa-solid fa-play mr-2"></i> Video
-                </button>
-            </div>
-
-            <!-- FEATURED VIDEO SECTION (Visible only when 'all' or 'video' is active) -->
-            <div class="gallery-item video w-full mb-12 rounded-2xl overflow-hidden shadow-2xl relative aspect-video group"
-                data-category="video">
-                <iframe class="w-full h-full" src="https://www.youtube.com/embed/ScMzIvxBSi4?si=example"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <!-- Overlay for Title -->
-                <div
-                    class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
-                    <span class="inline-block py-1 px-3 rounded bg-red-600 text-white text-xs font-bold mb-2">FEATURED
-                        VIDEO</span>
-                    <h3 class="text-white text-2xl font-bold font-serif">Profil Sekolah YPI Al-Intidhom</h3>
-                </div>
-            </div>
-
-            <!-- GRID GALLERY -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="gallery-grid">
-
-                <!-- Item 1: Akademik -->
-                <div class="gallery-item group relative rounded-xl overflow-hidden shadow-card cursor-pointer h-72"
-                    data-category="akademik" onclick="openLightbox(0)">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop"
-                        alt="Kegiatan Belajar Mengajar"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                        <div
-                            class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                            <i class="fa-solid fa-expand text-white text-lg"></i>
-                        </div>
-                        <h3
-                            class="text-white font-bold text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
-                            KBM di Kelas</h3>
-                        <p
-                            class="text-slate-200 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                            Akademik</p>
-                    </div>
-                </div>
-
-                <!-- Item 2: Ekskul -->
-                <div class="gallery-item group relative rounded-xl overflow-hidden shadow-card cursor-pointer h-72"
-                    data-category="ekskul" onclick="openLightbox(1)">
-                    <img src="https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?q=80&w=800&auto=format&fit=crop"
-                        alt="Pramuka"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                        <div
-                            class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                            <i class="fa-solid fa-expand text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-white font-bold text-lg">Kegiatan Pramuka</h3>
-                        <p class="text-slate-200 text-sm">Ekstrakurikuler</p>
-                    </div>
-                </div>
-
-                <!-- Item 3: Fasilitas -->
-                <div class="gallery-item group relative rounded-xl overflow-hidden shadow-card cursor-pointer h-72"
-                    data-category="fasilitas" onclick="openLightbox(2)">
-                    <img src="https://images.unsplash.com/photo-1598690467776-e8229b012674?q=80&w=800&auto=format&fit=crop"
-                        alt="Perpustakaan"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                        <div
-                            class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                            <i class="fa-solid fa-expand text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-white font-bold text-lg">Perpustakaan Digital</h3>
-                        <p class="text-slate-200 text-sm">Fasilitas</p>
-                    </div>
-                </div>
-
-                <!-- Item 4: Video Thumbnail (Opens Modal with Video) -->
-                <div class="gallery-item group relative rounded-xl overflow-hidden shadow-card cursor-pointer h-72"
-                    data-category="video" onclick="openVideoModal('https://www.youtube.com/embed/LXb3EKWsInQ')">
-                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop"
-                        alt="Dokumentasi Wisuda"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
-                    <div
-                        class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
-                        <div
-                            class="w-16 h-16 rounded-full bg-white text-primary-600 flex items-center justify-center shadow-lg play-btn-pulse transform group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-play text-2xl ml-1"></i>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent">
-                        <h3 class="text-white font-bold text-md">Highlight Wisuda 2024</h3>
-                        <p class="text-slate-300 text-xs mt-1"><i class="fa-brands fa-youtube text-red-500 mr-1"></i>
-                            Video Gallery</p>
-                    </div>
-                </div>
-
-                <!-- Item 5: Akademik -->
-                <div class="gallery-item group relative rounded-xl overflow-hidden shadow-card cursor-pointer h-72"
-                    data-category="akademik" onclick="openLightbox(3)">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
-                        alt="Praktikum Lab"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                        <div
-                            class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3">
-                            <i class="fa-solid fa-expand text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-white font-bold text-lg">Praktikum Sains</h3>
-                        <p class="text-slate-200 text-sm">Akademik</p>
-                    </div>
-                </div>
-
-                <!-- Item 6: Ekskul -->
-                <div class="gallery-item group relative rounded-xl overflow-hidden shadow-card cursor-pointer h-72"
-                    data-category="ekskul" onclick="openLightbox(4)">
-                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop"
-                        alt="Pencak Silat"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                        <div
-                            class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3">
-                            <i class="fa-solid fa-expand text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-white font-bold text-lg">Pencak Silat</h3>
-                        <p class="text-slate-200 text-sm">Prestasi & Ekskul</p>
-                    </div>
-                </div>
-                <!-- Item 7: Fasilitas -->
-                <div class="gallery-item group relative rounded-xl overflow-hidden shadow-card cursor-pointer h-72"
-                    data-category="fasilitas" onclick="openLightbox(5)">
-                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop"
-                        alt="Masjid Sekolah"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                        <div
-                            class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3">
-                            <i class="fa-solid fa-expand text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-white font-bold text-lg">Masjid Al-Intidhom</h3>
-                        <p class="text-slate-200 text-sm">Fasilitas Ibadah</p>
-                    </div>
-                </div>
-
-                <!-- Item 8: Video -->
-                <div class="gallery-item group relative rounded-xl overflow-hidden shadow-card cursor-pointer h-72"
-                    data-category="video" onclick="openVideoModal('https://www.youtube.com/embed/eng_sPj3i3o')">
-                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=800&auto=format&fit=crop"
-                        alt="Study Tour"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
-                    <div
-                        class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
-                        <div
-                            class="w-16 h-16 rounded-full bg-white text-primary-600 flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-play text-2xl ml-1"></i>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent">
-                        <h3 class="text-white font-bold text-md">Study Tour 2023</h3>
-                        <p class="text-slate-300 text-xs mt-1"><i class="fa-brands fa-youtube text-red-500 mr-1"></i>
-                            Video Gallery</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Load More Button -->
-            <div class="mt-16 text-center">
-                <button
-                    class="px-8 py-3 rounded-full border-2 border-primary-600 text-primary-600 font-bold hover:bg-primary-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-primary-500/40">
-                    Muat Lebih Banyak <i class="fa-solid fa-arrow-down ml-2"></i>
+                    class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-bold text-sm hover:bg-primary-600 hover:text-white transition-all shadow-sm flex items-center gap-2"
+                    data-filter="karya">
+                    <i class="fas fa-palette"></i> Kreasi & Prestasi Siswa
                 </button>
             </div>
         </div>
     </section>
 
+
+    <section class="py-8 pb-8">
+        <div class="container mx-auto px-4">
+            <div id="lightgallery-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+                <a href="https://placehold.co/600x800.png"
+                    class="gallery-item group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-md cursor-pointer aspect-[4/5] block"
+                    data-category="belajar"
+                    data-sub-html="<h4>Eksplorasi Pasir</h4><p>Melatih motorik halus anak di Sentra Alam.</p>">
+                    <img src="https://placehold.co/600x800.png" alt="Eksplorasi Pasir"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-bold text-yellow-400 uppercase tracking-widest">Sentra Alam</span>
+                        <h3 class="text-white font-bold font-sans text-sm">
+                            Eksplorasi Pasir
+                        </h3>
+                    </div>
+                </a>
+
+                <a href="https://placehold.co/600x800.png"
+                    class="gallery-item group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-md cursor-pointer aspect-[4/5] block"
+                    data-category="bermain"
+                    data-sub-html="<h4>Berenang Ceria</h4><p>Kegiatan rutin setiap Jumat untuk melatih fisik.</p>">
+                    <img src="https://placehold.co/600x800.png" alt="Renang" alt="Renang"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Renang</span>
+                        <h3 class="text-white font-bold font-sans text-sm">
+                            Berenang Ceria
+                        </h3>
+                    </div>
+                </a>
+
+                <a href="https://placehold.co/600x800.png"
+                    class="gallery-item group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-md cursor-pointer aspect-[4/5] block"
+                    data-category="karya"
+                    data-sub-html="<h4>Tari Tradisional</h4><p>Pentas seni akhir tahun di panggung sekolah.</p>">
+                    <img src="https://placehold.co/600x800.png" alt="Tari" alt="Tari"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-bold text-pink-400 uppercase tracking-widest">Pentas Seni</span>
+                        <h3 class="text-white font-bold font-sans text-sm">
+                            Tari Tradisional
+                        </h3>
+                    </div>
+                </a>
+
+                <a href="https://placehold.co/600x800.png"
+                    class="gallery-item group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-md cursor-pointer aspect-[4/5] block"
+                    data-category="belajar" data-sub-html="<h4>Pojok Baca</h4><p>Meningkatkan literasi sejak dini.</p>">
+                    <img src="https://placehold.co/600x800.png" alt="Baca"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-bold text-cyan-400 uppercase tracking-widest">Literasi</span>
+                        <h3 class="text-white font-bold font-sans text-sm">Pojok Baca</h3>
+                    </div>
+                </a>
+
+                <a href="https://placehold.co/600x800.png"
+                    class="gallery-item group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-md cursor-pointer aspect-[4/5] block"
+                    data-category="bermain"
+                    data-sub-html="<h4>Outbound</h4><p>Kegiatan Flying Fox melatih keberanian.</p>">
+                    <img src="https://placehold.co/600x800.png" alt="Outbound"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-bold text-orange-400 uppercase tracking-widest">Outbound</span>
+                        <h3 class="text-white font-bold font-sans text-sm">Flying Fox</h3>
+                    </div>
+                </a>
+
+                <a href="https://placehold.co/600x800.png"
+                    class="gallery-item group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-md cursor-pointer aspect-[4/5] block"
+                    data-category="karya"
+                    data-sub-html="<h4>Melukis</h4><p>Sentra Seni: Mengembangkan imajinasi warna.</p>">
+                    <img src="https://placehold.co/600x800.png" alt="Melukis"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-bold text-purple-400 uppercase tracking-widest">Seni</span>
+                        <h3 class="text-white font-bold font-sans text-sm">
+                            Melukis Bersama
+                        </h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8 pb-8  rounded-t-[3rem] lg:rounded-t-[5rem] relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-2xl lg:text-4xl font-bold font-sans dark:text-white text-slate-900 mb-8">
+                Video Profil YPI AVICENNA 🎥
+            </h2>
+
+            <div class="max-w-4xl mx-auto w-full bg-black rounded-3xl overflow-hidden shadow-2xl border-4 border-primary-600 aspect-[16/9] relative group cursor-pointer"
+                onclick="playVideo(this)">
+                <div id="video-cover" class="absolute inset-0 w-full h-full z-20 transition-all duration-500 bg-black">
+                    <img src="https://img.youtube.com/vi/xh0Puvq68jc/maxresdefault.jpg" alt="Cover Video"
+                        class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <button
+                            class="w-20 h-20 bg-white text-primary-600 rounded-full flex items-center justify-center pl-2 text-3xl shadow-lg animate-pulse group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="video-frame" class="w-full h-full z-10"></div>
+            </div>
+
+            <div class="mt-10">
+                <a href="https://youtube.com" target="_blank"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 transition-all shadow-lg hover:-translate-y-1">
+                    <i class="fab fa-youtube text-xl"></i> Kunjungi Channel Youtube Kami
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- =========================================
          5. FOOTER (Sama seperti Index)
@@ -651,486 +685,330 @@
     <footer
         class="bg-white dark:bg-dark-bg text-slate-600 dark:text-slate-300 pt-16 pb-8 md:pt-20 md:pb-10 border-t border-slate-200 dark:border-slate-800 font-sans transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <div>
-                    <div class="flex items-center gap-3 mb-6 text-slate-900 dark:text-white">
-                        <img src="assets/img/logo.png" alt="Logo YPI Al-Intidhom"
-                            class="w-10 h-10 rounded-lg object-cover shadow-sm">
-                        <span class="font-serif font-bold text-2xl tracking-tight">AL-INTIDHOM</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+
+                <div class="lg:col-span-3">
+                    <div class="flex items-center gap-3 mb-6 text-slate-900 dark:text-white group cursor-pointer">
+                        <img src="assets/img/logo-yayasan.png" alt="Logo YPI Avicenna"
+                            class="w-11 h-11 rounded-xl object-cover shadow-lg shadow-primary-500/10 group-hover:scale-110 transition-transform">
+                        <span class="font-serif font-bold text-2xl tracking-tight leading-none">YPI AVICENNA</span>
                     </div>
-                    <p class="text-sm leading-relaxed mb-6 text-slate-600 dark:text-slate-400">Yayasan Pendidikan Islam
-                        Al-Intidhom
-                        berkomitmen menyelenggarakan pendidikan berkualitas, terjangkau, dan berlandaskan
-                        nilai-nilai Islam Ahlussunnah Wal Jamaah.</p>
-                    <div class="flex gap-4">
+                    <p class="text-sm leading-relaxed mb-6 text-slate-600 dark:text-slate-400">
+                        Membangun peradaban Islam melalui pendidikan terpadu yang modern, berkarakter, dan berlandaskan
+                        nilai-nilai Ahlussunnah Wal Jamaah.
+                    </p>
+                    <div class="flex gap-3">
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-primary-600 hover:border-primary-600 hover:text-white transition-all"><i
-                                class="fab fa-facebook-f"></i></a>
+                            class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center hover:bg-primary-600 hover:text-white hover:-translate-y-1 transition-all">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all"><i
-                                class="fab fa-instagram"></i></a>
+                            class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center hover:bg-gradient-to-tr hover:from-yellow-500 hover:to-purple-600 hover:text-white hover:-translate-y-1 transition-all">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all"><i
-                                class="fab fa-youtube"></i></a>
+                            class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center hover:bg-red-600 hover:text-white hover:-translate-y-1 transition-all">
+                            <i class="fab fa-youtube text-sm"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div>
-                    <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-6 relative inline-block">
-                        Tautan Cepat <span
-                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                <div class="lg:col-span-2 lg:pl-4">
+                    <h3
+                        class="text-slate-900 dark:text-white font-bold text-base uppercase tracking-widest mb-8 relative">
+                        Navigasi
+                        <span class="absolute -bottom-2 left-0 w-8 h-1 bg-primary-500 rounded-full"></span>
                     </h3>
                     <ul class="space-y-3 text-sm">
                         <li><a href="#"
-                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Profil
-                                Yayasan</a>
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-all flex items-center gap-2 group">
+                                <i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Profil Yayasan</a>
                         </li>
                         <li><a href="#"
-                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Visi & Misi</a>
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-all flex items-center gap-2 group">
+                                <i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Visi & Misi</a>
                         </li>
                         <li><a href="#"
-                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Tenaga
-                                Pengajar</a>
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-all flex items-center gap-2 group">
+                                <i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Prestasi</a>
                         </li>
                         <li><a href="#"
-                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Prestasi
-                                Siswa</a>
-                        </li>
-                        <li><a href="#"
-                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Galeri
-                                Kegiatan</a>
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-all flex items-center gap-2 group">
+                                <i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500 group-hover:translate-x-1 transition-transform"></i>
+                                Karir</a>
                         </li>
                     </ul>
                 </div>
 
-                <div>
-                    <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-6 relative inline-block">
-                        Unit Pendidikan <span
-                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                <div class="lg:col-span-4">
+                    <h3
+                        class="text-slate-900 dark:text-white font-bold text-base uppercase tracking-widest mb-8 relative">
+                        Unit Pendidikan
+                        <span class="absolute -bottom-2 left-0 w-8 h-1 bg-secondary-500 rounded-full"></span>
                     </h3>
-                    <ul class="space-y-3 text-sm">
-                        <li
-                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer group">
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="tk/tk_index.html" target="_blank"
+                            class="group flex items-center gap-3 p-2 rounded-xl border border-transparent hover:border-slate-100 dark:hover:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">
                             <div
-                                class="w-8 h-8 rounded bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-                                <i class="fas fa-shapes"></i>
+                                class="w-8 h-8 shrink-0 rounded-lg bg-pink-100 dark:bg-pink-900/30 text-pink-600 flex items-center justify-center group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-shapes text-xs"></i>
                             </div>
-                            <span>RA / TK Islam</span>
-                        </li>
-                        <li
-                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer group">
+                            <span
+                                class="text-xs font-semibold group-hover:text-primary-600 transition-colors leading-tight">RA
+                                / TK</span>
+                        </a>
+
+                        <a href="tk/sd_index.html" target="_blank"
+                            class="group flex items-center gap-3 p-2 rounded-xl border border-transparent hover:border-slate-100 dark:hover:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">
                             <div
-                                class="w-8 h-8 rounded bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-                                <i class="fas fa-user-graduate"></i>
+                                class="w-8 h-8 shrink-0 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center group-hover:bg-secondary-600 group-hover:text-secondary-600 transition-colors">
+                                <i class="fas fa-child text-xs"></i>
                             </div>
-                            <span>SD IT Al-Intidhom</span>
-                        </li>
-                        <li
-                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer group">
+                            <span
+                                class="text-xs font-semibold group-hover:text-primary-600 transition-colors leading-tight">SD
+                                IT</span>
+                        </a>
+
+                        <a href="tk/smp_index.html" target="_blank"
+                            class="group flex items-center gap-3 p-2 rounded-xl border border-transparent hover:border-slate-100 dark:hover:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">
                             <div
-                                class="w-8 h-8 rounded bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-                                <i class="fas fa-book-open"></i>
+                                class="w-8 h-8 shrink-0 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-book-open text-xs"></i>
                             </div>
-                            <span>SMP Islam</span>
-                        </li>
-                        <li
-                            class="flex items-center gap-3 p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer group">
+                            <span
+                                class="text-xs font-semibold group-hover:text-primary-600 transition-colors leading-tight">SMP
+                                IT</span>
+                        </a>
+
+                        <a href="tk/sma_index.html" target="_blank"
+                            class="group flex items-center gap-3 p-2 rounded-xl border border-transparent hover:border-slate-100 dark:hover:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">
                             <div
-                                class="w-8 h-8 rounded bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-500 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-                                <i class="fas fa-university"></i>
+                                class="w-8 h-8 shrink-0 rounded-lg bg-purple-100 dark:bg-purple-100 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-university text-xs"></i>
                             </div>
-                            <span>SMA Islam</span>
-                        </li>
-                    </ul>
+                            <span
+                                class="text-xs font-semibold group-hover:text-primary-600 transition-colors leading-tight">SMA
+                                IT</span>
+                        </a>
+
+                        <a href="tk/univ_index.html" target="_blank"
+                            class="group flex items-center gap-3 p-2 rounded-xl border border-transparent hover:border-slate-100 dark:hover:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">
+                            <div
+                                class="w-8 h-8 shrink-0 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-graduation-cap text-xs"></i>
+                            </div>
+                            <span
+                                class="text-xs font-semibold group-hover:text-primary-600 transition-colors leading-tight">UNIV</span>
+                        </a>
+
+                        <a href="tk/ponpes_index.html" target="_blank"
+                            class="group flex items-center gap-3 p-2 rounded-xl border border-transparent hover:border-slate-100 dark:hover:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">
+                            <div
+                                class="w-8 h-8 shrink-0 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-mosque text-xs"></i>
+                            </div>
+                            <span
+                                class="text-xs font-semibold group-hover:text-primary-600 transition-colors leading-tight">PONDOK</span>
+                        </a>
+                    </div>
                 </div>
 
-                <div>
-                    <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-6 relative inline-block">
-                        Hubungi Kami <span
-                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                <div class="lg:col-span-3">
+                    <h3
+                        class="text-slate-900 dark:text-white font-bold text-base uppercase tracking-widest mb-8 relative">
+                        Hubungi Kami
+                        <span class="absolute -bottom-2 left-0 w-8 h-1 bg-primary-500 rounded-full"></span>
                     </h3>
-                    <ul class="space-y-4 text-sm mb-8">
+                    <ul class="space-y-4 text-sm mb-6">
                         <li class="flex items-start gap-3">
                             <i class="fas fa-map-marker-alt mt-1 text-primary-500"></i>
-                            <span class="text-slate-600 dark:text-slate-400">Jl. Raya Pendidikan No. 123, Kel.
-                                Kebayoran,
-                                Jakarta
-                                Selatan 12345</span>
+                            <span class="text-slate-600 dark:text-slate-400 leading-snug">Jl. Raya Pendidikan No. 123,
+                                Jakarta Selatan 12345</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fas fa-phone-alt text-primary-500"></i>
                             <span class="text-slate-600 dark:text-slate-400">(021) 789-0123</span>
                         </li>
                     </ul>
-                    <div>
-                        <p class="text-xs text-slate-500 mb-2">Dapatkan info PPDB via Email:</p>
-                        <form class="flex gap-2">
-                            <input type="email" placeholder="Email Anda..."
-                                class="bg-slate-100 dark:bg-slate-800 border-none rounded-lg px-3 py-2 text-sm w-full focus:ring-2 focus:ring-primary-500 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-600">
-                            <button
-                                class="bg-primary-600 hover:bg-primary-700 text-white rounded-lg px-3 py-2 transition-colors"><i
-                                    class="fas fa-paper-plane"></i></button>
+                    <div class="relative">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-2">Newsletter</p>
+
+                        <div id="newsletter-msg" class="text-[10px] font-bold mb-2 hidden transition-all duration-300">
+                        </div>
+
+                        <form id="newsletter-form" class="flex flex-col gap-2">
+                            <div class="flex group">
+                                <input type="email" id="newsletter-email" placeholder="Email Anda"
+                                    class="bg-slate-100 dark:bg-slate-800 border-2 border-transparent rounded-l-lg px-3 py-2 text-xs w-full focus:ring-0 focus:outline-none text-slate-900 dark:text-white transition-all duration-300">
+                                <button type="submit"
+                                    class="bg-primary-600 hover:bg-primary-700 text-white rounded-r-lg px-4 py-2 transition-colors flex items-center justify-center shrink-0">
+                                    <i class="fas fa-paper-plane text-xs"></i>
+                                </button>
+                            </div>
+                            <p id="email-error"
+                                class="text-[9px] text-red-500 font-bold hidden uppercase tracking-tighter">
+                                Email tidak
+                                valid atau kosong!</p>
                         </form>
                     </div>
                 </div>
             </div>
 
             <div
-                class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-                <p>&copy; 2024 YPI Al-Intidhom. All rights reserved.</p>
+                class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] font-medium text-slate-500">
+                <p>&copy; 2024 YPI Avicenna. Membangun Generasi Rabbani.</p>
                 <div class="flex gap-6">
-                    <a href="#" class="hover:text-primary-600 dark:hover:text-white transition-colors">Privacy
-                        Policy</a>
-                    <a href="#" class="hover:text-primary-600 dark:hover:text-white transition-colors">Terms of
-                        Service</a>
-                    <a href="#" class="hover:text-primary-600 dark:hover:text-white transition-colors">Sitemap</a>
+                    <a href="#" class="hover:text-primary-600 transition-colors uppercase tracking-widest">Kebijakan
+                        Privasi</a>
+                    <a href="#" class="hover:text-primary-600 transition-colors uppercase tracking-widest">Sitemap</a>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Kembali ke atas" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="fixed bottom-6 right-6 z-[100] 
+                           w-10 h-10 rounded-full 
+                           bg-gradient-to-r from-primary-600 to-primary-500 
+                           text-white shadow-lg shadow-primary-500/40 
+                           flex items-center justify-center 
+                           transition-all duration-500 ease-in-out transform 
+                           opacity-0 invisible translate-y-10 
+                           hover:scale-110 hover:-translate-y-1 hover:shadow-2xl 
+                           group border border-white/20 backdrop-blur-sm">
 
+        <i class="fas fa-arrow-up text-lg transition-transform duration-300 group-hover:-translate-y-0.5"></i>
+    </button>
 
-    <!-- =========================================
-         6. MODALS / LIGHTBOX
-    ========================================== -->
-
-    <!-- A. IMAGE LIGHTBOX -->
-    <div id="lightbox"
-        class="fixed inset-0 z-[100] bg-black/95 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center">
-
-        <!-- Controls Top -->
-        <div
-            class="absolute top-0 left-0 w-full p-4 flex justify-between items-center z-20 bg-gradient-to-b from-black/70 to-transparent">
-            <span class="text-white/80 text-sm" id="lightbox-counter">1 / 5</span>
-            <div class="flex gap-4">
-                <button onclick="downloadImage()" class="text-white hover:text-primary-400 transition-colors"
-                    title="Download">
-                    <i class="fa-solid fa-download text-xl"></i>
-                </button>
-                <button onclick="shareImage()" class="text-white hover:text-primary-400 transition-colors"
-                    title="Share">
-                    <i class="fa-solid fa-share-nodes text-xl"></i>
-                </button>
-                <button onclick="closeLightbox()" class="text-white hover:text-red-500 transition-colors" title="Close">
-                    <i class="fa-solid fa-xmark text-2xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Main Image Container -->
-        <div class="relative w-full h-full flex items-center justify-center p-4 sm:p-12">
-            <!-- Prev Button -->
-            <button onclick="changeSlide(-1)"
-                class="absolute left-4 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all hover:scale-110">
-                <i class="fa-solid fa-chevron-left text-xl"></i>
-            </button>
-
-            <!-- Image -->
-            <img id="lightbox-img" src="" alt="Gallery Preview"
-                class="max-w-full max-h-[85vh] object-contain shadow-2xl rounded-sm transition-transform duration-300">
-
-            <!-- Caption -->
-            <div class="absolute bottom-8 left-0 w-full text-center px-4">
-                <h3 id="lightbox-title" class="text-white text-xl font-bold font-serif drop-shadow-md"></h3>
-                <p id="lightbox-desc" class="text-slate-300 text-sm mt-1 drop-shadow-md"></p>
-            </div>
-
-            <!-- Next Button -->
-            <button onclick="changeSlide(1)"
-                class="absolute right-4 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all hover:scale-110">
-                <i class="fa-solid fa-chevron-right text-xl"></i>
-            </button>
-        </div>
-    </div>
-
-    <!-- B. VIDEO MODAL -->
-    <div id="video-modal"
-        class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center p-4 backdrop-blur-sm">
-        <div class="w-full max-w-4xl bg-black rounded-xl overflow-hidden shadow-2xl relative">
-            <button onclick="closeVideoModal()"
-                class="absolute -top-12 right-0 text-white hover:text-red-500 text-lg flex items-center gap-2">
-                Close <i class="fa-solid fa-xmark text-2xl"></i>
-            </button>
-            <div class="aspect-video w-full">
-                <iframe id="video-frame" class="w-full h-full" src="" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
-        <!-- Close Overlay (Click outside) -->
-        <div class="absolute inset-0 z-[-1]" onclick="closeVideoModal()"></div>
-    </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/share/lg-share.min.js"></script>
     <!-- =========================================
          7. JAVASCRIPT LOGIC
     ========================================== -->
     <script src="assets/js/script.js"></script>
     <script>
-        // --- DATA GALLERY (Simulasi Database) ---
-        // Karena HTML item sudah dibuat di atas, kita akan mengambil data dari DOM untuk Lightbox
-        // Agar sync antara Grid dan Lightbox
+        // --- 2. SCRIPT VIDEO PLAY ---
+        function playVideo(element) {
+            const videoId = "xh0Puvq68jc";
+            const cover = element.querySelector("#video-cover");
+            const frameContainer = element.querySelector("#video-frame");
 
-        let galleryItems = [];
-        let filteredItems = [];
-        let currentIndex = 0;
+            cover.style.opacity = "0";
+            cover.style.pointerEvents = "none";
 
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeGallery();
-            setupFilters();
-            setupMobileMenu();
-            setupNavbarScroll();
-        });
-
-        // 1. Initialize & Scan Items
-        function initializeGallery() {
-            // Ambil semua item yang BUKAN video (karena video pakai modal beda)
-            // Tapi user minta bisa slide, jadi kita ambil data gambar saja untuk lightbox.
-            const items = document.querySelectorAll('.gallery-item:not([data-category="video"])');
-
-            items.forEach((item, index) => {
-                const img = item.querySelector('img');
-                const title = item.querySelector('h3').innerText;
-                const desc = item.querySelector('p').innerText;
-
-                galleryItems.push({
-                    src: img.src,
-                    title: title,
-                    desc: desc,
-                    element: item,
-                    category: item.getAttribute('data-category')
-                });
-            });
-
-            // Default: Show all
-            filteredItems = galleryItems;
+            frameContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
         }
 
-        // 2. Filter Logic
-        function setupFilters() {
-            const buttons = document.querySelectorAll('.filter-btn');
-            const allDomItems = document.querySelectorAll('.gallery-item'); // Termasuk video
+        // --- 3. SCRIPT FILTER + LIGHTGALLERY (INTI LOGIKA) ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("lightgallery-container");
+            const filterBtns = document.querySelectorAll(".filter-btn");
+            const mobileFilter = document.getElementById("mobile-filter");
+            let lgInstance = null;
 
-            buttons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class
-                    buttons.forEach(b => {
-                        b.classList.remove('bg-primary-600', 'text-white', 'shadow-lg');
-                        b.classList.add('bg-white', 'dark:bg-dark-card', 'text-slate-600', 'dark:text-slate-300');
-                    });
+            // Fungsi Init LightGallery
+            function initLightGallery() {
+                // Destroy instance lama jika ada
+                if (lgInstance) {
+                    lgInstance.destroy(true);
+                    lgInstance = null;
+                }
 
-                    // Add active class
-                    btn.classList.remove('bg-white', 'dark:bg-dark-card', 'text-slate-600', 'dark:text-slate-300');
-                    btn.classList.add('bg-primary-600', 'text-white', 'shadow-lg');
+                // Init instance baru hanya pada item yang terlihat (:not(.hidden))
+                lgInstance = lightGallery(container, {
+                    selector: ".gallery-item:not(.hidden)", // KUNCI FILTER: Hanya ambil yang tidak hidden
+                    plugins: [lgZoom, lgThumbnail, lgShare],
+                    licenseKey: "0000-0000-000-0000",
+                    speed: 500,
+                    download: true,
+                    mobileSettings: {
+                        controls: false,
+                        showCloseIcon: true,
+                        download: true,
+                    },
+                });
+            }
 
-                    const filterValue = btn.getAttribute('data-filter');
+            // Fungsi Filter
+            function applyFilter(category) {
+                const items = document.querySelectorAll(".gallery-item");
 
-                    // Filter DOM Elements (Animasi Hide/Show)
-                    allDomItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.classList.remove('hidden', 'hidden-item');
-                            // Trigger reflow for animation
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'scale(1)';
-                            }, 50);
-                        } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'scale(0.8)';
-                            setTimeout(() => {
-                                item.classList.add('hidden-item');
-                            }, 300); // Wait for transition
-                        }
-                    });
-
-                    // Update Data Array for Lightbox Navigation
-                    if (filterValue === 'all') {
-                        filteredItems = galleryItems;
-                    } else if (filterValue === 'video') {
-                        filteredItems = []; // Video doesn't go to image lightbox
+                items.forEach((item) => {
+                    if (
+                        category === "all" ||
+                        item.getAttribute("data-category") === category
+                    ) {
+                        item.classList.remove("hidden");
+                        // Efek animasi masuk
+                        item.style.opacity = "0";
+                        setTimeout(() => (item.style.opacity = "1"), 50);
                     } else {
-                        filteredItems = galleryItems.filter(item => item.category === filterValue);
+                        item.classList.add("hidden");
                     }
                 });
-            });
-        }
 
-        // 3. Lightbox Logic
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxTitle = document.getElementById('lightbox-title');
-        const lightboxDesc = document.getElementById('lightbox-desc');
-        const lightboxCounter = document.getElementById('lightbox-counter');
-
-        window.openLightbox = function (originalIndex) {
-            // Kita perlu mencari index relatif terhadap filteredItems
-            // Karena 'originalIndex' di HTML hardcoded 0-5
-            // Cara mudah: Cari src gambar yang diklik di array filteredItems
-
-            // Note: Pada implementasi real, lebih baik kirim URL atau ID unik.
-            // Di sini kita mapping manual berdasarkan urutan DOM saat ini.
-
-            // Karena fungsi onclick di HTML hardcoded, kita mapping ulang logika ini:
-            // Ambil src dari element yang diklik
-            const clickedItem = galleryItems[originalIndex]; // Item dari database utama
-
-            // Cek apakah item ini ada di filteredItems (sedang tampil?)
-            const indexInFiltered = filteredItems.findIndex(item => item.src === clickedItem.src);
-
-            if (indexInFiltered !== -1) {
-                currentIndex = indexInFiltered;
-                updateLightboxContent();
-                lightbox.classList.remove('hidden');
-                // Animation fade in
-                requestAnimationFrame(() => {
-                    lightbox.classList.remove('opacity-0');
-                    lightboxImg.classList.add('lightbox-enter');
-                });
-                document.body.style.overflow = 'hidden'; // Disable scroll
+                // Re-init LightGallery agar slide-nya sesuai dengan item yang tampil saja
+                // Beri sedikit jeda agar DOM terupdate dulu
+                setTimeout(() => {
+                    initLightGallery();
+                }, 100);
             }
-        };
 
-        function updateLightboxContent() {
-            const item = filteredItems[currentIndex];
-            lightboxImg.src = item.src;
-            lightboxTitle.innerText = item.title;
-            lightboxDesc.innerText = item.desc;
-            lightboxCounter.innerText = `${currentIndex + 1} / ${filteredItems.length}`;
-
-            // Reset Animation
-            lightboxImg.classList.remove('lightbox-enter');
-            void lightboxImg.offsetWidth; // trigger reflow
-            lightboxImg.classList.add('lightbox-enter');
-        }
-
-        window.closeLightbox = function () {
-            lightbox.classList.add('opacity-0');
-            setTimeout(() => {
-                lightbox.classList.add('hidden');
-                document.body.style.overflow = '';
-            }, 300);
-        };
-
-        window.changeSlide = function (direction) {
-            currentIndex += direction;
-            if (currentIndex >= filteredItems.length) currentIndex = 0;
-            if (currentIndex < 0) currentIndex = filteredItems.length - 1;
-            updateLightboxContent();
-        };
-
-        // Keyboard Navigation
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.classList.contains('hidden')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowRight') changeSlide(1);
-            if (e.key === 'ArrowLeft') changeSlide(-1);
-        });
-
-        // 4. Download & Share Logic
-        window.downloadImage = async function () {
-            const item = filteredItems[currentIndex];
-            const imageUrl = item.src;
-
-            try {
-                // Fetch image as blob to force download (works for cross-origin if permitted)
-                const response = await fetch(imageUrl);
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `Al-Intidhom-${item.title.replace(/\s+/g, '-').toLowerCase()}.jpg`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                window.URL.revokeObjectURL(url);
-            } catch (error) {
-                // Fallback: Open in new tab
-                window.open(imageUrl, '_blank');
-            }
-        };
-
-        window.shareImage = async function () {
-            const item = filteredItems[currentIndex];
-            if (navigator.share) {
-                try {
-                    await navigator.share({
-                        title: 'Galeri YPI Al-Intidhom',
-                        text: `Lihat dokumentasi "${item.title}" di Al-Intidhom.`,
-                        url: window.location.href // Share URL halaman, karena image URL seringkali temporary
+            // Event Listener Tombol Desktop
+            filterBtns.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    // Update Style Tombol
+                    filterBtns.forEach((b) => {
+                        b.classList.remove(
+                            "bg-primary-600",
+                            "text-white",
+                            "border-primary-600"
+                        );
+                        b.classList.add(
+                            "bg-white",
+                            "dark:bg-slate-800",
+                            "text-slate-600",
+                            "dark:text-slate-300"
+                        );
                     });
-                } catch (err) {
-                    console.log('Error sharing:', err);
-                }
-            } else {
-                // Copy link to clipboard
-                navigator.clipboard.writeText(window.location.href);
-                alert('Link halaman telah disalin ke clipboard!');
-            }
-        };
+                    btn.classList.remove(
+                        "bg-white",
+                        "dark:bg-slate-800",
+                        "text-slate-600",
+                        "dark:text-slate-300"
+                    );
+                    btn.classList.add(
+                        "bg-primary-600",
+                        "text-white",
+                        "border-primary-600"
+                    );
 
-        // 5. Video Modal Logic
-        const videoModal = document.getElementById('video-modal');
-        const videoFrame = document.getElementById('video-frame');
-
-        window.openVideoModal = function (videoUrl) {
-            // Ensure autoplay is added
-            const url = new URL(videoUrl);
-            url.searchParams.set('autoplay', '1');
-
-            videoFrame.src = url.toString();
-            videoModal.classList.remove('hidden');
-            videoModal.classList.add('flex');
-        };
-
-        window.closeVideoModal = function () {
-            videoModal.classList.add('hidden');
-            videoModal.classList.remove('flex');
-            videoFrame.src = ""; // Stop video
-        };
-
-        // 6. Mobile Menu & Scroll Logic (Copied from Index for consistency)
-        function setupMobileMenu() {
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            const panel = document.getElementById('mobile-menu-panel');
-            const closeBtn = document.getElementById('close-menu-btn');
-
-            function openMenu() {
-                menu.classList.remove('invisible', 'opacity-0');
-                panel.classList.remove('translate-x-full');
-            }
-            function closeMenu() {
-                panel.classList.add('translate-x-full');
-                setTimeout(() => menu.classList.add('invisible', 'opacity-0'), 300);
-            }
-
-            btn.addEventListener('click', openMenu);
-            closeBtn.addEventListener('click', closeMenu);
-            menu.addEventListener('click', (e) => {
-                if (e.target === menu) closeMenu();
+                    // Jalankan Filter
+                    const cat = btn.getAttribute("data-filter");
+                    applyFilter(cat);
+                    if (mobileFilter) mobileFilter.value = cat;
+                });
             });
-        }
 
-        function setupNavbarScroll() {
-            const navbar = document.getElementById('navbar');
-            const navbarBg = document.getElementById('navbar-bg');
+            // Event Listener Dropdown Mobile
+            if (mobileFilter) {
+                mobileFilter.addEventListener("change", (e) =>
+                    applyFilter(e.target.value)
+                );
+            }
 
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('shadow-sm');
-                    navbarBg.classList.remove('opacity-0');
-                } else {
-                    navbar.classList.remove('shadow-sm');
-                    navbarBg.classList.add('opacity-0');
-                }
-            });
-        }
-
+            // Init pertama kali
+            initLightGallery();
+        });
     </script>
 </body>
 

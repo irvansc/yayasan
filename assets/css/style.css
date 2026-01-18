@@ -164,3 +164,68 @@
     background-color: rgba(5, 150, 105, 0.2);
     color: #34d399;
 }
+/* --- Active State Khusus Dropdown SMP (Flat Style) --- */
+.dropdown-link-smp.active {
+    background-color: #ecfdf5; /* Hijau muda transparan (primary-50) */
+    color: #059669;            /* Hijau tua teks (primary-600) */
+    font-weight: 700;          /* Teks tebal */
+    border-radius: 0.5rem;     /* Sudut sedikit melengkung rapi */
+}
+
+/* Dark Mode Support */
+.dark .dropdown-link-smp.active {
+    background-color: rgba(5, 150, 105, 0.2);
+    color: #34d399;
+}
+/* --- Active State Khusus Dropdown SMA (Flat Style) --- */
+.dropdown-link-sma.active {
+    background-color: #ecfdf5; /* Hijau muda transparan (primary-50) */
+    color: #059669;            /* Hijau tua teks (primary-600) */
+    font-weight: 700;          /* Teks tebal */
+    border-radius: 0.5rem;     /* Sudut sedikit melengkung rapi */
+}
+
+/* Dark Mode Support */
+.dark .dropdown-link-sma.active {
+    background-color: rgba(5, 150, 105, 0.2);
+    color: #34d399;
+}
+
+
+
+
+/* --- SISTEM ANIMASI PENGGANTI AOS --- */
+        
+        /* 1. Base Transition (Wajib ada untuk semua elemen animasi) */
+        [class*="fade-"], [class*="zoom-"] {
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: opacity, transform;
+        }
+
+        /* 2. Posisi Awal (Sebelum discroll) */
+        .fade-up { transform: translateY(50px); }
+        .fade-down { transform: translateY(-50px); }
+        .fade-left { transform: translateX(50px); }
+        .fade-right { transform: translateX(-50px); }
+        .zoom-in { transform: scale(0.8); }
+        .zoom-out { transform: scale(1.2); }
+
+        /* 3. State Aktif (Saat elemen masuk layar) */
+        .aos-animate {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+
+        /* 4. State Selesai (PENTING UNTUK BUG MODAL & HP) 
+           Class ini akan menghapus transform sepenuhnya setelah animasi selesai.
+           Ini yang membuat modal Anda nanti bisa diam di tengah (fixed) dan tidak lari. */
+        .aos-done {
+            transform: none !important;
+        }
+        
+        /* Delay Utilities (Opsional, mirip data-aos-delay) */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-500 { transition-delay: 500ms; }

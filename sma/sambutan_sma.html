@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/img/svg/logo-sma.svg" type="image/svg+xml">
+    <title>Sambutan Kepala Sekolah - SMAIT AVICENNA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="../output.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+
+
+</head>
+
+<body
+    class="font-sans antialiased text-slate-700 bg-white dark:bg-dark-bg dark:text-slate-300 transition-colors duration-300">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div
+            class="absolute -top-24 -left-24 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob dark:bg-primary-900 dark:opacity-20">
+        </div>
+        <div
+            class="absolute top-0 -right-4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 dark:bg-blue-900 dark:opacity-10">
+        </div>
+        <div
+            class="absolute -bottom-32 left-20 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000 dark:bg-purple-900 dark:opacity-10">
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 top-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <a href="smait_index.html" class="flex items-center gap-3 group">
+                    <div
+                        class="relative w-10 h-10 flex items-center justify-center bg-primary-600 rounded-xl text-white shadow-lg group-hover:rotate-6 transition-transform">
+                        <img src="../assets/img/logo-sma.png" alt="Logo" class="w-full h-full object-contain">
+                        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                        </span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold font-kids text-slate-800 dark:text-white leading-none">SMAIT
+                            AVICENNA</span>
+                        <span class="text-[10px] font-bold tracking-widest text-primary-600 uppercase">Senior
+                            High School</span>
+                    </div>
+                </a>
+
+                <div
+                    class="hidden md:flex items-center space-x-1 p-1 bg-white/50 dark:bg-slate-800/50 rounded-full border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
+                    <a href="smait_index.html"
+                        class="desktop-link-sma px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Beranda</a>
+
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 desktop-link-sma  px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">
+                            Profile <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="sambutan_sma.html"
+                                class="dropdown-link-sma block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">Sambutan
+                                Kepala Sekolah</a>
+                            <a href="sejarah_sma.html"
+                                class="dropdown-link-sma block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Sejarah
+                                & Visi Misi</a>
+                            <a href="struktur_sma.html"
+                                class="dropdown-link-sma block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-b-xl">Struktur
+                                Organisasi</a>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 desktop-link-sma px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">
+                            Kesiswaan <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="program_sma.html"
+                                class="dropdown-link-sma block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">Program
+                                Unggulan</a>
+                            <a href="mpk_sma.html"
+                                class="dropdown-link-sma block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">
+                                MPK
+                            </a>
+                            <a href="osis_sma.html"
+                                class="dropdown-link-sma block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">
+                                OSIS
+                            </a>
+                            <a href="ekstrakurikuler_sma.html"
+                                class="dropdown-link-sma block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">
+                                Ekstrakurikuler
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 desktop-link-sma px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">
+                            Akademik <i class="fas fa-chevron-down text-xs ml-1 opacity-50"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-xl shadow-xl border border-gray-100 dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="kurikulum_sma.html"
+                                class="dropdown-link-sma block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 rounded-t-xl">Kurikulum
+                                & Riset
+                            </a>
+                            <a href="kalender_akademik_sma.html"
+                                class="dropdown-link-sma block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Kalender
+                                Akademik
+                            </a>
+                            <a href="prestasi_sma.html"
+                                class="dropdown-link-sma block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600">Prestasi
+                                & Alumni
+                            </a>
+                        </div>
+                    </div>
+                    <a href="galeri_sma.html"
+                        class="desktop-link-sma px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Galeri</a>
+                    <a href="kontak_sma.html"
+                        class="desktop-link-sma px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Kontak</a>
+                    <a href="artikel_sma.html"
+                        class="desktop-link-sma px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-600 hover:bg-white/80 dark:hover:bg-slate-700 rounded-full transition-all">Artikel</a>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+
+                    <button onclick="toggleSearch()"
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-300 hover:bg-primary-50 hover:text-primary-600 transition-colors flex items-center justify-center">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <button id="theme-toggle-desktop"
+                        class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-yellow-400 hover:bg-primary-50 transition-colors flex items-center justify-center">
+                        <i class="fas fa-sun dark:hidden"></i>
+                        <i class="fas fa-moon hidden dark:block"></i>
+                    </button>
+
+                    <a href="ppdb_sma.html"
+                        class="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary-700 to-primary-600 hover:to-primary-700 text-white rounded-full font-bold shadow-lg shadow-primary-500/30 transform hover:-translate-y-0.5 transition-all text-sm">
+                        <span>PPDB SMA</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+
+                    <button id="mobile-menu-btn"
+                        class="relative z-50 p-2 -mr-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none lg:hidden">
+                        <div class="w-6 h-5 flex flex-col justify-between">
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-1"></span>
+                            <span class="w-3/4 h-0.5 bg-current rounded-full transition-all duration-300"
+                                id="bar-2"></span>
+                            <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-left"
+                                id="bar-3"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="search-modal"
+        class="fixed inset-0 z-[80] opacity-0 invisible transition-all duration-300 flex items-start justify-center pt-20 md:pt-32 px-4">
+
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="toggleSearch()"></div>
+
+        <div class="relative z-10 w-full max-w-3xl bg-white dark:bg-dark-card rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300"
+            id="search-content">
+            <form action="#" class="relative flex items-center">
+                <div class="pl-5 md:pl-6 text-slate-400">
+                    <i class="fas fa-search text-lg md:text-xl"></i>
+                </div>
+                <input type="text" id="search-input"
+                    class="w-full py-5 md:py-6 px-4 bg-transparent border-none text-slate-800 dark:text-white text-base md:text-xl font-bold focus:ring-0 placeholder:text-slate-300 dark:placeholder:text-slate-600 font-kids"
+                    placeholder="Ketik pencarian..." autocomplete="off">
+                <button type="button" onclick="toggleSearch()"
+                    class="px-5 md:px-6 py-5 md:py-6 text-slate-400 hover:text-red-500 transition-colors">
+                    <i class="fas fa-times text-lg md:text-xl"></i>
+                </button>
+            </form>
+
+            <div
+                class="px-5 md:px-6 pb-5 md:pb-6 pt-2 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+                <p class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Pencarian
+                    Populer:
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="#"
+                        class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 transition-colors">Biaya
+                        Masuk</a>
+                    <a href="#"
+                        class="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 transition-colors">PPDB</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-backdrop"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm opacity-0 invisible transition-all duration-300"
+        onclick="toggleSidebar()"></div>
+
+    <div id="mobile-sidebar"
+        class="fixed top-0 left-0 bottom-0 w-[280px] z-[70] bg-white dark:bg-dark-card shadow-2xl transform -translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col">
+
+        <div
+            class="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-800 bg-primary-50 dark:bg-slate-800/50">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-primary-700 text-white flex items-center justify-center">
+                    <img src="../assets/img/logo-sma.png" alt="Logo" class="w-full h-full object-contain">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold font-kids text-lg text-slate-800 dark:text-white leading-none">SMAIT
+                        AVICENNA</span>
+                    <span class="text-[9px] font-bold text-primary-600 uppercase tracking-widest mt-0.5">Senior
+                        High School</span>
+                </div>
+            </div>
+            <button onclick="toggleSidebar()"
+                class="p-2 rounded-full text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+            <a href="smait_index.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-sma flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50 dark:bg-slate-800 text-primary-700 dark:text-primary-400 font-bold transition-all">
+                <i class="fas fa-home w-6 text-center"></i> Beranda
+            </a>
+
+            <div class="group">
+                <button onclick="toggleSub('menu-profil', 'arrow-profil')"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                    <span class="flex items-center gap-3">
+                        <i class="fas fa-user-tie w-6 text-center opacity-70"></i>
+                        <span>Profile</span>
+                    </span>
+                    <i id="arrow-profil" class="fas fa-chevron-right text-xs transition-transform duration-300"></i>
+                </button>
+                <div id="menu-profil" class="hidden pl-12 pr-2 space-y-1 py-1">
+                    <a href="sambutan_sma.html"
+                        class="dropdown-link-sma block py-2 text-sm text-slate-500 hover:text-primary-600">Sambutan
+                        Kepala</a>
+                    <a href="sejarah_sma.html"
+                        class="dropdown-link-sma block py-2 text-sm text-slate-500 hover:text-primary-600">Visi Misi</a>
+                    <a href="struktur_organisasi_sma.html"
+                        class="dropdown-link-sma block py-2 text-sm text-slate-500 hover:text-primary-600">Struktur
+                        Organisasi</a>
+                </div>
+            </div>
+            <div class="group">
+                <button onclick="toggleSub('menu-profil', 'arrow-profil')"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                    <span class="flex items-center gap-3">
+                        <i class="fas fa-user-tie w-6 text-center opacity-70"></i>
+                        <span>Kesiswaan </span>
+                    </span>
+                    <i id="arrow-profil" class="fas fa-chevron-right text-xs transition-transform duration-300"></i>
+                </button>
+                <div id="menu-profil" class="hidden pl-12 pr-2 space-y-1 py-1">
+                    <a href="program_sma.html"
+                        class="dropdown-link-sma block py-2 text-sm text-slate-500 hover:text-primary-600">Program
+                        Unggulan</a>
+                    <a href="mpk_sma.html"
+                        class="dropdown-link-sma block py-2 text-sm text-slate-500 hover:text-primary-600">MPK</a>
+                    <a href="osis_sma.html"
+                        class="dropdown-link-sma block py-2 text-sm text-slate-500 hover:text-primary-600">OSIS</a>
+                    <a href="ekstrakurikuler_sma.html"
+                        class="dropdown-link-sma block py-2 text-sm text-slate-500 hover:text-primary-600">Ekstrakurikuler</a>
+                </div>
+            </div>
+            <div class="group">
+                <button onclick="toggleSub('menu-profil', 'arrow-profil')"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 transition-colors font-medium">
+                    <span class="flex items-center gap-3">
+                        <i class="fas fa-book w-6 text-center opacity-70"></i>
+                        <span>Akademik </span>
+                    </span>
+                    <i id="arrow-profil" class="fas fa-chevron-right text-xs transition-transform duration-300"></i>
+                </button>
+                <div id="menu-profil" class="hidden pl-12 pr-2 space-y-1 py-1">
+                    <a href="kurikulum_sma.html"
+                        class="dropdown-link-sma block py-2 text-sm text-slate-500 hover:text-primary-600">Kurikulum
+                        & Riset</a>
+                    <a href="kalender_akademik_sma.html"
+                        class="dropdown-link-sma block py-2 text-sm text-slate-500 hover:text-primary-600">Kalender
+                        Akademik</a>
+                    <a href="prestasi_sma.html"
+                        class="dropdown-link-sma block py-2 text-sm text-slate-500 hover:text-primary-600">Prestasi
+                        & Alumni</a>
+                </div>
+            </div>
+
+            <a href="gallery_sma.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-sma flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50 dark:bg-slate-800 text-primary-700 dark:text-primary-400 font-bold transition-all">
+                <i class="fas fa-images w-6 text-center"></i> Gallery
+            </a>
+            <a href="kontak_sma.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-sma flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50 dark:bg-slate-800 text-primary-700 dark:text-primary-400 font-bold transition-all">
+                <i class="fas fa-phone w-6 text-center"></i> Kontak
+            </a>
+            <a href="artikel_sma.html" onclick="toggleSidebar()"
+                class="mobile-nav-link-sma flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50 dark:bg-slate-800 text-primary-700 dark:text-primary-400 font-bold transition-all">
+                <i class="fas fa-newspaper w-6 text-center"></i> Artikel
+            </a>
+
+            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:text-primary-600 font-medium text-sm">
+                    <i class="fas fa-arrow-left w-6 text-center"></i> Kembali ke Yayasan
+                </a>
+            </div>
+        </div>
+
+        <div class="p-5 border-t border-slate-100 dark:border-slate-800">
+            <a href="ppdb_sma.html"
+                class="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-primary-700 to-primary-600 text-white rounded-xl font-bold shadow-lg shadow-primary-500/30">
+                <i class="fas fa-rocket"></i> Daftar PPDB SMA
+            </a>
+        </div>
+    </div>
+    <!-- PAGE HEADER -->
+    <section class="relative pt-32 pb-24 md:pt-32 md:pb-32 bg-slate-900 overflow-hidden ">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+
+            <div
+                class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6 fade-up">
+                <span class="w-2 h-2 rounded-full bg-primary-400 animate-pulse"></span>
+                <span class="text-primary-200 text-[10px] font-bold uppercase tracking-[0.2em]">Profile Sekolah</span>
+            </div>
+
+            <h1
+                class="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-2xl fade-up delay-100">
+                Sambutan Kepala Sekolah
+            </h1>
+
+            <div class="fade-up delay-200">
+                <nav
+                    class="inline-flex items-center p-1 rounded-full bg-white/10 border border-white/10 backdrop-blur-md shadow-2xl">
+                    <ol class="flex items-center gap-1">
+
+                        <li>
+                            <a href="smait_index.html"
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-primary-600 hover:scale-110 transition-all duration-300"
+                                title="Kembali ke Beranda">
+                                <i class="fas fa-home text-xs"></i>
+                            </a>
+                        </li>
+
+                        <li class="text-slate-500 px-1">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="px-2 py-1 text-xs font-medium text-slate-300 hover:text-white transition-colors rounded-md hover:bg-white/5">
+                                Profil
+                            </a>
+                        </li>
+
+                        <li class="text-slate-500 px-1">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </li>
+
+                        <li>
+                            <span
+                                class="px-3 py-1.5 rounded-full bg-primary-600/90 text-white text-xs font-bold shadow-lg border border-primary-500/50">
+                                Sambutan Kepala...
+                            </span>
+                        </li>
+
+                    </ol>
+                </nav>
+            </div>
+
+        </div>
+    </section>
+    <!-- PAGE CONTENT -->
+    <section class="py-16 md:py-24 bg-white dark:bg-dark-bg relative overflow-hidden">
+
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div
+                class="absolute top-[10%] right-0 w-[600px] h-[600px] bg-primary-50/50 dark:bg-primary-900/5 rounded-full blur-3xl">
+            </div>
+            <div
+                class="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-slate-100/50 dark:bg-slate-800/20 rounded-full blur-3xl">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-start">
+
+                <div class="lg:w-4/12 w-full">
+                    <div class="sticky top-28 space-y-8 fade-up">
+
+                        <div
+                            class="group relative bg-white dark:bg-dark-card rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 overflow-hidden">
+                            <div class="relative h-[420px] overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10 opacity-90">
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Kepala Sekolah"
+                                    class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+
+                                <div class="absolute bottom-0 left-0 w-full p-6 z-20">
+                                    <h3 class="font-heading font-bold text-2xl text-white leading-tight">Ustadz H. Ahmad
+                                        Fauzi, M.Pd.</h3>
+                                    <div class="h-1 w-12 bg-primary-500 my-3"></div>
+                                    <p class="text-sm text-slate-300 font-medium tracking-wide uppercase">Kepala Sekolah
+                                        SMAIT</p>
+                                </div>
+                            </div>
+
+                            <div class="p-6 bg-white dark:bg-dark-card relative z-20">
+                                <div
+                                    class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-4 mb-4">
+                                    <div class="text-center">
+                                        <span class="block font-bold text-lg text-slate-800 dark:text-white">15+</span>
+                                        <span class="text-[10px] text-slate-500 uppercase tracking-wider">Tahun
+                                            Mengabdi</span>
+                                    </div>
+                                    <div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
+                                    <div class="text-center">
+                                        <span class="block font-bold text-lg text-slate-800 dark:text-white">S2</span>
+                                        <span class="text-[10px] text-slate-500 uppercase tracking-wider">Magister
+                                            Pend.</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center gap-4">
+                                    <a href="#"
+                                        class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-500 hover:bg-primary-600 hover:text-white flex items-center justify-center transition-all"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"
+                                        class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-500 hover:bg-primary-600 hover:text-white flex items-center justify-center transition-all"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="#"
+                                        class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-500 hover:bg-primary-600 hover:text-white flex items-center justify-center transition-all"><i
+                                            class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="relative bg-primary-50 dark:bg-primary-900/10 p-8 rounded-2xl border border-primary-100 dark:border-primary-900/20">
+                            <i
+                                class="fas fa-quote-right absolute top-6 right-6 text-4xl text-primary-200 dark:text-primary-900 opacity-50"></i>
+                            <p
+                                class="font-serif italic text-slate-700 dark:text-slate-300 text-lg leading-relaxed relative z-10">
+                                "Pendidikan di usia remaja adalah tentang menyalakan api nalar dan menanamkan akar iman
+                                yang
+                                kuat."
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="lg:w-8/12 fade-left">
+
+                    <div class="mb-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span
+                                class="px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest bg-slate-100 dark:bg-slate-800 text-slate-500">Sambutan
+                                Resmi</span>
+                            <div class="h-[1px] flex-1 bg-slate-200 dark:bg-slate-700"></div>
+                        </div>
+                        <h2
+                            class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white leading-[1.2]">
+                            Membangun Generasi <br>
+                            <span class="bg-clip-text bg-gradient-to-r from-primary-700 to-primary-500">Pemimpin
+                                Berkarakter.</span>
+                        </h2>
+                    </div>
+
+                    <article
+                        class="prose prose-lg prose-slate dark:prose-invert max-w-none 
+                    prose-headings:font-heading prose-headings:font-bold prose-headings:text-slate-900 dark:prose-headings:text-white 
+                    prose-p:leading-relaxed prose-p:text-slate-600 dark:prose-p:text-slate-300
+                    prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline 
+                    prose-li:marker:text-primary-500 
+                    prose-blockquote:border-l-4 prose-blockquote:border-primary-500 prose-blockquote:bg-slate-50 dark:prose-blockquote:bg-slate-800/50 prose-blockquote:py-2 prose-blockquote:px-5 prose-blockquote:not-italic prose-blockquote:rounded-r-lg">
+
+                        <p class="lead">
+                            <strong>Assalamu'alaikum Warahmatullahi Wabarakatuh.</strong><br>
+                            Segala puji bagi Allah SWT yang telah memberikan nikmat iman dan ilmu. Shalawat serta salam
+                            semoga tercurah
+                            kepada Rasulullah SAW.
+                        </p>
+
+                        <p>
+                            Selamat datang di website resmi SMAIT Avicenna. Sebagai lembaga pendidikan yang berfokus
+                            pada fase <em>aqil
+                                baligh</em>, kami memahami bahwa pendidikan tingkat menengah adalah jembatan krusial
+                            menuju kedewasaan.
+                        </p>
+
+                        <h2>Visi Pendidikan Kami</h2>
+                        <p>
+                            Kami tidak hanya mencetak siswa yang pintar secara akademis, tetapi juga memiliki adab yang
+                            luhur. Dalam
+                            pandangan kami, <strong>Adab mendahului Ilmu</strong>. Tanpa adab, ilmu tidak akan membawa
+                            keberkahan.
+                        </p>
+
+                        <blockquote>
+                            <p>"Barangsiapa yang menempuh jalan untuk mencari ilmu, maka Allah akan mudahkan baginya
+                                jalan menuju surga."
+                            </p>
+                            <cite class="block mt-2 text-sm font-bold text-slate-500 not-italic">— HR. Muslim</cite>
+                        </blockquote>
+
+                        <h3>Target Lulusan (Quality Assurance)</h3>
+                        <p>
+                            Setiap siswa yang lulus dari SMAIT Avicenna diharapkan memiliki kompetensi dasar sebagai
+                            berikut:
+                        </p>
+
+                        <ul>
+                            <li>Memiliki hafalan Al-Qur'an minimal <strong>3 Juz (Juz 28, 29, 30)</strong> dengan bacaan
+                                yang tartil.</li>
+                            <li>Mampu berkomunikasi aktif dalam Bahasa Inggris dan Arab dasar (Daily Conversation).</li>
+                            <li>Memiliki nalar kritis (Critical Thinking) dalam memecahkan masalah sains dan sosial.
+                            </li>
+                            <li>Terbiasa melaksanakan ibadah wajib dan sunnah (Shalat Dhuha, Qiyamul Lail, dan Puasa
+                                Sunnah).</li>
+                        </ul>
+
+                        <h3>Tahapan Pembinaan Karakter</h3>
+                        <p>
+                            Proses pembinaan dilakukan secara bertahap (Staging) dari kelas 7 hingga kelas 9:
+                        </p>
+
+                        <ol>
+                            <li><strong>Kelas 7 (Adaptasi & Adab):</strong> Fokus pada kemandirian ibadah, adab kepada
+                                guru/orang tua, dan
+                                adaptasi lingkungan asrama/sekolah.</li>
+                            <li><strong>Kelas 8 (Eksplorasi & Potensi):</strong> Siswa didorong untuk mengikuti
+                                organisasi (OSIS),
+                                ekstrakurikuler, dan kompetisi luar sekolah.</li>
+                            <li><strong>Kelas 9 (Prestasi & Persiapan):</strong> Fokus pada pematangan akademik, Ujian
+                                Sekolah, dan
+                                persiapan masuk SMA/MA Unggulan.</li>
+                        </ol>
+
+                        <h2>Sinergi Orang Tua dan Sekolah</h2>
+                        <p>
+                            Kami mengajak Bapak/Ibu untuk terus bersinergi. Pintu sekolah selalu terbuka untuk diskusi
+                            demi kemajuan ananda.
+                            Mari kita antarkan mereka menjadi pemimpin masa depan yang <em>Rabbani</em>, Cerdas, dan
+                            Berprestasi.
+                        </p>
+
+                        <p>
+                            <em>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</em>
+                        </p>
+
+                    </article>
+
+                    <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
+                        <div class="flex flex-col sm:flex-row justify-between items-end gap-6">
+                            <div>
+                                <img src="../assets/img/logo-sma.png" alt="Logo Watermark"
+                                    class="h-12 opacity-10 mb-4 grayscale">
+                                <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-1">Kepala
+                                    Sekolah
+                                </p>
+                                <h4 class="font-heading font-bold text-xl text-slate-900 dark:text-white">Ustadz H.
+                                    Ahmad
+                                    Fauzi, M.Pd.</h4>
+                                <p class="text-sm text-slate-500">NIP. 19850101 201001 1 001</p>
+                            </div>
+
+                            <div class="relative group">
+                                <div
+                                    class="absolute -inset-2 bg-gradient-to-r from-primary-500 to-blue-500 rounded-lg blur opacity-10 group-hover:opacity-20 transition duration-500">
+                                </div>
+                                <div class="relative font-serif italic text-4xl text-slate-800 dark:text-white pr-8">
+                                    AhmadFauzi.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 relative bg-slate-900 overflow-hidden fade-up">
+        <div class="absolute inset-0 opacity-20"
+            style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-kids font-bold text-white mb-6 leading-tight">
+                Mari Menjadi Bagian dari <br> Keluarga Besar Kami
+            </h2>
+            <p class="text-slate-300 text-lg max-w-2xl mx-auto mb-10 font-medium">
+                Siapkan masa depan ananda dengan pondasi iman, ilmu, dan akhlak yang kokoh bersama SMAIT AVICENNA.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="ppdb_smp.html"
+                    class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-kids-yellow text-slate-900 rounded-full font-bold shadow-lg shadow-yellow-500/20 hover:bg-yellow-300 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-rocket"></i> Daftar Sekarang
+                </a>
+                <a href="kontak_smp.html"
+                    class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-bold hover:bg-white/20 transition-all duration-300">
+                    <i class="fab fa-whatsapp"></i> Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer
+        class="bg-white dark:bg-dark-bg text-slate-600 dark:text-slate-300 pt-16 pb-8 md:pt-20 md:pb-10 border-t border-slate-200 dark:border-slate-800 font-sans transition-colors duration-300 fade-up delay-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6 text-slate-900 dark:text-white">
+                        <div
+                            class="w-12 h-12 bg-primary-700 rounded-lg flex items-center justify-center text-white font-bold shadow-sm">
+                            <img src="../assets/img/logo-sma.png" alt="Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="font-kids font-bold text-2xl tracking-tight">SMAIT AVICENNA</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-600 dark:text-slate-400">
+                        Sekolah Menengah Atas Islam Terpadu yang berdedikasi mencetak pemimpin masa depan dengan
+                        kurikulum integrasi ilmu dan adab.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Akses Cepat <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="profil_sma.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Profil Sekolah</a>
+                        </li>
+                        <li><a href="gtk_sma.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Guru & Staf</a>
+                        </li>
+                        <li><a href="ppdb_sma.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Info PPDB</a>
+                        </li>
+                        <li><a href="alumni_sma.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-[10px] text-primary-500"></i> Jejak Alumni</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Jam Operasional <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm">
+                        <li
+                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
+                            <span>Senin - Jumat</span>
+                            <span class="font-bold text-primary-600">07:00 - 15:30</span>
+                        </li>
+                        <li
+                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-2">
+                            <span>Sabtu (Ekskul)</span>
+                            <span class="font-bold text-primary-600">08:00 - 12:00</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2 text-slate-400">
+                            <span>Minggu</span>
+                            <span>Libur</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-slate-900 dark:text-white font-bold font-kids text-lg mb-6 relative inline-block">
+                        Hubungi Kami <span
+                            class="absolute bottom-0 left-0 w-1/2 h-1 bg-primary-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-4 text-sm mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary-500"></i>
+                            <span class="text-slate-600 dark:text-slate-400">Jl. Raya Pendidikan No. 123, Kel.
+                                Kebayoran, Jakarta Selatan 12345</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-primary-500 text-lg"></i>
+                            <span class="text-slate-600 dark:text-slate-400 font-bold">+62 812-9999-8888</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-primary-500"></i>
+                            <span class="text-slate-600 dark:text-slate-400">smait@avicenna.sch.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2025 SMAIT AVICENNA. All rights reserved.</p>
+                <div class="flex gap-6 items-center">
+                    <a href="../index.html"
+                        class="flex items-center gap-2 hover:text-primary-600 dark:hover:text-white transition-colors">
+                        <i class="fas fa-arrow-left"></i> Website Yayasan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Kembali ke atas" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="fixed bottom-6 right-6 z-[100] 
+                               w-10 h-10 rounded-full 
+                               bg-gradient-to-r from-primary-600 to-primary-500 
+                               text-white shadow-lg shadow-primary-500/40 
+                               flex items-center justify-center 
+                               transition-all duration-500 ease-in-out transform 
+                               opacity-0 invisible translate-y-10 
+                               hover:scale-110 hover:-translate-y-1 hover:shadow-2xl 
+                               group border border-white/20 backdrop-blur-sm">
+        <i class="fas fa-arrow-up text-lg transition-transform duration-300 group-hover:-translate-y-0.5"></i>
+    </button>
+
+
+    <script src="../assets/js/script.js"></script>
+
+</body>
+
+</html>
